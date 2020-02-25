@@ -46,6 +46,11 @@ const ProfilBlock = (): React.ReactElement => {
                 <p className="text-top">{profileData[0].descripion}</p>
                 <p className="text-bottom">{profileData[0].fulltext}</p>
               </div>
+              <div className="button-container">
+                    <a className="external-link" href="#courses">
+                      Läs mer
+                    </a>
+                  </div>
             </div>
           </div>
         </div>

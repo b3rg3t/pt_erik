@@ -17,9 +17,9 @@ export const font = {
 
 //colors for page
 export const colors = {
-  primary: "rgb(126, 38, 38)", //text-color
+  primary: "white", //text-color
   third: "rgb(61, 61, 61)", //darkpink ish
-  secondary: "rgb(204, 124, 124)", //lightpink ish
+  secondary: "#c27708", //lightpink ish
   lightgray: "lightgray",
   white: "white",
   color6: "#f9f9f9", //Contact & Cardblock
@@ -29,11 +29,11 @@ export const colors = {
 
 //Seo data
 export const SEOdata = {
-  title: "VickanYoga",
-  description: "This is a webpage about Yoga",
-  customImageSrc: "./images/yoga3.jpg",
+  title: "Obsticle Fitness",
+  description: "Det här är en sida om löpning, kost och personlig träning",
+  customImageSrc: "./images/erik1.jpg",
   ogType: "website",
-  name: "Yoga"
+  name: "PT"
 };
 
 //Social Media links

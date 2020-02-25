@@ -1,44 +1,30 @@
 import React from "react";
-import Video from "../AMP/AmpVideo";
 // import heights from "../../helpers/helpdata";
 // import { colors } from "../AMP/AmpStyling";
-import { useAmp } from "next/amp";
-import { FaRegPlayCircle } from "react-icons/fa";
 import { IoIosArrowDown } from "react-icons/io";
 
 const FirstComponent = (): React.ReactElement => {
-  const isAmp = useAmp();
   return (
     <>
       <div
         className="hero"
-        style={
-          isAmp
-            ? {
-                // - ${heights.navHeigt}
-                height: `calc(100vh )`,
-                backgroundImage: `url(./images/yogahero.jpg)`,
-                backgroundSize: "cover",
-                backgroundPosition: "center center"
-              }
-            : null
-        }
+        style={{
+          // - ${heights.navHeigt}
+          height: `calc(100vh )`,
+          backgroundImage: `url(./images/erik2.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center"
+        }}
       >
-        <div className="hero__layer">{!isAmp && <Video />}</div>
+        <div className="hero__layer"></div>
         <div className="hero__content">
           <div className="hero__box">
-            <h1>Welcome to the world of Yoga</h1>
+            <h1>ERIK JOHANSSON</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
               eaque labore nulla doloremque laborum, odit nostrum
               necessitatibus.
             </p>
-            {isAmp && (
-              <a href="/" className="main-btn">
-                <span className="play-text">PLAY VIDEO</span>
-                <FaRegPlayCircle className="play-icon" color="white" />
-              </a>
-            )}
           </div>
           <div className="hero__bottom-arrow">
             <a className="arrow-down" href="#cards">
@@ -73,7 +59,7 @@ const FirstComponent = (): React.ReactElement => {
           -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
           overflow: hidden;
-          opacity: ${isAmp ? 0.2 : 1};
+          opacity: 0.3;
           z-index: 5;
         }
         .hero__content {

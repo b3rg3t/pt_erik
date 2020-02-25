@@ -2,8 +2,8 @@ export const cardData = [
   {
     name: "Where does yoga come from",
     pic: "",
-    smallPic: "./images/yoga1.jpg",
-    alt: "Cat behind bars",
+    smallPic: "./images/erik1.jpg",
+    alt: "Erik Johansson",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
     author: "James Cameron"
@@ -11,7 +11,7 @@ export const cardData = [
   {
     name: "Where does yoga come from",
     pic: "",
-    smallPic: "./images/yoga1.jpg",
+    smallPic: "./images/erik1.jpg",
     alt: "Cat behind bars",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
@@ -30,9 +30,9 @@ export const cardData = [
 
 export const profileData = [
   {
-    name: "Vickan",
-    pic: "./images/yoga1.jpg",
-    smallPic: "./images/profil.jpg",
+    name: "Erik Johanssson",
+    pic: "./images/erik3.jpg",
+    smallPic: "./images/erik1.jpg",
     position: "left",
     alt: "Cat behind bars",
     overlayColor: "white",
