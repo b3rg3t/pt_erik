@@ -1,2 +1,2 @@
-# donpdong
-test project with mobx
+# Website for Erik
+Personal trainer website
