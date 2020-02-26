@@ -1,9 +1,10 @@
 import React from "react";
+import { colors } from "../../helpers/helpdata";
 
 const ProfileStyling = (): React.ReactElement => (
-  <style jsx global >{`
+  <style jsx global>{`
     .profile-block {
-      animation: easein 3s;
+      animation: easein 0.5s;
       min-height: 100vh;
       display: flex;
       justify-content: center;
@@ -13,6 +14,10 @@ const ProfileStyling = (): React.ReactElement => (
     }
     .profile-block h3 {
       margin-bottom: 1rem;
+      color: ${colors.white};
+    }
+    .profile-block p {
+      color: ${colors.white};
     }
     .profile-block__layer {
       opacity: 0.9;

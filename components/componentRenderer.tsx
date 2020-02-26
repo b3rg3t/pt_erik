@@ -7,7 +7,7 @@ import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
 import AmpStyling from "../components/AMP/AmpStyling";
 import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
-import { SEOdata } from "../helpers/helpdata";
+import { SEOdata,profileData } from "../helpers/helpdata";
 import Courses from "../components/CoursesFolder/Courses";
 
 import { useAmp } from "next/amp";
@@ -19,7 +19,7 @@ import AmpContact from "./ContactBlockFolder/AmpContact";
 const ComponentRenderer = (props: any): React.ReactElement => {
   const isAmp = useAmp();
   return (
-    <Layout title={`${SEOdata.title} | Yoga`}>
+    <Layout title={`${SEOdata.title} | Hem`}>
       {!isAmp ? (
         <>
           <section id="hero">
@@ -29,7 +29,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <CardBlock />
           </section>
           <section id="about">
-            <ProfilBlock />
+            <ProfilBlock profil={profileData}/>
           </section>
           <section id="articles">
             <ImageBlock />
@@ -51,7 +51,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <CardBlock />
           </section>
           <section id="about">
-            <AmpProfilBlock />
+            <AmpProfilBlock profil={profileData}/>
           </section>
           <section id="articles">
             <AmpImageBlock />

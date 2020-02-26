@@ -1,6 +1,7 @@
 import React from "react";
 // import heights from "../../helpers/helpdata";
 // import { colors } from "../AMP/AmpStyling";
+import { SEOdata } from "../../helpers/helpdata";
 import { IoIosArrowDown } from "react-icons/io";
 
 const FirstComponent = (): React.ReactElement => {
@@ -19,7 +20,7 @@ const FirstComponent = (): React.ReactElement => {
         <div className="hero__layer"></div>
         <div className="hero__content">
           <div className="hero__box">
-            <h1>ERIK JOHANSSON</h1>
+            <h1>{SEOdata.title}</h1>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
               eaque labore nulla doloremque laborum, odit nostrum
@@ -37,7 +38,6 @@ const FirstComponent = (): React.ReactElement => {
       <style jsx>{`
         .hero {
           position: relative;
-          text-align: center;
           background: #ffffff50;
           height: 100vh;
           display: flex;

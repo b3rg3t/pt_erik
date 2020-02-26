@@ -43,22 +43,22 @@ const Footer = (): React.ReactElement => {
       </footer>
       <style jsx>{`
         footer {
-          background-color: ${colors.white};
+          background-color: ${colors.footer};
           display: flex;
           justify-content: center;
           align-items: center;
           flex-direction: column;
           border-bottom: 0.5rem solid ${colors.secondary};
-          -webkit-box-shadow: 0 8px 6px 8px ${colors.lightgray};
-          -moz-box-shadow: 0 8px 6px 8px ${colors.lightgray};
-          box-shadow: 0 8px 6px 8px ${colors.lightgray};
           z-index: 10;
         }
         footer a {
           transition: all 0.5s ease;
           font-size: 2rem;
           padding: 0.5rem 0.5rem 0 0.5rem;
-          color: ${colors.secondary};
+          color: ${colors.white};
+        }
+        footer p {
+          color: ${colors.white};
         }
         footer a:hover {
           color: ${colors.primary};

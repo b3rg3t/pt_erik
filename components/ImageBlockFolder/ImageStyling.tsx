@@ -7,7 +7,7 @@ const ImageStyling = (): React.ReactElement => {
   return (
     <style jsx global>{`
       .image-block {
-        animation: easein 3s;
+        animation: easein 0.5s;
         min-height: 100vh;
         display: flex;
         justify-content: center;

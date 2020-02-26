@@ -29,7 +29,6 @@ const DateBox = ({ month, number, day }: DateBoxProps): React.ReactElement => {
           justify-content: center;
           align-items: center;
           background-color: white;
-          text-align: center;
           -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
@@ -39,14 +38,18 @@ const DateBox = ({ month, number, day }: DateBoxProps): React.ReactElement => {
           color: white;
           background-color: ${colors.secondary};
         }
+        .date-box__heading h4 {
+          text-align: center;
+        }
         .date-box__date {
           padding: 0.2rem 0;
         }
         .date-box__date p {
+          text-align: center;
           padding: 0 0.5rem;
           font-weight: 700;
         }
-        .date-box__number{
+        .date-box__number {
           font-size: 1.3rem;
         }
         .date-box__heading h4 {

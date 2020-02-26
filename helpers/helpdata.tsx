@@ -15,16 +15,34 @@ export const font = {
   url: `https://fonts.googleapis.com/css?family=Dosis&display=swap`
 };
 
+export const profileData = {
+  name: "Erik Johanssson",
+  pic: "./images/erik3.jpg",
+  smallPic: "./images/erik1.jpg",
+  position: "left",
+  alt: "Cat behind bars",
+  overlayColor: "black",
+  opacity: 0.6,
+  description:
+    "Mitt namn är Erik Johansson och jag tycker inte om träning, jag ÄLSKAR träning. Jag vill ständigt utvecklas i träning och som människa. På samma sätt tänker jag när jag tränar mina kunder för att förmedla träning på bästa sätt samt öka kundens välmående.",
+  time: "5 minutes",
+  author: "James Cameron",
+  button: false,
+  fulltext:
+    "Jag har en bakgrund inom elitfotbollen , men på grund av skador fick jag tyvärr lägga fotbollsskorna på hyllan. Efter mycket rebilitering fann jag nytt intresse i att förmedla träning till andra och se dem utvecklas. Det jag brinner för är just att förmedla träningsglädje och framgång.",
+};
+
 //colors for page
 export const colors = {
-  primary: "white", //text-color
+  primary: "#b07113", //text-color
   third: "rgb(61, 61, 61)", //darkpink ish
-  secondary: "#c27708", //lightpink ish
+  secondary: "#ff9419", //lightpink ish
   lightgray: "lightgray",
   white: "white",
   color6: "#f9f9f9", //Contact & Cardblock
   transparent: "rgba(0, 0, 0, 0)",
-  navbar: "rgba(255, 237, 237)"
+  navbar: "#00000090",
+  footer: "#2f2f2f"
 };
 
 //Seo data
@@ -55,8 +73,8 @@ export const SocialMedia = {
 //Links to page
 export const Links = [
   {
-    href: "#cards",
-    title: "Yoga",
+    href: "/profil",
+    title: "Profil",
     url: ""
   },
   {

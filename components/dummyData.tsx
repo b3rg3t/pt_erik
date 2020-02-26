@@ -1,47 +1,34 @@
 export const cardData = [
   {
-    name: "Where does yoga come from",
+    name: "Personlig träning",
     pic: "",
     smallPic: "./images/erik1.jpg",
     alt: "Erik Johansson",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
-    author: "James Cameron"
+    author: "James Cameron",
+    link: "/träning"
   },
   {
-    name: "Where does yoga come from",
+    name: "Löpning",
     pic: "",
-    smallPic: "./images/erik1.jpg",
+    smallPic: "./images/lopning.jpg",
     alt: "Cat behind bars",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
-    author: "James Cameron"
+    author: "James Cameron",
+    link: "/löpning"
   },
   {
-    name: "Where does yoga come from",
+    name: "Kost",
     pic: "",
-    smallPic: "./images/yoga1.jpg",
+    smallPic: "./images/food.jpg",
     alt: "Cat behind bars",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
-    author: "James Cameron"
+    author: "James Cameron",
+    link: "/kost"
   },
 ];
 
-export const profileData = [
-  {
-    name: "Erik Johanssson",
-    pic: "./images/erik3.jpg",
-    smallPic: "./images/erik1.jpg",
-    position: "left",
-    alt: "Cat behind bars",
-    overlayColor: "white",
-    opacity: 0.8,
-    descripion:
-      "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda architecto dignissimos molestias praesentium magni delectus! Tempora unde qui nesciunt?",
-    time: "5 minutes",
-    author: "James Cameron",
-    fulltext:
-      "Lorem, ipsum dolor tetur adipisicing elit. Sint quidem doloremque animi asperiores sit error vitae, similique quaerat nesciunt assumenda ar"
-  }
-];
+

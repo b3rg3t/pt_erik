@@ -1,15 +1,22 @@
 import React from "react";
-import { GiAllSeeingEye } from "react-icons/gi";
-import { useAmp } from "next/amp";
+// import { GiAllSeeingEye } from "react-icons/gi";
+import LazyLoad from "react-lazyload";
+import Image from "../AMP/AmpImage";
+import Link from "next/link";
+// import { useAmp } from "next/amp";
 import { cardData } from "../dummyData";
+import { profileData } from "../../helpers/helpdata";
 
 const CardBlock = (): React.ReactElement => {
-  const isAmp = useAmp();
+  // const isAmp = useAmp();
   return (
     cardData && (
       <>
         <div className="cards">
-          <h2>What is yoga?</h2>
+          <div className="card__header">
+            <h2>Vad erbjuder jag?</h2>
+            <p>Behöver du hjälp med att komma igång med träningen</p>
+          </div>
           <div className="cards__block">
             {cardData.length > 0 &&
               cardData.map((card, index) => (
@@ -21,14 +28,22 @@ const CardBlock = (): React.ReactElement => {
                   <div className="card__panels__div">
                     <h3>{card.name}</h3>
                   </div>
-                  <div className="card__panels__div">
-                    <GiAllSeeingEye color="gray" size="8rem" />
+                  <div className="card-block__content__boxes__img">
+                    <Image
+                      src={card.smallPic}
+                      alt={profileData.alt}
+                      height="300"
+                      width="300"
+                      layout="intrinsic"
+                    />
                   </div>
                   <div className="card__panels__div">
                     <p>{card.description}</p>
                   </div>
                   <div className="card__panels__div">
-                    <button className="main-btn">Läs mer</button>
+                    <Link href={card.link} as={card.link}>
+                      <a className="main-btn">Läs mer</a>
+                    </Link>
                   </div>
                 </article>
               ))}
@@ -42,15 +57,18 @@ const CardBlock = (): React.ReactElement => {
             justify-content: center;
             align-items: center;
             background: white;
-            ${isAmp && "padding-top: 3rem;"}
-            ${isAmp && "padding-bottom: 3rem;"}
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+          }
+          .card__header {
+            padding-bottom: 2rem;
           }
           .cards__block {
             display: flex;
             flex-wrap: wrap;
             justify-content: space-around;
             align-items: center;
-            max-width: 1200px;  
+            max-width: 1200px;
           }
           .cards__panels {
             margin: 1rem 2rem;
@@ -71,6 +89,22 @@ const CardBlock = (): React.ReactElement => {
             display: flex;
             justify-content: center;
             padding: 1rem;
+          }
+          .main-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+          }
+          .card-block__content__boxes__img {
+            max-height: 250px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            padding: 0 1rem;
+
           }
           @media only screen and (max-width: 1100 px) {
             .cards {

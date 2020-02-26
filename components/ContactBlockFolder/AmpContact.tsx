@@ -2,7 +2,7 @@ import React from "react";
 // import { useAmp } from "next/amp";
 import Form from "../FormFolder/Form";
 import MapContainer from "../MapFolder/MapContainer";
-import { profileData } from "../dummyData";
+import { profileData } from "../../helpers/helpdata";
 import ContactStyling from "./ContactStyling";
 
 const AmpContact = (): React.ReactElement => {
@@ -12,7 +12,7 @@ const AmpContact = (): React.ReactElement => {
       <div
         className="contact-block"
         style={{
-          backgroundImage: `url(./images/yoga1.jpg)`,
+          backgroundImage: `url(./images/ropes.jpg)`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
         }}
@@ -20,8 +20,8 @@ const AmpContact = (): React.ReactElement => {
         <div
           className="contact-block__layer"
           style={{
-            background: `${profileData[0].overlayColor}`,
-            opacity: `${profileData[0].opacity}`
+            background: `${profileData.overlayColor}`,
+            opacity: `${profileData.opacity}`
           }}
         />
 

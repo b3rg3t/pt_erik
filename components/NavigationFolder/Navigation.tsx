@@ -49,7 +49,7 @@ const Navigation = (): React.ReactElement => {
           }}
         >
           <div className="nav__boxes">
-            <Link href={`#hero`}>
+            <Link href="/" as="/">
               <a>
                 <GiEarthAfricaEurope size="3rem" />
                 {SEOdata.title.toUpperCase()}
@@ -79,7 +79,7 @@ const Navigation = (): React.ReactElement => {
             position: fixed;
             top: 0;
             width: 100%;
-            background-color: #00000090;
+            background-color: ${colors.navbar};
             display: flex;
             justify-content: center;
             align-items: center;
