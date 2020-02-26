@@ -13,7 +13,6 @@ export const body = JSON.stringify({
           opacity
           picposition
           secondtext
-          position
           backgroundimage {
             alt
             url

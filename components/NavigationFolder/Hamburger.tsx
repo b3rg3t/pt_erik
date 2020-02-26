@@ -4,6 +4,7 @@ import { slide as Menu } from "react-burger-menu";
 import { Links, colors, SEOdata, SocialMedia } from "../../helpers/helpdata";
 import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
+import Logo from "./Logo";
 
 class Hamburger extends React.Component {
   constructor(props) {
@@ -27,7 +28,6 @@ class Hamburger extends React.Component {
     this.setState({ isOpen: true });
   }
   render() {
-    
     return (
       <>
         <style jsx global>
@@ -149,20 +149,19 @@ class Hamburger extends React.Component {
           width={"200px"}
           //@ts-ignore
           isOpen={this.state.menuOpen}
-          onStateChange={(state) => this.handleStateChange(state)}
+          onStateChange={state => this.handleStateChange(state)}
         >
           <ul className="ham-ul">
             <li onClick={() => this.closeMenu()} className="logo-link">
-              <Link href={`#hero`}>
-                <a>
-                  <GiEarthAfricaEurope color="white" size="3rem" />
-                  {SEOdata.title.toUpperCase()}
-                </a>
-              </Link>
+              <Logo />
             </li>
             {Links &&
               Links.map((link, index) => (
-                <li onClick={() => this.closeMenu()} key={index} className="ham-li">
+                <li
+                  onClick={() => this.closeMenu()}
+                  key={index}
+                  className="ham-li"
+                >
                   <Link href={link.href}>
                     <a className="ham-links">{link.title}</a>
                   </Link>

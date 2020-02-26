@@ -122,3 +122,8 @@ export const Links = [
 export const ProfileInfo = {
   name: "Erik"
 };
+
+//ampurl
+export const AMPurl ={
+  url: "/?amp=1"
+}

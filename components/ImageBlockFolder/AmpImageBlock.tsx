@@ -33,7 +33,7 @@ const AmpImageBlock = (): React.ReactElement => {
           <div className="image-block__content">
             <div
               className={`image-block__content__boxes ${
-                img.smallImagePosition ? "left" : ""
+                img.picposition ? "left" : ""
               }`}
             >
               <div className="image-block__content__boxes__img">

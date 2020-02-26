@@ -4,6 +4,7 @@ import { colors, SocialMedia, SEOdata, Links } from "../../helpers/helpdata";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 
 import { GiEarthAfricaEurope } from "react-icons/gi";
+import Logo from "./Logo";
 
 const AmpSidebar = (): React.ReactElement => {
   return (
@@ -14,12 +15,7 @@ const AmpSidebar = (): React.ReactElement => {
             <nav>
               <ul>
                 <li className="logo-link">
-                  <Link href={`#hero`}>
-                    <a>
-                      <GiEarthAfricaEurope color="white" size="3rem" />
-                      {SEOdata.title.toUpperCase()}
-                    </a>
-                  </Link>
+                  <Logo />
                 </li>
                 {Links.map((link, index) => (
                   <li key={index}>
@@ -109,9 +105,8 @@ const AmpSidebar = (): React.ReactElement => {
             display: flex;
             justify-content: center;
             align-items: center;
-            
           }
-          .social-media-div a{
+          .social-media-div a {
             font-size: 1.6rem;
           }
           .logo-link a {

@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 import { useAmp } from "next/amp";
-import heights, { colors, SEOdata, Links } from "../../helpers/helpdata";
+import heights, { colors, Links } from "../../helpers/helpdata";
 
 import AmpSidebar from "./AmpSidebar";
 
-import { GiEarthAfricaEurope } from "react-icons/gi";
 import { FaBars } from "react-icons/fa";
 import Hamburger from "./Hamburger";
+import Logo from "./Logo";
 
 const Navigation = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -49,12 +49,7 @@ const Navigation = (): React.ReactElement => {
           }}
         >
           <div className="nav__boxes">
-            <Link href="/" as="/">
-              <a>
-                <GiEarthAfricaEurope size="3rem" />
-                {SEOdata.title.toUpperCase()}
-              </a>
-            </Link>
+            <Logo />
           </div>
           <div className="nav__boxes"></div>
           {!isAmp && (

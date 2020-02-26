@@ -14,18 +14,18 @@ const ContactBlock = (): React.ReactElement => {
         <div
           className="contact-block"
           style={{
-            backgroundImage: `url(./images/ropes.jpg)`,
+            // backgroundImage: `url(./images/ropes.jpg)`,
             backgroundSize: "cover",
             backgroundPosition: "center center"
           }}
         >
-          <div
+          {/* <div
             className="contact-block__layer"
             style={{
               background: `${profileData.overlayColor}`,
               opacity: `${profileData.opacity}`
             }}
-          />
+          /> */}
 
           <div className="contact-block__container">
             <MapContainer />

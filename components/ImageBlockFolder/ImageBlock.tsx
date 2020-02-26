@@ -12,6 +12,7 @@ const ImageBlock = (): React.ReactElement => {
   const articles = useContext(DataContext);
 
   const articleData = articles?.data?.allArticles;
+  console.log(articleData);
   return articleData?.length > 0 ? (
     <>
       {articleData.map((img, index) => (
@@ -36,7 +37,7 @@ const ImageBlock = (): React.ReactElement => {
             <div className="image-block__content">
               <div
                 className={`image-block__content__boxes ${
-                  img.smallImagePosition ? "left" : ""
+                  img.picposition ? "left" : ""
                 }`}
               >
                 <div className="image-block__content__boxes__img">

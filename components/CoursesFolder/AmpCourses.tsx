@@ -29,7 +29,6 @@ const AmpCourses = (): React.ReactElement => {
                 let day = date.substring(0, 3).toUpperCase();
                 let number = date.substring(4, 6);
                 let month = date.substring(7, 10).toUpperCase();
-                // console.log(date);
                 //@ts-ignore
                 let comDate = moment(course.date).format("L");
                 //@ts-ignore

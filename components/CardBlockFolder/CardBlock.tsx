@@ -5,7 +5,7 @@ import Image from "../AMP/AmpImage";
 import Link from "next/link";
 import { useAmp } from "next/amp";
 import { cardData } from "../dummyData";
-import { profileData } from "../../helpers/helpdata";
+import { profileData, colors } from "../../helpers/helpdata";
 
 const CardBlock = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -86,7 +86,9 @@ const CardBlock = (): React.ReactElement => {
             padding: 1rem;
           }
           .cards__panels__content h3 {
-            padding: 1rem;
+            padding: 0.5rem 1rem;
+            color: ${colors.white};
+            background: ${colors.secondary};
           }
           .card-block__content__boxes__img {  
             display: flex;

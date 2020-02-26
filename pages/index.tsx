@@ -25,6 +25,7 @@ interface Course {
 
 interface Articles {
   id: string;
+  picposition: boolean;
   title: string;
   textcolor: { hex: string };
   toptext: string;

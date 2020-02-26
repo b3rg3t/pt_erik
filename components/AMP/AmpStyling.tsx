@@ -49,7 +49,7 @@ const AmpStyling = (): React.ReactElement => {
         text-decoration: none;
       }
       img {
-        animation: easein 3s;
+        animation: easein 1.2s;
       }
       a,
       p,
