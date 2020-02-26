@@ -29,6 +29,16 @@ export const cardData = [
     author: "James Cameron",
     link: "/kost"
   },
+  {
+    name: "Massage",
+    pic: "",
+    smallPic: "./images/massage.jpg",
+    alt: "Erik Johansson",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
+    author: "James Cameron",
+    link: "/träning"
+  },
 ];
 
 

@@ -3,48 +3,49 @@ export const BASE_URL = "https://graphql.datocms.com/";
 export const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Authorization: `Bearer fba5190e97e6ec7fa854afa2a1ac99`
+  Authorization: `Bearer d08a1eb18ab572e54dc724b47fd6ad`
 };
 
 export const body = JSON.stringify({
-  query: `query GetAllCourses {
-        allCourses(orderBy: date_ASC) {
-          id
-          title
-          spots
-          date
-          location
-          content
-          time
-          externalurl
-          image {
-            alt
-            url
-            height
-            width
-          }
-        },
+  query: `query GetAllData {
         allArticles {
           id
-          bottomText
-          topText
-          title
-          smallImagePosition
           opacity
-          backgroundimg {
-            height
-            width
+          picposition
+          secondtext
+          position
+          backgroundimage {
             alt
             url
+            width
+            height
           }
-          smallimg {
+          smallimage {
             alt
+            url
             height
             width
-            url
+          }
+          toptext
+          title
+          textcolor {
+            hex
           }
           overlaycolor {
             hex
+          }
+        },
+        allOffers {
+          content
+          title
+          price
+          position
+          image {
+            alt
+            width
+            height
+            id
+            url
           }
         }
       }`

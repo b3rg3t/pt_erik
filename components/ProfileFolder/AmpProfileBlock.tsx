@@ -14,6 +14,7 @@ interface AmpProfilBlockProps {
     position: string;
     name: string;
     description: string;
+    text: string | null;
     fulltext: string;
     button: boolean;
   };
@@ -51,11 +52,18 @@ const AmpProfilBlock = ({
                 layout="intrinsic"
               />
             </div>
-
             <div className="profile-block__content__boxes__text">
               <h3>{profileData.name}</h3>
               <p className="text-top">{profileData.description}</p>
               <p className="text-bottom">{profileData.fulltext}</p>
+              {profil.text && <p className="text-bottom">{profil.text}</p>}
+              {profil.button && (
+                <div className="button-container">
+                  <a className="external-link" href="#courses">
+                    Läs mer
+                  </a>
+                </div>
+              )}
             </div>
           </div>
         </div>

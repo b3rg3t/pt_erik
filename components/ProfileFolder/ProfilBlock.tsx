@@ -1,10 +1,10 @@
 import React from "react";
-import { profileData } from "../../helpers/helpdata";
 import Loading from "../loading";
 import Image from "../AMP/AmpImage";
 import LazyLoad from "react-lazyload";
 import ProfileStyling from "./ProfileStyling";
-// import { colors } from "../../helpers/helpdata";
+import Link from "next/link";
+
 interface ProfilBlockProps {
   profil: {
     pic: string;
@@ -15,6 +15,7 @@ interface ProfilBlockProps {
     position: string;
     name: string;
     description: string;
+    text: string;
     fulltext: string;
     button: boolean;
   };
@@ -35,19 +36,17 @@ const ProfilBlock = ({ profil }: ProfilBlockProps): React.ReactElement => {
           <div
             className="profile-block__layer"
             style={{
-              background: `${profileData.overlayColor}`,
-              opacity: `${profileData.opacity}`
+              background: `${profil.overlayColor}`,
+              opacity: `${profil.opacity}`
             }}
           />
           <div className="profile-block__content">
-            <div
-              className={`profile-block__content__boxes ${profileData.position}`}
-            >
+            <div className={`profile-block__content__boxes ${profil.position}`}>
               <div className="profile-block__content__boxes__img">
                 <LazyLoad height={350}>
                   <Image
-                    src={profileData.smallPic}
-                    alt={profileData.alt}
+                    src={profil.smallPic}
+                    alt={profil.alt}
                     height="500"
                     width="500"
                     layout="intrinsic"
@@ -56,17 +55,18 @@ const ProfilBlock = ({ profil }: ProfilBlockProps): React.ReactElement => {
               </div>
 
               <div className="profile-block__content__boxes__text">
-                <h3>{profileData.name}</h3>
-                <p className="text-top">{profileData.description}</p>
-                <p className="text-bottom">{profileData.fulltext}</p>
+                <h3>{profil.name}</h3>
+                <p className="text-top">{profil.description}</p>
+                <p className="text-bottom">{profil.fulltext}</p>
+                {profil.text && <p className="text-bottom"  >{profil.text}</p>}
+                {profil.button && (
+                  <div className="button-container">
+                    <Link href="/profil" as="/profil">
+                      <a className="external-link">Läs mer</a>
+                    </Link>
+                  </div>
+                )}
               </div>
-              {profileData.button && (
-                <div className="button-container">
-                  <a className="external-link" href="#courses">
-                    Läs mer
-                  </a>
-                </div>
-              )}
             </div>
           </div>
         </div>

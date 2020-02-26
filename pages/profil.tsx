@@ -2,7 +2,7 @@ import React from "react";
 
 // import ComponentRenderer from "../components/componentRenderer";
 // import { BASE_URL, headers, body } from "../config";
-import { SEOdata, profileData } from "../helpers/helpdata";
+import { SEOdata, fullprofileData } from "../helpers/helpdata";
 import Layout from "../components/LayoutFolder/Layout";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import AmpStyling from "../components/AMP/AmpStyling";
@@ -12,7 +12,7 @@ export const config = { amp: "hybrid" };
 const Profil: React.FunctionComponent = (props: any) => {
   return (
     <Layout title={`${SEOdata.title} | Profil`}>
-      <ProfilBlock profil={profileData}/>
+      <ProfilBlock profil={fullprofileData} />
       <AmpStyling />
     </Layout>
   );

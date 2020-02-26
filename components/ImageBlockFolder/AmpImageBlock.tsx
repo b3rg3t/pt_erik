@@ -18,7 +18,7 @@ const AmpImageBlock = (): React.ReactElement => {
           className="image-block"
           style={{
             backgroundImage:
-              img?.backgroundimg?.url && `url(${img?.backgroundimg?.url})`,
+              img?.backgroundimage?.url && `url(${img?.backgroundimage?.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center center"
           }}
@@ -38,19 +38,33 @@ const AmpImageBlock = (): React.ReactElement => {
             >
               <div className="image-block__content__boxes__img">
                 <Image
-                  src={img.smallimg.url}
-                  alt={img.smallimg.alt}
-                  width={img.smallimg.width}
-                  height={img.smallimg.height}
+                  src={img.smallimage.url}
+                  alt={img.smallimage.alt}
+                  width={img.smallimage.width}
+                  height={img.smallimage.height}
                   layout="intrinsic"
                 />
               </div>
               <div className="image-block__content__boxes__text">
                 <div className="text-box">
-                  <h3>{img?.title}</h3>
-                  {img.topText && <p className="text-top">{img.topText}</p>}
+                  <h3 style={{ color: `${img.textcolor.hex}` }}>
+                    {img?.title}
+                  </h3>
+                  {img.toptext && (
+                    <p
+                      style={{ color: `${img.textcolor.hex}` }}
+                      className="text-top"
+                    >
+                      {img.toptext}
+                    </p>
+                  )}
                   {img.bottomText && (
-                    <p className="text-bottom">{img.bottomText}</p>
+                    <p
+                      style={{ color: `${img.textcolor.hex}` }}
+                      className="text-bottom"
+                    >
+                      {img.bottomText}
+                    </p>
                   )}
                 </div>
                 <div className="button-container">

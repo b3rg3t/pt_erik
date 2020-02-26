@@ -26,22 +26,23 @@ interface Course {
 interface Articles {
   id: string;
   title: string;
-  topText: string;
+  textcolor: { hex: string };
+  toptext: string;
   bottomText: string;
   smallImagePosition: boolean;
   opacity: number;
   overlaycolor: { hex: string };
-  backgroundimg?: {
+  backgroundimage?: {
     alt: string;
     title?: string;
-    url: string;
+    url?: string;
     width: string;
     height: string;
   };
-  smallimg: {
+  smallimage: {
     alt: string;
     title?: string;
-    url: string;
+    url?: string;
     width: string;
     height: string;
   };

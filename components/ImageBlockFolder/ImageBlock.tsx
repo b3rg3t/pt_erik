@@ -5,38 +5,13 @@ import Image from "../AMP/AmpImage";
 import LazyLoad from "react-lazyload";
 import { DataContext } from "../../pages/index";
 import Loading from "../loading";
-import { AiFillPicture } from "react-icons/ai";
 import ImageStyling from "./ImageStyling";
-
-const PlaceHolder = (): React.ReactElement => (
-  <>
-    <div>
-      <span aria-label="Placeholder div">
-        <AiFillPicture color="gray" />
-      </span>
-    </div>
-    <style jsx>
-      {`
-        div {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          background: white;
-          min-width: 366px;
-          height: 350px;
-          padding: 0 2rem;
-        }
-      `}
-    </style>
-  </>
-);
 
 const ImageBlock = (): React.ReactElement => {
   // const isAmp = useAmp();
   const articles = useContext(DataContext);
 
   const articleData = articles?.data?.allArticles;
-
   return articleData?.length > 0 ? (
     <>
       {articleData.map((img, index) => (
@@ -45,7 +20,8 @@ const ImageBlock = (): React.ReactElement => {
             className="image-block"
             style={{
               backgroundImage:
-                img?.backgroundimg?.url && `url(${img?.backgroundimg?.url})`,
+                img?.backgroundimage?.url &&
+                `url(${img?.backgroundimage?.url})`,
               backgroundSize: "cover",
               backgroundPosition: "center center"
             }}
@@ -67,23 +43,37 @@ const ImageBlock = (): React.ReactElement => {
                   <LazyLoad
                     offset={[-200, 0]}
                     height={350}
-                    placeholder={<PlaceHolder />}
+                    width={350}
                   >
                     <Image
-                      src={img.smallimg.url}
-                      alt={img.smallimg.alt}
-                      width={img.smallimg.width}
-                      height={img.smallimg.height}
+                      src={img.smallimage.url}
+                      alt={img.smallimage.alt}
+                      width={img.smallimage.width}
+                      height={img.smallimage.height}
                       layout="intrinsic"
                     />
                   </LazyLoad>
                 </div>
                 <div className="image-block__content__boxes__text">
                   <div className="text-box">
-                    <h3>{img?.title}</h3>
-                    {img.topText && <p className="text-top">{img.topText}</p>}
+                    <h3 style={{ color: `${img.textcolor.hex}` }}>
+                      {img?.title}
+                    </h3>
+                    {img.toptext && (
+                      <p
+                        style={{ color: `${img.textcolor.hex}` }}
+                        className="text-top"
+                      >
+                        {img.toptext}
+                      </p>
+                    )}
                     {img.bottomText && (
-                      <p className="text-bottom">{img.bottomText}</p>
+                      <p
+                        style={{ color: `${img.textcolor.hex}` }}
+                        className="text-bottom"
+                      >
+                        {img.bottomText}
+                      </p>
                     )}
                   </div>
                   <div className="button-container">

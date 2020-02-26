@@ -35,7 +35,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <ImageBlock />
           </section>
           <section id="courses">
-            <Courses />
+            {/* <Courses /> */}
           </section>
           <section id="contact">
             <ContactBlock />
@@ -57,7 +57,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <AmpImageBlock />
           </section>
           <section id="courses">
-            <AmpCourses />
+            {/* <AmpCourses /> */}
           </section>
           <section id="contact">
             <AmpContact />
