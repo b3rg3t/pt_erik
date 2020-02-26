@@ -40,7 +40,6 @@ const ComponentRenderer = (props: any): React.ReactElement => {
           <section id="contact">
             <ContactBlock />
           </section>
-          <AmpStyling />
         </>
       ) : (
         <>
@@ -62,7 +61,6 @@ const ComponentRenderer = (props: any): React.ReactElement => {
           <section id="contact">
             <AmpContact />
           </section>
-          <AmpStyling />
         </>
       )}
     </Layout>

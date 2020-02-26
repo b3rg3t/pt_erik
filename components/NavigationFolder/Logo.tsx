@@ -16,14 +16,15 @@ const Logo = (): React.ReactElement => {
       </Link>
       <style jsx>{`
         a {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: ${colors.white};
-            font-weight: bold;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: ${colors.white};
+          font-weight: bold;
+          transition: all 0.5s ease;
         }
         a:hover {
-            color: ${colors.secondary};
+          color: ${colors.secondary};
         }
       `}</style>
     </>

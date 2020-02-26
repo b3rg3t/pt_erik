@@ -97,22 +97,22 @@ export const Links = [
     url: ""
   },
   {
-    href: "#about",
-    title: "Om",
+    href: "/massage",
+    title: "Massage",
     url: ""
   },
   {
-    href: "#articles",
-    title: "Artiklar",
+    href: "/lopning",
+    title: "Löpning",
     url: ""
   },
   {
-    href: "#courses",
-    title: "Kurser",
+    href: "/hinderbana",
+    title: "Hinderbana",
     url: ""
   },
   {
-    href: "#contact",
+    href: "/kontakt",
     title: "Kontakt",
     url: ""
   }

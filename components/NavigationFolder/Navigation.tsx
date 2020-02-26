@@ -79,6 +79,7 @@ const Navigation = (): React.ReactElement => {
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            border-top: 0.5rem solid ${colors.secondary};
           }
           nav a {
             color: white;

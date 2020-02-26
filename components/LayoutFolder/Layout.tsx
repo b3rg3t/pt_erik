@@ -2,6 +2,7 @@ import * as React from "react";
 import Head from "next/head";
 import Navigation from "../NavigationFolder/Navigation";
 import Footer from "../FooterFolder/Footer";
+import AmpStyling from "../AMP/AmpStyling";
 import { useAmp } from "next/amp";
 
 type LayoutProps = {
@@ -37,6 +38,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => {
       <Navigation />
       <main className="site-content">{children}</main>
       <Footer />
+      <AmpStyling />
     </div>
   );
 };

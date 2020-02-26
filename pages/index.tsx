@@ -29,7 +29,7 @@ interface Articles {
   title: string;
   textcolor: { hex: string };
   toptext: string;
-  bottomText: string;
+  secondtext: string;
   smallImagePosition: boolean;
   opacity: number;
   overlaycolor: { hex: string };

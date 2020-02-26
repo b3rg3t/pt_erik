@@ -58,12 +58,12 @@ const AmpImageBlock = (): React.ReactElement => {
                       {img.toptext}
                     </p>
                   )}
-                  {img.bottomText && (
+                  {img.secondtext && (
                     <p
                       style={{ color: `${img.textcolor.hex}` }}
                       className="text-bottom"
                     >
-                      {img.bottomText}
+                      {img.secondtext}
                     </p>
                   )}
                 </div>
