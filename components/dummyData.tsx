@@ -7,7 +7,7 @@ export const cardData = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
     author: "James Cameron",
-    link: "/träning"
+    link: "/traning"
   },
   {
     name: "Löpning",
@@ -17,7 +17,7 @@ export const cardData = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elitsda sd asd asd asd asdsd sda asda. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
     author: "James Cameron",
-    link: "/löpning"
+    link: "/lopning"
   },
   {
     name: "Kost",
@@ -37,7 +37,7 @@ export const cardData = [
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
     author: "James Cameron",
-    link: "/träning"
+    link: "/massage"
   },
 ];
 

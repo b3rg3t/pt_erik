@@ -71,11 +71,11 @@ const AmpImageBlock = ({
                     </p>
                   )}
                 </div>
-                <div className="button-container">
+                {/* <div className="button-container">
                   <a className="external-link" href="#courses">
                     Kurser
                   </a>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
