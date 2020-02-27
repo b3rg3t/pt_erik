@@ -70,7 +70,24 @@ const ProfileStyling = (): React.ReactElement => (
       padding: 4rem 0;
       position: relative;
     }
-
+    .utb {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-item: center;
+    }
+    .utb_item {
+      font-weight: bold;
+      padding: 0.5rem;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      background: ${colors.secondary};
+    }
+    .utb_item__2 {
+      margin-left: 0.5rem;
+    }
     @media only screen and (max-width: 600px) {
       .profile-block__content__boxes__img img {
         height: 200px;

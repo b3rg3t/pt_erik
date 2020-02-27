@@ -1,18 +1,16 @@
-import React, { useContext } from "react";
+import React from "react";
 import Image from "../AMP/AmpImage";
-// import { useAmp } from "next/amp";
-// import { colors } from "../../helpers/helpdata";
 import LazyLoad from "react-lazyload";
-import { DataContext } from "../../pages/index";
+import { Articles } from "../../pages/index";
 import Loading from "../loading";
 import ImageStyling from "./ImageStyling";
 
-const ImageBlock = (): React.ReactElement => {
-  // const isAmp = useAmp();
-  const articles = useContext(DataContext);
+interface ImageBlockProps {
+  allArticles: Articles[];
+}
 
-  const articleData = articles?.data?.allArticles;
-  console.log(articleData);
+const ImageBlock = ({ allArticles }: ImageBlockProps): React.ReactElement => {
+  const articleData = allArticles;
   return articleData?.length > 0 ? (
     <>
       {articleData.map((img, index) => (
@@ -41,11 +39,7 @@ const ImageBlock = (): React.ReactElement => {
                 }`}
               >
                 <div className="image-block__content__boxes__img">
-                  <LazyLoad
-                    offset={[-200, 0]}
-                    height={350}
-                    width={350}
-                  >
+                  <LazyLoad offset={[-200, 0]} height={350} width={350}>
                     <Image
                       src={img.smallimage.url}
                       alt={img.smallimage.alt}

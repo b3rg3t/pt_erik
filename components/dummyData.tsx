@@ -15,7 +15,7 @@ export const cardData = [
     smallPic: "./images/lopning.jpg",
     alt: "Cat behind bars",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elitsda sd asd asd asd asdsd sda asda. Veritatisvel reiciendis corporis pariatur adipisci illo quis explicabo exaperiam suscipit, dolorem cupiditate nobis esse animi sequi totam dolorum molestias dicta!",
     author: "James Cameron",
     link: "/löpning"
   },

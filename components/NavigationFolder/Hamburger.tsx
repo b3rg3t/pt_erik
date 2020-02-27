@@ -1,8 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { slide as Menu } from "react-burger-menu";
-import { Links, colors, SEOdata, SocialMedia } from "../../helpers/helpdata";
-import { GiEarthAfricaEurope } from "react-icons/gi";
+import { Links, colors, SocialMedia } from "../../helpers/helpdata";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import Logo from "./Logo";
 

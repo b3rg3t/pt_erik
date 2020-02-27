@@ -22,10 +22,10 @@ const CardBlock = (): React.ReactElement => {
               cardData.map((card, index) => (
                 <article key={index} className="cards__panels">
                   <div className="cards__panels__content">
-                    <div className="card__panels__div">
-                      <h3>{card.name}</h3>
-                    </div>
                     <div className="card-block__content__boxes__img">
+                      <div className="card__panels__div text">
+                        <h3>{card.name.toUpperCase()}</h3>
+                      </div>
                       <Image
                         src={card.smallPic}
                         alt={profileData.alt}
@@ -34,12 +34,13 @@ const CardBlock = (): React.ReactElement => {
                         layout="intrinsic"
                       />
                     </div>
+
                     <div className="card__panels__div">
                       <p>{card.description}</p>
                     </div>
                     <div className="card__panels__div">
                       <Link href={card.link} as={card.link}>
-                        <a className="main-btn">Läs mer</a>
+                        <a className="main-btn card-btn">LÄS MER</a>
                       </Link>
                     </div>
                   </div>
@@ -69,7 +70,7 @@ const CardBlock = (): React.ReactElement => {
             align-items: center;
           }
           .cards__panels {
-            min-height: 480px;
+            min-height: 100%;
             max-width: 300px;
             margin: 1rem 1rem;
             background: #f9f9f9;
@@ -85,12 +86,20 @@ const CardBlock = (): React.ReactElement => {
           .cards__panels__content p {
             padding: 1rem;
           }
+          .text {
+            position: absolute;
+            left: 0;
+           z-index: 10;
+          }
           .cards__panels__content h3 {
+            font-size: 1.2rem;
             padding: 0.5rem 1rem;
             color: ${colors.white};
             background: ${colors.secondary};
+            border-radius: 0 0 0.5rem 0;
           }
-          .card-block__content__boxes__img {  
+          .card-block__content__boxes__img {
+            position: relative;
             display: flex;
             justify-content: center;
             max-widht: 100px;
@@ -101,11 +110,11 @@ const CardBlock = (): React.ReactElement => {
             object-fit: contain;
             max-widht: 100px;
           }
-          .main-btn {
+          .card-btn {
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 1rem;
             margin-bottom: 1rem;
           }
           @media only screen and (max-width: 1100 px) {

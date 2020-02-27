@@ -50,12 +50,29 @@ export const fullprofileData = {
   fulltext:
     "Jag har en bakgrund inom elitfotbollen , men på grund av skador fick jag tyvärr lägga fotbollsskorna på hyllan. Efter mycket rebilitering fann jag nytt intresse i att förmedla träning till andra och se dem utvecklas. Det jag brinner för är just att förmedla träningsglädje och framgång."
 };
+export const utbildning = {
+  name: "Utbildningar",
+  pic: "",
+  smallPic: "./images/erik4.jpg",
+  position: "right",
+  alt: "Cat behind bars",
+  overlayColor: "white",
+  textColor: "rgb(61, 61, 61)",
+  utbildningar: ["Personlig Tränare-Hälsocoach Lillsveds idrottsfolkhögskola", "Entreprenörskap inom träning och hälsa Lillsveds idrottsfolkhögskola","Fystränarutbildning Bosön idrottsfolkhögskola", "OCR-Instructor Obstacle Training AB", "Löpcoach Lillsveds idrottsfokhögskola", "Klassisk Massör Lillsveds idrottsfolkhögskola", "EMS-instructor X-Shape Fitness AB", "100% Ren hårdträning (Anti doping)"],
+  opacity: 0.6,
+  description: "",
+  time: "5 minutes",
+  author: "James Cameron",
+  button: false,
+  text: "",
+  fulltext: "",
+};
 
 //colors for page
 export const colors = {
-  primary: "#b07113", //text-color
-  third: "rgb(61, 61, 61)", //darkpink ish
-  secondary: "#ff9419", //lightpink ish
+  primary: "#b07113", //darkorange
+  third: "rgb(61, 61, 61)", 
+  secondary: "#ff9419", //orange
   lightgray: "lightgray",
   white: "white",
   color6: "#f9f9f9", //Contact & Cardblock

@@ -4,6 +4,7 @@ import Image from "../AMP/AmpImage";
 import LazyLoad from "react-lazyload";
 import ProfileStyling from "./ProfileStyling";
 import Link from "next/link";
+import EducationBlock from "./EducationBlock";
 
 interface ProfilBlockProps {
   profil: {
@@ -18,6 +19,8 @@ interface ProfilBlockProps {
     text: string;
     fulltext: string;
     button: boolean;
+    textColor?: string;
+    utbildningar?: string[];
   };
 }
 
@@ -55,10 +58,30 @@ const ProfilBlock = ({ profil }: ProfilBlockProps): React.ReactElement => {
               </div>
 
               <div className="profile-block__content__boxes__text">
-                <h3>{profil.name}</h3>
-                <p className="text-top">{profil.description}</p>
-                <p className="text-bottom">{profil.fulltext}</p>
-                {profil.text && <p className="text-bottom"  >{profil.text}</p>}
+                <h3 style={{ color: `${profil.textColor}` }}>{profil.name}</h3>
+                {profil?.utbildningar && (
+                  <EducationBlock utbildningar={profil?.utbildningar}/>
+                )}
+                <p
+                  style={{ color: `${profil.textColor}` }}
+                  className="text-top"
+                >
+                  {profil.description}
+                </p>
+                <p
+                  style={{ color: `${profil.textColor}` }}
+                  className="text-bottom"
+                >
+                  {profil.fulltext}
+                </p>
+                {profil.text && (
+                  <p
+                    style={{ color: `${profil.textColor}` }}
+                    className="text-bottom"
+                  >
+                    {profil.text}
+                  </p>
+                )}
                 {profil.button && (
                   <div className="button-container">
                     <Link href="/profil" as="/profil">

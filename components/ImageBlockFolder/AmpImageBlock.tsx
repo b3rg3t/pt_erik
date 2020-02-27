@@ -1,14 +1,18 @@
-import React, { useContext } from "react";
+import React from "react";
 import Image from "../AMP/AmpImage";
 // import { colors } from "../../helpers/helpdata";
-import { DataContext } from "../../pages/index";
+import { Articles } from "../../pages/index";
 import Loading from "../loading";
 import ImageStyling from "./ImageStyling";
 
-const AmpImageBlock = (): React.ReactElement => {
-  const articles = useContext(DataContext);
+interface AmpImageBlockProps {
+  allArticles: Articles[];
+}
 
-  const articleData = articles?.data?.allArticles;
+
+const AmpImageBlock = ({ allArticles }: AmpImageBlockProps): React.ReactElement => {
+
+  const articleData = allArticles;
 
   return articleData?.length > 0 ? (
     <>

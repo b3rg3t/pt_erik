@@ -23,7 +23,7 @@ interface Course {
   };
 }
 
-interface Articles {
+export interface Articles {
   id: string;
   picposition: boolean;
   title: string;
@@ -59,7 +59,7 @@ export const config = { amp: "hybrid" };
 const Index: React.FunctionComponent = (props: any) => {
   return (
     <DataContext.Provider value={props.response}>
-      <ComponentRenderer />
+      <ComponentRenderer data={props.response.data}/>
     </DataContext.Provider>
   );
 };
