@@ -39,7 +39,7 @@ const ImageBlock = ({ allArticles }: ImageBlockProps): React.ReactElement => {
                 }`}
               >
                 <div className="image-block__content__boxes__img">
-                  <LazyLoad offset={[-200, 0]} height={350} width={350}>
+                  <LazyLoad offset={[200, 0]} height={350} width={350}>
                     <Image
                       src={img.smallimage.url}
                       alt={img.smallimage.alt}
@@ -71,11 +71,11 @@ const ImageBlock = ({ allArticles }: ImageBlockProps): React.ReactElement => {
                       </p>
                     )}
                   </div>
-                  <div className="button-container">
+                  {/* <div className="button-container">
                     <a className="external-link" href="#courses">
                       Kurser
                     </a>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>

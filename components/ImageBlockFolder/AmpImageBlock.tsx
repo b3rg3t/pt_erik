@@ -9,9 +9,9 @@ interface AmpImageBlockProps {
   allArticles: Articles[];
 }
 
-
-const AmpImageBlock = ({ allArticles }: AmpImageBlockProps): React.ReactElement => {
-
+const AmpImageBlock = ({
+  allArticles
+}: AmpImageBlockProps): React.ReactElement => {
   const articleData = allArticles;
 
   return articleData?.length > 0 ? (

@@ -16,7 +16,6 @@ import AmpCourses from "./CoursesFolder/AmpCourses";
 import { useAmp } from "next/amp";
 
 const ComponentRenderer = (props: any): React.ReactElement => {
-  console.log(props.data.allArticles);
   const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | Hem`}>

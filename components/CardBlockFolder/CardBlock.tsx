@@ -14,8 +14,8 @@ const CardBlock = (): React.ReactElement => {
       <>
         <div className="cards">
           <div className="card__header">
-            <h2>Vad erbjuder jag?</h2>
-            <p>Behöver du hjälp med att komma igång med träningen</p>
+            <h2>Vad kan jag hjälpa dig med?</h2>
+            {/* <p>Behöver du hjälp med att komma igång med träningen</p> */}
           </div>
           <div className="cards__block">
             {cardData.length > 0 &&
@@ -38,7 +38,7 @@ const CardBlock = (): React.ReactElement => {
                     <div className="card__panels__div">
                       <p>{card.description}</p>
                     </div>
-                    <div className="card__panels__div">
+                    <div className="card__panels__div button__div">
                       <Link href={card.link} as={card.link}>
                         <a className="main-btn card-btn">LÄS MER</a>
                       </Link>
@@ -116,6 +116,10 @@ const CardBlock = (): React.ReactElement => {
             align-items: center;
             font-size: 1rem;
             margin-bottom: 1rem;
+          }
+          .button__div {
+            display: flex;
+            justify-content: center;
           }
           @media only screen and (max-width: 1100 px) {
             .cards {

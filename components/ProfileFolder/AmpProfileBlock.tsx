@@ -79,7 +79,7 @@ const AmpProfilBlock = ({
               {profil.button && (
                 <div className="button-container">
                   <Link href="/profil" as="/profil">
-                    <a className="external-link">Läs mer</a>
+                    <a className="external-link">LÄS MER</a>
                   </Link>
                 </div>
               )}

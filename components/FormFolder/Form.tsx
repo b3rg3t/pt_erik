@@ -113,7 +113,7 @@ const Form = (): React.ReactElement => {
               required
             />
             <button
-              className="contact__form__button main-btn"
+              className="main-btn"
               type="submit"
               value="Submit"
               disabled={!isAmp ? (loading ? isDisabled : !isDisabled) : null}
@@ -172,6 +172,9 @@ const Form = (): React.ReactElement => {
           outline: none;
           border: 1px solid ${colors.secondary};
           border-radius: 30px;
+        }
+        .main-btn {
+          margin: auto;
         }
         .contact textarea {
           width: 100%;

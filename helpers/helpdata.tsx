@@ -34,7 +34,7 @@ export const profileData = {
 };
 export const fullprofileData = {
   name: "Erik Johanssson",
-  pic: "./images/erik3.jpg",
+  pic: "",
   smallPic: "./images/erik1.jpg",
   position: "left",
   alt: "Cat behind bars",
@@ -109,13 +109,18 @@ export const SocialMedia = {
 //Links to page
 export const Links = [
   {
+    href: "/",
+    title: "Hem",
+    url: ""
+  },
+  {
     href: "/profil",
     title: "Profil",
     url: ""
   },
   {
-    href: "/massage",
-    title: "Massage",
+    href: "/traning",
+    title: "Träning",
     url: ""
   },
   {
@@ -124,8 +129,13 @@ export const Links = [
     url: ""
   },
   {
-    href: "/hinderbana",
-    title: "Hinderbana",
+    href: "/kost",
+    title: "Kost",
+    url: ""
+  },
+  {
+    href: "/massage",
+    title: "Massage",
     url: ""
   },
   {
