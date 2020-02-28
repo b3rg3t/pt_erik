@@ -7,9 +7,7 @@ import Link from "next/link";
 import CoursesStyling from "./CoursesStyling";
 
 const Courses = (props: any): React.ReactElement => {
-
   const courseData = props.offers.offers;
-  console.log(courseData);
   return courseData.length > 0 ? (
     <>
       <div className="course">
@@ -38,12 +36,20 @@ const Courses = (props: any): React.ReactElement => {
                         <div className="course__panels__div__header__box">
                           <h3>{course.title}</h3>
                           <p style={{ fontWeight: "bold" }}>
-                          <span style={{ fontSize: "1.5rem", color: "orange"}}>{course.time ? course.time : "Okänd"}</span> MIN
+                            <span
+                              style={{ fontSize: "1.5rem", color: "orange" }}
+                            >
+                              {course.time ? course.time : "Okänd"}
+                            </span>{" "}
+                            MIN
                           </p>
                         </div>
                       </div>
                       <div className="textP">
                         <p>{course.content}</p>
+                      </div>
+                      <div className="price">
+                        <p>{course.price} ;-</p>
                       </div>
                     </div>
                   </article>

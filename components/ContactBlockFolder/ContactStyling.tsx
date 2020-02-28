@@ -1,4 +1,5 @@
 import React from "react";
+import { blockHeight } from "../../helpers/helpdata";
 
 const ContactStyling = (): React.ReactElement => {
   return (
@@ -8,7 +9,7 @@ const ContactStyling = (): React.ReactElement => {
       z-index: 10;
     }
     .contact-block__container {
-      min-height: 100vh;
+      min-height: ${blockHeight.height};
       max-width: 960px;
       margin: auto;
       display: flex;
@@ -24,11 +25,6 @@ const ContactStyling = (): React.ReactElement => {
       height: 100%;
       position: absolute;
       z-index: -1;
-    }
-    @media only screen and (max-width: 600px) {
-      .contact-block__container {
-        padding: 2rem;
-      }
     }
   `}</style>
   );

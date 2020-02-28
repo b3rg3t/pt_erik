@@ -1,18 +1,30 @@
 import React from "react";
-import heights from "../../helpers/helpdata";
+import { Links, AMPurl, heights } from "../../helpers/helpdata";
+import Link from "next/link";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
-// import { useAmp } from "next/amp";
+import { useAmp } from "next/amp";
 import { colors, SocialMedia } from "../../helpers/helpdata";
 
-
 const Footer = (): React.ReactElement => {
-  // const isAmp = useAmp();
+  const isAmp = useAmp();
   return (
     <>
       <footer style={{ height: `${heights.footerheight}` }}>
-        <div></div>
+        <div>
+          <ul className="footer__link">
+            {Links &&
+              Links.map((link, index) => (
+                <li key={index}>
+                  <Link href={link.href + (isAmp ? AMPurl.url : "")}>
+                    <a>{link.title}</a>
+                  </Link>
+                </li>
+              ))}
+          </ul>
+        </div>
         <div>
           <a
+          className="footer__icons"
             target="_blank"
             rel="noreferrer noopener"
             title={SocialMedia.linkedin.title}
@@ -21,6 +33,7 @@ const Footer = (): React.ReactElement => {
             <FaLinkedin />
           </a>
           <a
+          className="footer__icons"
             target="_blank"
             rel="noreferrer noopener"
             title={SocialMedia.instagram.title}
@@ -29,6 +42,7 @@ const Footer = (): React.ReactElement => {
             <FaInstagram />
           </a>
           <a
+          className="footer__icons"
             target="_blank"
             rel="noreferrer noopener"
             title={SocialMedia.facebook.title}
@@ -51,7 +65,19 @@ const Footer = (): React.ReactElement => {
           border-bottom: 0.5rem solid ${colors.secondary};
           z-index: 10;
         }
-        footer a {
+        .footer__link {
+          display: flex;
+          margin: 0.5rem 0;
+          padding: 1rem;
+          border-top: 1px solid ${colors.secondary};
+          border-bottom: 1px solid ${colors.secondary};
+        }
+        .footer__link a{
+          color: white;
+          transition: all 0.5s ease;
+          margin: 0.5rem;
+        }
+        .footer__icons {
           transition: all 0.5s ease;
           font-size: 2rem;
           padding: 0.5rem 0.5rem 0 0.5rem;
@@ -62,6 +88,11 @@ const Footer = (): React.ReactElement => {
         }
         footer a:hover {
           color: ${colors.primary};
+        }
+        @media only screen and (max-width: 960px) {
+          .footer__link {
+            padding: 1rem 0;
+          }
         }
       `}</style>
     </>

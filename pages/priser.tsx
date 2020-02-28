@@ -1,13 +1,15 @@
 import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
-import { SEOdata } from "../helpers/helpdata";
+import { SEOdata, heights } from "../helpers/helpdata";
 
-const Kost = (): React.ReactElement => {
+export const config = { amp: "hybrid" };
+
+const Priser = (): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | Kost`}>
+    <Layout title={`${SEOdata.title} | Priser`}>
       <div
         style={{
-          height: "calc(100vh - 100px)",
+          height: `calc(100vh - ${heights.footerheight})`,
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -21,4 +23,4 @@ const Kost = (): React.ReactElement => {
   );
 };
 
-export default Kost;
+export default Priser;

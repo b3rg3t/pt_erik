@@ -5,6 +5,7 @@ import LazyLoad from "react-lazyload";
 import ProfileStyling from "./ProfileStyling";
 import Link from "next/link";
 import EducationBlock from "./EducationBlock";
+import TagBlock from "../TagBlockFolder/TagBlock";
 
 interface ProfilBlockProps {
   profil: {
@@ -22,9 +23,13 @@ interface ProfilBlockProps {
     textColor?: string;
     utbildningar?: string[];
   };
+  tags?: string[];
 }
 
-const ProfilBlock = ({ profil }: ProfilBlockProps): React.ReactElement => {
+const ProfilBlock = ({
+  profil,
+  tags
+}: ProfilBlockProps): React.ReactElement => {
   return profil ? (
     <>
       <LazyLoad height={"100vh"}>
@@ -60,7 +65,7 @@ const ProfilBlock = ({ profil }: ProfilBlockProps): React.ReactElement => {
               <div className="profile-block__content__boxes__text">
                 <h3 style={{ color: `${profil.textColor}` }}>{profil.name}</h3>
                 {profil?.utbildningar && (
-                  <EducationBlock utbildningar={profil?.utbildningar}/>
+                  <EducationBlock utbildningar={profil?.utbildningar} />
                 )}
                 <p
                   style={{ color: `${profil.textColor}` }}
@@ -82,6 +87,7 @@ const ProfilBlock = ({ profil }: ProfilBlockProps): React.ReactElement => {
                     {profil.text}
                   </p>
                 )}
+                {tags && <TagBlock tags={tags} color={profil.textColor}/>}
                 {profil.button && (
                   <div>
                     <Link href="/profil" as="/profil">

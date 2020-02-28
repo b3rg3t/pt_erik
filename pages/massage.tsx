@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import { SEOdata } from "../helpers/helpdata";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
-import { massageData, massageOffer } from "../components/massageData";
+import { massageData, massageOffer } from "../helpers/massageData";
 import Courses from "../components/CoursesFolder/Courses";
 import { useAmp } from "next/amp";
 import AmpProfilBlock from "../components/ProfileFolder/AmpProfileBlock";

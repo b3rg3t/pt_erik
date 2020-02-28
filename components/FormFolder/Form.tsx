@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import Loading from "../loading";
-import helpdata from "../../helpers/helpdata";
-import { colors } from "../../helpers/helpdata";
+import { colors, heights } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 import { contactBlockStyle } from "../../helpers/helpdata";
 import PopUp from "../PopUpFolder/PopUp";
@@ -31,7 +30,7 @@ const Form = (): React.ReactElement => {
     };
     let response;
     try {
-      const postBasin = await axios.post(`${helpdata.url}`, data, {
+      const postBasin = await axios.post(`${heights.url}`, data, {
         headers
       });
       response = await postBasin;
@@ -78,9 +77,9 @@ const Form = (): React.ReactElement => {
           <form
             className="contact__form"
             onSubmit={handleSubmit}
-            verify-xhr={isAmp ? `${helpdata.url}` : null}
+            verify-xhr={isAmp ? `${heights.url}` : null}
             method="post"
-            action-xhr={isAmp ? `${helpdata.url}` : null}
+            action-xhr={isAmp ? `${heights.url}` : null}
             target="_top"
           >
             <h3 className="contact__head">Kontakt</h3>
@@ -199,6 +198,9 @@ const Form = (): React.ReactElement => {
         @media only screen and (max-width: 600px) {
           .contact__form__div {
             padding: 2rem 1rem;
+          }
+          .contact {
+            padding: 0rem 1rem;
           }
         }
       `}</style>

@@ -1,11 +1,11 @@
 import React from "react";
-import { colors } from "../../helpers/helpdata";
+import { colors, blockHeight } from "../../helpers/helpdata";
 
 const ProfileStyling = (): React.ReactElement => (
   <style jsx global>{`
     .profile-block {
       animation: easein 0.5s;
-      min-height: 100vh;
+      min-height: ${blockHeight.height};
       display: flex;
       justify-content: center;
       align-items: center;

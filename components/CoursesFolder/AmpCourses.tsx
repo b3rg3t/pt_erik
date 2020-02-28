@@ -41,6 +41,9 @@ const AmpCourses = (props: any): React.ReactElement => {
                       <div className="textP">
                         <p>{course.content}</p>
                       </div>
+                      <div className="price">
+                        <p>{course.price} ;-</p>
+                      </div>
                     </div>
                   </article>
                 );

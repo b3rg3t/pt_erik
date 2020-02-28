@@ -1,6 +1,6 @@
-export default {
+export const heights = {
   navHeigt: "60px",
-  footerheight: "100px",
+  footerheight: "160px",
   url: "https://www.usebasin.com/f/c177f0920b56.json"
 };
 
@@ -29,8 +29,7 @@ export const profileData = {
   author: "James Cameron",
   button: true,
   text: "",
-  fulltext:
-    ""
+  fulltext: ""
 };
 export const fullprofileData = {
   name: "Erik Johanssson",
@@ -58,20 +57,29 @@ export const utbildning = {
   alt: "Cat behind bars",
   overlayColor: "white",
   textColor: "rgb(61, 61, 61)",
-  utbildningar: ["Personlig Tränare-Hälsocoach Lillsveds idrottsfolkhögskola", "Entreprenörskap inom träning och hälsa Lillsveds idrottsfolkhögskola","Fystränarutbildning Bosön idrottsfolkhögskola", "OCR-Instructor Obstacle Training AB", "Löpcoach Lillsveds idrottsfokhögskola", "Klassisk Massör Lillsveds idrottsfolkhögskola", "EMS-instructor X-Shape Fitness AB", "100% Ren hårdträning (Anti doping)"],
+  utbildningar: [
+    "Personlig Tränare-Hälsocoach Lillsveds idrottsfolkhögskola",
+    "Entreprenörskap inom träning och hälsa Lillsveds idrottsfolkhögskola",
+    "Fystränarutbildning Bosön idrottsfolkhögskola",
+    "OCR-Instructor Obstacle Training AB",
+    "Löpcoach Lillsveds idrottsfokhögskola",
+    "Klassisk Massör Lillsveds idrottsfolkhögskola",
+    "EMS-instructor X-Shape Fitness AB",
+    "100% Ren hårdträning (Anti doping)"
+  ],
   opacity: 0.6,
   description: "",
   time: "5 minutes",
   author: "James Cameron",
   button: false,
   text: "",
-  fulltext: "",
+  fulltext: ""
 };
 
 //colors for page
 export const colors = {
   primary: "#b07113", //darkorange
-  third: "rgb(61, 61, 61)", 
+  third: "rgb(61, 61, 61)",
   secondary: "#ff9419", //orange
   lightgray: "lightgray",
   white: "white",
@@ -123,14 +131,15 @@ export const Links = [
     title: "Träning",
     url: ""
   },
-  {
-    href: "/kost",
-    title: "Kost",
-    url: ""
-  },
+
   {
     href: "/massage",
     title: "Massage",
+    url: ""
+  },
+  {
+    href: "/priser",
+    title: "Priser",
     url: ""
   },
   {
@@ -146,6 +155,10 @@ export const ProfileInfo = {
 };
 
 //ampurl
-export const AMPurl ={
+export const AMPurl = {
   url: "?amp=1"
-}
+};
+
+export const blockHeight = {
+  height: "calc(100vh - 200px)"
+};

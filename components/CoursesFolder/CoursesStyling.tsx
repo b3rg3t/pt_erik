@@ -2,14 +2,14 @@ import React from "react";
 
 import { useAmp } from "next/amp";
 
-import { colors } from "../../helpers/helpdata";
+import { colors, blockHeight } from "../../helpers/helpdata";
 
 const CoursesStyling = (): React.ReactElement => {
   const isAmp = useAmp();
   return (
     <style jsx global>{`
       .course {
-        min-height: 100vh;
+        min-height: ${blockHeight.height};
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -103,6 +103,19 @@ const CoursesStyling = (): React.ReactElement => {
         margin-top: 1rem;
         display: flex;
         justify-content: center;
+      }
+      .price {
+        display: flex;
+        justify-content: center;
+        
+      }
+      .price p {
+        background-color: ${colors.secondary};
+        color: white;
+        font-size: 1.2rem;
+        padding: 0.2rem 0.5rem;
+        font-weight: bold;
+        border-radius: 10px;
       }
       @media only screen and (max-width: 960px) {
         .course {

@@ -1,9 +1,10 @@
 import React from "react";
 import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
 import Layout from "../components/LayoutFolder/Layout";
-import { SEOdata } from "../helpers/helpdata";
+import { SEOdata, heights } from "../helpers/helpdata";
 import { useAmp } from "next/amp";
-import AmpContact from "../components/ContactBlockFolder/AmpContact";
+import Form from "../components/FormFolder/Form";
+import MapContainer from "../components/MapFolder/MapContainer";
 
 export const config = { amp: "hybrid" };
 
@@ -12,13 +13,32 @@ const Kontakt = (): React.ReactElement => {
   return (
     <Layout title={`${SEOdata.title} | Kontakt`}>
       {!isAmp ? (
-        <div style={{ minHeight: "calc(100vh - 100px)" }}>
+        <div style={{ minHeight: `calc(100vh - ${heights.footerheight})` }}>
           <ContactBlock />
         </div>
       ) : (
-        <div style={{ minHeight: "calc(100vh - 100px)" }}>
-          <AmpContact />
-        </div>
+        <>
+          <div
+            style={{
+              minHeight: `calc(100vh)`,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <Form />
+          </div>
+          <div
+            style={{
+              minHeight: `calc(100vh - ${heights.footerheight})`,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <MapContainer />
+          </div>
+        </>
       )}
     </Layout>
   );

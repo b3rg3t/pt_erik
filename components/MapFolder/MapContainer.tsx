@@ -43,6 +43,11 @@ const MapContainer = (): React.ReactElement => {
           -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
         }
+        @media only screen and (max-width: 600px) {
+          .map {
+            margin: 1rem 1rem;
+          }
+        }
       `}</style>
     </>
   );

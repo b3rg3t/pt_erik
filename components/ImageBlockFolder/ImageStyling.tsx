@@ -1,5 +1,6 @@
 import React from "react";
 
+import { blockHeight } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 
 const ImageStyling = (): React.ReactElement => {
@@ -8,7 +9,7 @@ const ImageStyling = (): React.ReactElement => {
     <style jsx global>{`
       .image-block {
         animation: easein 0.5s;
-        min-height: 100vh;
+        min-height: ${blockHeight.height};
         display: flex;
         justify-content: center;
         align-items: center;
@@ -27,6 +28,8 @@ const ImageStyling = (): React.ReactElement => {
       .image-block__content {
         z-index: 2;
         padding: 4rem 0;
+        display: flex;
+        justify-content: center;
         position: relative;
       }
       .left {

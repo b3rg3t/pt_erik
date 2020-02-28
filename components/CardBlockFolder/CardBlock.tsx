@@ -5,7 +5,7 @@ import Image from "../AMP/AmpImage";
 import Link from "next/link";
 import { useAmp } from "next/amp";
 import { cardData } from "../dummyData";
-import { profileData, colors } from "../../helpers/helpdata";
+import { profileData, colors, blockHeight, AMPurl } from "../../helpers/helpdata";
 
 const CardBlock = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -36,10 +36,10 @@ const CardBlock = (): React.ReactElement => {
                     </div>
 
                     <div className="card__panels__div">
-                      <p>{card.description}</p>
+                      <p>{card.description.substring(0, 200)}..</p>
                     </div>
                     <div className="card__panels__div button__div">
-                      <Link href={card.link} as={card.link}>
+                      <Link href={isAmp ? (card.link + AMPurl.url) : card.link}>
                         <a className="main-btn card-btn">LÄS MER</a>
                       </Link>
                     </div>
@@ -50,7 +50,7 @@ const CardBlock = (): React.ReactElement => {
         </div>
         <style jsx global>{`
           .cards {
-            min-height: 100vh;
+            min-height: ${blockHeight.height};
             max-widht: 100%;
             display: flex;
             flex-direction: column;

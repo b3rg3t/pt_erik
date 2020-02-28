@@ -4,6 +4,8 @@ import Image from "../AMP/AmpImage";
 import ProfileStyling from "./ProfileStyling";
 import Link from "next/link";
 import EducationBlock from "./EducationBlock";
+import TagBlock from "../TagBlockFolder/TagBlock";
+import { AMPurl } from "../../helpers/helpdata";
 
 interface AmpProfilBlockProps {
   profil: {
@@ -21,9 +23,11 @@ interface AmpProfilBlockProps {
     textColor?: string;
     utbildningar?: string[];
   };
+  tags?: string[];
 }
 const AmpProfilBlock = ({
-  profil
+  profil,
+  tags
 }: AmpProfilBlockProps): React.ReactElement => {
   return profil ? (
     <>
@@ -76,9 +80,10 @@ const AmpProfilBlock = ({
                   {profil.text}
                 </p>
               )}
+              {tags && <TagBlock tags={tags} color={profil.textColor} />}
               {profil.button && (
                 <div className="button-container">
-                  <Link href="/profil" as="/profil">
+                  <Link href={`/profil${AMPurl.url}`}>
                     <a className="external-link">LÄS MER</a>
                   </Link>
                 </div>

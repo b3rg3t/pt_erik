@@ -17,7 +17,7 @@ export const massageData = {
 };
 
 export const massageOffer = {
-  title: "Upplägg för massage",
+  title: "Priser",
   text: "Hör gärna av dig/ni för mer information.",
   offers: [
     {
@@ -27,6 +27,7 @@ export const massageOffer = {
         width: "200px",
         height: "220px"
       },
+      price: 599,
       title: "Kort",
       time: 30,
       content: "På denna tid fokuserar jag mer på vissa muskelgrupper"
@@ -38,6 +39,7 @@ export const massageOffer = {
         width: "200px",
         height: "200px"
       },
+      price: 649,
       title: "Mellan",
       time: 45,
       content: "På denna tid fokuserar jag på hela kroppen"
@@ -49,6 +51,7 @@ export const massageOffer = {
         width: "200px",
         height: "200px"
       },
+      price: 699,
       title: "Lång",
       time: 60,
       content:
