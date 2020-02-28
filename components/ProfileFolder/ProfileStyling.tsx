@@ -45,19 +45,18 @@ const ProfileStyling = (): React.ReactElement => (
       width: 350px;
       object-fit: cover;
     }
-    .text-bottom {
-      padding-top: 1rem;
-      font-weight: 500;
-    }
     .text-top {
       font-weight: 1000;
+      padding-bottom: 1rem;
+    }
+    .text-bottom {
+      padding-bottom: 1rem;
     }
     .profile-block__content__boxes__text {
       flex: 1 1 500px;
       padding: 0 2rem 2rem 2rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
     .profile-block__content__boxes {
       max-width: 960px;

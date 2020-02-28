@@ -1,56 +1,29 @@
-import React, { useContext } from "react";
+import React from "react";
 import Image from "../AMP/AmpImage";
-import { useAmp } from "next/amp";
-import DateBox from "../DateFolder/Date";
-import { DataContext } from "../../pages/index";
 import Loading from "../loading";
-import * as moment from "moment";
-import "moment/locale/sv";
+import Link from "next/link";
+import { AMPurl } from "../../helpers/helpdata";
 
 import CoursesStyling from "./CoursesStyling";
 
-const AmpCourses = (): React.ReactElement => {
-  const isAmp = useAmp();
-
-  const courses = useContext(DataContext);
-
-  const courseData = courses?.data?.allCourses;
-
-  return courseData?.length > 0 ? (
+const AmpCourses = (props: any): React.ReactElement => {
+  const courseData = props.offers.offers;
+  return courseData.length > 0 ? (
     <>
       <div className="course">
         <div className="course__b">
-          <h2>Kurser</h2>
+          <h2>{props.offers.title}</h2>
           <div className="course__block">
             {courseData &&
               courseData.map((course, index) => {
-                //@ts-ignore
-                let date = moment(course.date).format("llll");
-                let day = date.substring(0, 3).toUpperCase();
-                let number = date.substring(4, 6);
-                let month = date.substring(7, 10).toUpperCase();
-                //@ts-ignore
-                let comDate = moment(course.date).format("L");
-                //@ts-ignore
-                let comparedDates = moment(
-                  comDate.replace("-", "").replace("-", ""),
-                  "YYYYMMDD"
-                ).fromNow();
-                let past = false;
-                if (comparedDates.includes("timmar")) {
-                  past = false;
-                  comparedDates = "Idag";
-                } else if (comparedDates.includes("för")) {
-                  past = true;
-                }
                 return (
                   <article key={index} className="course__panels">
                     <div className="course__panels__div background">
                       <div className="course__panels__div__img">
                         <Image
-                          src={course.image.url}
-                          width={isAmp ? `${course.image.width}` : `auto`}
-                          height={isAmp ? `${course.image.height}` : "220"}
+                          src={course.image.src}
+                          width={course.image.width}
+                          height={course.image.height}
                           alt={course.image.alt}
                           layout="intrinsic"
                         />
@@ -60,47 +33,23 @@ const AmpCourses = (): React.ReactElement => {
                       <div className="course__panels__div__header">
                         <div className="course__panels__div__header__box">
                           <h3>{course.title}</h3>
-                          <span>{`Antal platser: ${
-                            course.spots ? course.spots : "0"
-                          }`}</span>
-                          <span>{`Plats: ${
-                            course.location ? course.location : "Okänd"
-                          }`}</span>
-                          <span>{`Tid: ${
-                            course.time ? course.time : "Okänd"
-                          }`}</span>
-                        </div>
-                        <div className="date">
-                          <DateBox month={month} number={number} day={day} />
+                          <p style={{ fontWeight: "bold" }}>
+                          <span style={{ fontSize: "1.5rem", color: "orange"}}>{course.time ? course.time : "Okänd"}</span> MIN
+                          </p>
                         </div>
                       </div>
                       <div className="textP">
                         <p>{course.content}</p>
                       </div>
-                      {past ? (
-                        <>
-                          <button className="main-btn" disabled={true}>
-                            Passerat datum
-                          </button>
-                        </>
-                      ) : (
-                        <>
-                          <a
-                            title={course.externalurl}
-                            className="external-link"
-                            href={course.externalurl}
-                            target="_blank"
-                            rel="noreferrer noopener"
-                          >
-                            Se tillgänglighet
-                          </a>
-                        </>
-                      )}
                     </div>
                   </article>
                 );
               })}
           </div>
+          <p>{props.offers.text}</p>
+          <Link href={`/kontakt` + AMPurl.url} as={`/kontakt` + AMPurl.url}>
+            <a className="main-btn course-btn">KONTAKT</a>
+          </Link>
         </div>
       </div>
       <CoursesStyling />

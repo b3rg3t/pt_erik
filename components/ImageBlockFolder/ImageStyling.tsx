@@ -70,6 +70,7 @@ const ImageStyling = (): React.ReactElement => {
         font-weight: 1000;
       }
       .text-bottom {
+        padding-bottom: 1rem;
         font-weight: 500;
       }
       @media only screen and (max-width: 910px) {

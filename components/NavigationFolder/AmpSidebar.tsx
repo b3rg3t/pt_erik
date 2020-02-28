@@ -1,12 +1,12 @@
 import React from "react";
 import Link from "next/link";
-import { colors, SocialMedia, SEOdata, Links } from "../../helpers/helpdata";
+import { colors, SocialMedia, Links, AMPurl } from "../../helpers/helpdata";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
-
-import { GiEarthAfricaEurope } from "react-icons/gi";
+import { useAmp } from "next/amp";
 import Logo from "./Logo";
 
 const AmpSidebar = (): React.ReactElement => {
+  const isAmp = useAmp();
   return (
     Links && (
       <>
@@ -19,7 +19,7 @@ const AmpSidebar = (): React.ReactElement => {
                 </li>
                 {Links.map((link, index) => (
                   <li key={index}>
-                    <Link href={link.href}>
+                    <Link href={link.href + (isAmp ? AMPurl.url : "")}>
                       <a>{link.title}</a>
                     </Link>
                   </li>

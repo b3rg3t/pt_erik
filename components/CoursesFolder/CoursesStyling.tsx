@@ -83,7 +83,9 @@ const CoursesStyling = (): React.ReactElement => {
       }
       .course__panels__div__header__box {
         display: flex;
-        flex-direction: column;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: space-between;
       }
       .course__panels__div__header__box span {
         font-size: 0.8rem;
@@ -96,6 +98,11 @@ const CoursesStyling = (): React.ReactElement => {
       .textP {
         padding: 1rem 0 1rem 0;
         min-height: 120px;
+      }
+      .course-btn {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
       }
       @media only screen and (max-width: 960px) {
         .course {

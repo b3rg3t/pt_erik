@@ -196,6 +196,11 @@ const Form = (): React.ReactElement => {
         form button {
           margin-top: 2rem;
         }
+        @media only screen and (max-width: 600px) {
+          .contact__form__div {
+            padding: 2rem 1rem;
+          }
+        }
       `}</style>
     </>
   );

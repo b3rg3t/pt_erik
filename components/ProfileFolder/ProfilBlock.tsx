@@ -83,7 +83,7 @@ const ProfilBlock = ({ profil }: ProfilBlockProps): React.ReactElement => {
                   </p>
                 )}
                 {profil.button && (
-                  <div className="button-container">
+                  <div>
                     <Link href="/profil" as="/profil">
                       <a className="external-link">LÄS MER</a>
                     </Link>

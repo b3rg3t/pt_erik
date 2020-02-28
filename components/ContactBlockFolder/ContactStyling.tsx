@@ -25,6 +25,11 @@ const ContactStyling = (): React.ReactElement => {
       position: absolute;
       z-index: -1;
     }
+    @media only screen and (max-width: 600px) {
+      .contact-block__container {
+        padding: 2rem;
+      }
+    }
   `}</style>
   );
 };

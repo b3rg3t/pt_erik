@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useAmp } from "next/amp";
-import heights, { colors, Links } from "../../helpers/helpdata";
+import heights, { colors, Links, AMPurl } from "../../helpers/helpdata";
 
 import AmpSidebar from "./AmpSidebar";
 

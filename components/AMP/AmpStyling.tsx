@@ -113,9 +113,8 @@ const AmpStyling = (): React.ReactElement => {
         justify-content: center;
         height: 40px;
         width: 160px;
-        margin: auto;
         font-weight: 700;
-        font-size: 1.2rem;
+        font-size: 1rem;
         background-color: ${colors.secondary};
         color: ${colors.white};
         border-radius: 30px;

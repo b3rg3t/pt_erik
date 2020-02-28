@@ -8,7 +8,7 @@ export const headers = {
 
 export const body = JSON.stringify({
   query: `query GetAllData {
-        allArticles {
+        allArticles(orderBy: position_ASC){
           id
           opacity
           picposition

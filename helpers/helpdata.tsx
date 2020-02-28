@@ -51,7 +51,7 @@ export const fullprofileData = {
     "Jag har en bakgrund inom elitfotbollen , men på grund av skador fick jag tyvärr lägga fotbollsskorna på hyllan. Efter mycket rebilitering fann jag nytt intresse i att förmedla träning till andra och se dem utvecklas. Det jag brinner för är just att förmedla träningsglädje och framgång."
 };
 export const utbildning = {
-  name: "Utbildningar",
+  name: "Mina utbildningar",
   pic: "",
   smallPic: "./images/erik4.jpg",
   position: "right",
@@ -83,9 +83,9 @@ export const colors = {
 
 //Seo data
 export const SEOdata = {
-  title: "Obsticle Fitness",
+  title: "Obstacle Fitness",
   description: "Det här är en sida om löpning, kost och personlig träning",
-  customImageSrc: "./images/erik1.jpg",
+  customImageSrc: "./images/erik5.jpg",
   ogType: "website",
   name: "PT"
 };
@@ -124,11 +124,6 @@ export const Links = [
     url: ""
   },
   {
-    href: "/lopning",
-    title: "Löpning",
-    url: ""
-  },
-  {
     href: "/kost",
     title: "Kost",
     url: ""
@@ -152,5 +147,5 @@ export const ProfileInfo = {
 
 //ampurl
 export const AMPurl ={
-  url: "/?amp=1"
+  url: "?amp=1"
 }

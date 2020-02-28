@@ -1,13 +1,11 @@
 import React from "react";
-// import { useAmp } from "next/amp";
 import Form from "../FormFolder/Form";
 import MapContainer from "../MapFolder/MapContainer";
-import { profileData } from "../../helpers/helpdata";
+// import { profileData } from "../../helpers/helpdata";
 import ContactStyling from "./ContactStyling";
 import LazyLoad from "react-lazyload";
 
 const ContactBlock = (): React.ReactElement => {
-  //   const isAmp = useAmp();
   return (
     <>
       <LazyLoad>

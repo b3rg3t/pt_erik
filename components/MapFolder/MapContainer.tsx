@@ -9,6 +9,7 @@ const MapContainer = (): React.ReactElement => {
       <section className="map">
         {isAmp ? (
           <amp-iframe
+            className="amp-map"
             title="Linköping"
             width={contactBlockStyle.width}
             height={contactBlockStyle.height}

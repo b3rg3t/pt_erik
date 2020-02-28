@@ -11,6 +11,7 @@ interface ImageBlockProps {
 
 const ImageBlock = ({ allArticles }: ImageBlockProps): React.ReactElement => {
   const articleData = allArticles;
+  console.log(articleData)
   return articleData?.length > 0 ? (
     <>
       {articleData.map((img, index) => (
