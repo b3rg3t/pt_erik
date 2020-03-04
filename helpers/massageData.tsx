@@ -27,7 +27,7 @@ export const massageOffer = {
         width: "200px",
         height: "220px"
       },
-      price: 599,
+      price: 450,
       title: "Kort",
       time: 30,
       content: "På denna tid fokuserar jag mer på vissa muskelgrupper"
@@ -39,7 +39,7 @@ export const massageOffer = {
         width: "200px",
         height: "200px"
       },
-      price: 649,
+      price: 499,
       title: "Mellan",
       time: 45,
       content: "På denna tid fokuserar jag på hela kroppen"

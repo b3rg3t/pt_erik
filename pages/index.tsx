@@ -5,24 +5,6 @@ import { BASE_URL, headers, body } from "../config";
 
 var fetch = require("isomorphic-unfetch");
 
-interface Course {
-  id: string;
-  title: string;
-  spots: number;
-  date: string;
-  externalurl: string;
-  content: string;
-  location: string;
-  time: string;
-  image?: {
-    alt: string;
-    title?: string;
-    url: string;
-    width: string;
-    height: string;
-  };
-}
-
 export interface Articles {
   id: string;
   picposition: boolean;
@@ -50,7 +32,7 @@ export interface Articles {
 }
 
 interface PageData {
-  data: { allCourses: Course[]; allArticles: Articles[] };
+  data: { allArticles: Articles[] };
 }
 export const DataContext = React.createContext<PageData | null>(null);
 

@@ -16,6 +16,7 @@ const CoursesStyling = (): React.ReactElement => {
         align-items: center;
       }
       .course__b {
+        padding: 2rem 0;
         display: flex;
         flex-direction: column;
         justify-content: center;

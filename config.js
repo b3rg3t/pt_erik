@@ -49,3 +49,48 @@ export const body = JSON.stringify({
         }
       }`
 });
+
+export const pricebody = JSON.stringify({
+  query: `query GetAllData {
+    allArticles(orderBy: position_ASC){
+      id
+      opacity
+      picposition
+      secondtext
+      backgroundimage {
+        alt
+        url
+        width
+        height
+      }
+      smallimage {
+        alt
+        url
+        height
+        width
+      }
+      toptext
+      title
+      textcolor {
+        hex
+      }
+      overlaycolor {
+        hex
+      }
+    },
+    allOffers {
+      content
+      title
+      price
+      position
+      image {
+        alt
+        width
+        height
+        id
+        url
+      }
+    }
+  }
+  `
+});

@@ -1,10 +1,20 @@
 import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import { SEOdata, heights } from "../helpers/helpdata";
+import { BASE_URL, headers, body } from "../config";
+import PriceList from "../components/PriceListFolder/PriceList";
 
 export const config = { amp: "hybrid" };
+var fetch = require("isomorphic-unfetch");
 
-const Priser = (): React.ReactElement => {
+// interface PriceList{
+//   prices: string[];
+//   title: string;
+//   id: string;
+// }
+
+const Priser = (props: any): React.ReactElement => {
+  console.log(props); 
   return (
     <Layout title={`${SEOdata.title} | Priser`}>
       <div
@@ -16,11 +26,27 @@ const Priser = (): React.ReactElement => {
           alignItems: "center"
         }}
       >
-        <h1>Under byggnation!</h1>
-        <p>Denna sida kommer uppdateras inom kort!</p>
+        <PriceList pricelist={props.response.data}/>
       </div>
     </Layout>
   );
 };
+
+//@ts-ignore
+Priser.getInitialProps = async (): Promise<{}> => {
+  let response;
+  try {
+    response = await fetch(BASE_URL, {
+      method: "POST",
+      headers,
+      body
+    });
+    response = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+  return { response };
+};
+
 
 export default Priser;
