@@ -22,9 +22,7 @@ const FirstComponent = (): React.ReactElement => {
           <div className="hero__box">
             <h1>{SEOdata.title}</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
-              eaque labore nulla doloremque laborum, odit nostrum
-              necessitatibus.
+              Där hinder möter framgång
             </p>
           </div>
           <div className="hero__bottom-arrow">
@@ -68,12 +66,13 @@ const FirstComponent = (): React.ReactElement => {
         }
         .hero__box {
           padding: 0 2rem;
+          
         }
         .hero p {
           color: white;
           max-width: 70ch;
           z-index: 2;
-          text-align: start;
+          text-align: center;
         }
         .hero h1 {
           color: white;

@@ -1,32 +1,34 @@
 import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import { SEOdata, heights } from "../helpers/helpdata";
-import { BASE_URL, headers, body } from "../config";
+import { BASE_URL, headers } from "../config/config";
+import { body } from "../config/priceconfig";
 import PriceList from "../components/PriceListFolder/PriceList";
 
 export const config = { amp: "hybrid" };
 var fetch = require("isomorphic-unfetch");
 
-// interface PriceList{
-//   prices: string[];
-//   title: string;
-//   id: string;
-// }
+export interface PriceProps {
+  prices: [{ name: string, price: string }];
+  title: string;
+  id: string;
+}
 
 const Priser = (props: any): React.ReactElement => {
-  console.log(props); 
   return (
     <Layout title={`${SEOdata.title} | Priser`}>
       <div
         style={{
-          height: `calc(100vh - ${heights.footerheight})`,
+          minHeight: `calc(100vh - ${heights.footerheight})`,
+          paddingTop: "4rem",
+          paddingBottom: "4rem",
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "row",
           justifyContent: "center",
           alignItems: "center"
         }}
       >
-        <PriceList pricelist={props.response.data}/>
+        <PriceList pricelist={props.response.data} />
       </div>
     </Layout>
   );

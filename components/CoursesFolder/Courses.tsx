@@ -7,7 +7,8 @@ import Link from "next/link";
 import CoursesStyling from "./CoursesStyling";
 
 const Courses = (props: any): React.ReactElement => {
-  const courseData = props.offers.offers;
+  console.log(props)
+  const courseData = props.offers;
   return courseData.length > 0 ? (
     <>
       <div className="course">
@@ -17,15 +18,15 @@ const Courses = (props: any): React.ReactElement => {
             {courseData &&
               courseData.map((course, index) => {
                 return (
-                  <article key={index} className="course__panels">
+                  <article key={course.id} className="course__panels">
                     <div className="course__panels__div background">
                       <div className="course__panels__div__img">
                         <LazyLoad height={200}>
                           <Image
-                            src={course.image.src}
-                            width={`auto`}
-                            height={"220"}
-                            alt={course.image.alt}
+                            src={course?.image.url}
+                            alt={course?.image.alt}
+                            height={course?.image.height}
+                            width="auto"
                             layout="intrinsic"
                           />
                         </LazyLoad>
@@ -65,18 +66,18 @@ const Courses = (props: any): React.ReactElement => {
       <CoursesStyling />
     </>
   ) : (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        alignItems: "center"
-      }}
-    >
-      <Loading loading={true} />
-    </div>
-  );
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <Loading loading={true} />
+      </div>
+    );
 };
 
 export default Courses;

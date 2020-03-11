@@ -1,7 +1,7 @@
 import React from "react";
 
 import ComponentRenderer from "../components/componentRenderer";
-import { BASE_URL, headers, body } from "../config";
+import { BASE_URL, headers, body } from "../config/config";
 
 var fetch = require("isomorphic-unfetch");
 
@@ -31,18 +31,18 @@ export interface Articles {
   };
 }
 
-interface PageData {
-  data: { allArticles: Articles[] };
-}
-export const DataContext = React.createContext<PageData | null>(null);
+// interface PageData {
+//   data: { allArticles: Articles[] };
+// }
+// export const DataContext = React.createContext<PageData | null>(null);
 
 export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = (props: any) => {
   return (
-    <DataContext.Provider value={props.response}>
+    // <DataContext.Provider value={props.response}>
       <ComponentRenderer data={props.response.data}/>
-    </DataContext.Provider>
+    // </DataContext.Provider>
   );
 };
 

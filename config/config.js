@@ -34,19 +34,6 @@ export const body = JSON.stringify({
             hex
           }
         },
-        allOffers {
-          content
-          title
-          price
-          position
-          image {
-            alt
-            width
-            height
-            id
-            url
-          }
-        }
       }`
 });
 
@@ -78,19 +65,6 @@ export const pricebody = JSON.stringify({
         hex
       }
     },
-    allOffers {
-      content
-      title
-      price
-      position
-      image {
-        alt
-        width
-        height
-        id
-        url
-      }
-    }
   }
   `
 });

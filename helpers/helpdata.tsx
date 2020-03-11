@@ -92,7 +92,7 @@ export const colors = {
 //Seo data
 export const SEOdata = {
   title: "Obstacle Fitness",
-  description: "Det här är en sida om löpning, kost och personlig träning",
+  description: "Obstacle fitness, där ditt hinder blir en framgång. Här får du all hjälp du behöver för att komma igång med din träning. Även om det gäller Styrketräning, löpning eller en avkopplande massage. Erbjuder online coaching eller personlig träning tillsammans med kund/företag",
   customImageSrc: "./images/erik5.jpg",
   ogType: "website",
   name: "PT"
