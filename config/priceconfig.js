@@ -1,11 +1,16 @@
 export const body = JSON.stringify({
-    query: `query GetAllData {
+  query: `query GetAllData {
       allPricelists(orderBy: position_ASC) {
         id
         title
         prices
+        secondcolor {
+          hex
+        }
+        color {
+          hex
+        }
       }
     }
     `
-  });
-  
+});

@@ -160,7 +160,7 @@ const Form = (): React.ReactElement => {
           font-family: "Dosis", sans-serif;
           font-weight: 400;
           font-size: 1rem;
-          border-radius: 30px;
+
           padding: 4px 0 4px 8px;
           border: 1px solid ${colors.transparent};
           -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
@@ -170,7 +170,6 @@ const Form = (): React.ReactElement => {
         .contact input:focus {
           outline: none;
           border: 1px solid ${colors.secondary};
-          border-radius: 30px;
         }
         .main-btn {
           margin: auto;
@@ -180,7 +179,7 @@ const Form = (): React.ReactElement => {
           font-family: "Dosis", sans-serif;
           font-weight: 400;
           font-size: 1rem;
-          border-radius: 10px;
+
           border: 1px solid ${colors.transparent};
           padding: 0.5rem;
           -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
@@ -190,7 +189,6 @@ const Form = (): React.ReactElement => {
         .contact textarea:focus {
           outline: none;
           border: 1px solid ${colors.secondary};
-          border-radius: 10px;
         }
         form button {
           margin-top: 2rem;

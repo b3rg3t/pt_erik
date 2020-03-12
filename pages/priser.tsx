@@ -9,7 +9,7 @@ export const config = { amp: "hybrid" };
 var fetch = require("isomorphic-unfetch");
 
 export interface PriceProps {
-  prices: [{ name: string, price: string }];
+  prices: [{ name: string; price: string }];
   title: string;
   id: string;
 }
@@ -20,15 +20,20 @@ const Priser = (props: any): React.ReactElement => {
       <div
         style={{
           minHeight: `calc(100vh - ${heights.footerheight})`,
-          paddingTop: "4rem",
-          paddingBottom: "4rem",
+          padding: "4rem 1rem",
           display: "flex",
-          flexDirection: "row",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center"
         }}
       >
+        <h2>Priser</h2>
+        <p>
+          Den träning jag lär ut är bred och såklart anpassas den efter individ
+          och förfrågan.
+        </p>
         <PriceList pricelist={props.response.data} />
+        <p>Hör gärna av dig/er för mer information.</p>
       </div>
     </Layout>
   );
@@ -49,6 +54,5 @@ Priser.getInitialProps = async (): Promise<{}> => {
   }
   return { response };
 };
-
 
 export default Priser;
