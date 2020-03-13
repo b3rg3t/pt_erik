@@ -28,7 +28,7 @@ const Priser = (props: any): React.ReactElement => {
         }}
       >
         <h2>Priser</h2>
-        <p>
+        <p style={{ padding: "2rem 1rem"}}>
           Den träning jag lär ut är bred och såklart anpassas den efter individ
           och förfrågan.
         </p>

@@ -70,13 +70,20 @@ const PriceList = (props: any): React.ReactElement => {
           justify-content: center;
           align-items: center;
           margin: 1rem;
-          min-width: 250px;
+          min-width: 300px;
+          max-width: 300px;
           -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
         }
         .pricelist__card {
           padding: 1rem;
+        }
+        .price {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;      
         }
         .list {
           padding-top: 0;
