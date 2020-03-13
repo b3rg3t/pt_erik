@@ -21,7 +21,6 @@ export const body = JSON.stringify({
               hex
             }
             picposition
-            position
             secondtext
             smallimage {
               alt

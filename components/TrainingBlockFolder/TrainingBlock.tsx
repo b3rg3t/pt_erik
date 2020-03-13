@@ -10,7 +10,6 @@ import { blockHeight } from "../../helpers/helpdata";
 
 const TrainingBlock = (props: any): React.ReactElement => {
     const profiles = props?.profiles?.allTranings;
-    console.log(profiles[1].picposition)
     return profiles.length > 0 ? (
         <>
             <LazyLoad height={"100vh"}>

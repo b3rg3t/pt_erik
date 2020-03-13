@@ -9,11 +9,15 @@ import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/massageconfig";
 import AmpProfilBlock from "../components/ProfileFolder/AmpProfileBlock";
 import AmpCourses from "../components/CoursesFolder/AmpCourses";
+import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
 
 export const config = { amp: "hybrid" };
 
 const Massage = (props: any): React.ReactElement => {
-  // console.log(props.response.data.allMassageoffers)
+  console.log(props)
+  let massage = new Array;
+  massage.push(props.response.data.massage)
+  console.log(massage)
   const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | Massage`}>
