@@ -24,7 +24,7 @@ const Courses = (props: any): React.ReactElement => {
                           <Image
                             src={course?.image.url}
                             alt={course?.image.alt}
-                            height={course?.image.height}
+                            height="200"
                             width="auto"
                             layout="intrinsic"
                           />

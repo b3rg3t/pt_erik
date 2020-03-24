@@ -52,6 +52,7 @@ const PriceList = (props: any): React.ReactElement => {
                     padding: "0.5rem 1rem",
                     borderRadius: "30px",
                     color: "white",
+                    fontWeight: "bold",
                     backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
                   }} >LÄS MER</a>
                 </Link>

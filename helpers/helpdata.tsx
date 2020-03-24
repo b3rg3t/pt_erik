@@ -86,8 +86,14 @@ export const colors = {
   color6: "#f9f9f9", //Contact & Cardblock
   transparent: "rgba(0, 0, 0, 0)",
   navbar: "#00000090",
-  footer: "#2f2f2f"
+  footer: "#2f2f2f",
+  gradient: "#a15703"
 };
+
+// gradient background
+export const gradientBackground = {
+  src: `background-image: linear-gradient(to bottom right, ${colors.secondary}, ${colors.gradient});`
+}
 
 //Seo data
 export const SEOdata = {
