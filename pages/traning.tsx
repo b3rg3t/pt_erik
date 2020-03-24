@@ -2,34 +2,25 @@ import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import { SEOdata } from "../helpers/helpdata";
 import { useAmp } from "next/amp";
-import { trainingData } from "../helpers/trainingData";
-import { hinderbanaData, hinderbanaTags } from "../helpers/hinderbanaData";
-import { lopningData, lopningTags } from "../helpers/lopningData";
-import AmpProfilBlock from "../components/ProfileFolder/AmpProfileBlock";
 import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/trainingconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
+import AmpTrainingBlock from "../components/TrainingBlockFolder/AmpTrainingBlock";
 
 
 export const config = { amp: "hybrid" };
 
 const Traning = (props: any): React.ReactElement => {
   const isAmp = useAmp();
-  console.log(props)
   return (
     <Layout title={`${SEOdata.title} | Träning`}>
       {!isAmp ? (
         <>
-        <TrainingBlock profiles={props.response.data.allTranings} />
-          {/* <ProfilBlock profil={trainingData} />
-          <ProfilBlock profil={hinderbanaData} tags={hinderbanaTags} />
-          <ProfilBlock profil={lopningData} tags={lopningTags} /> */}
+          <TrainingBlock profiles={props.response.data.allTranings} />
         </>
       ) : (
           <>
-            <AmpProfilBlock profil={trainingData} />
-            <AmpProfilBlock profil={hinderbanaData} tags={hinderbanaTags} />
-            <AmpProfilBlock profil={lopningData} tags={lopningTags} />
+            <AmpTrainingBlock profiles={props.response.data.allTranings} />
           </>
         )}
     </Layout>

@@ -6,7 +6,6 @@ import { colors, blockHeight, AMPurl } from "../../helpers/helpdata";
 
 const CardBlock = (props: any): React.ReactElement => {
   const isAmp = useAmp();
-  console.log(props);
   const cardData = props.allCards;
   return (
     cardData && (
@@ -37,7 +36,7 @@ const CardBlock = (props: any): React.ReactElement => {
                       <p>{card.description.substring(0, 180)}..</p>
                     </div>
                     <div className="card__panels__div button__div">
-                      <Link href={`/${isAmp ? card.routepage[0] + AMPurl : card.routepage[0]}`} as={`/${isAmp ? card.routepage[0] + AMPurl : card.routepage[0]}`} >
+                      <Link href={`/${isAmp ? card.routepage[0] + AMPurl.url : card.routepage[0]}`} as={`/${isAmp ? card.routepage[0] + AMPurl.url : card.routepage[0]}`} >
                         <a title={card.routepage[0]} className="main-btn card-btn">LÄS MER</a>
                       </Link>
                     </div>

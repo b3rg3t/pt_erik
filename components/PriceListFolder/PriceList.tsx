@@ -1,10 +1,12 @@
 import React from "react";
 import Loading from "../loading";
 import Link from "next/link";
+import { useAmp } from "next/amp";
+import { AMPurl } from "../../helpers/helpdata";
 
 const PriceList = (props: any): React.ReactElement => {
   const prices = props?.pricelist?.allPricelists;
-  console.log(prices);
+  const isAmp = useAmp();
   return prices?.length > 0 ? (
     <>
       <div className="price">
@@ -39,11 +41,9 @@ const PriceList = (props: any): React.ReactElement => {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="pricelist__card" style={{width: "150px"}}>
-              <Link href={`/traning`}>
-                <a
-                  style={{
+              <div className="pricelist__card" >
+                <Link href={`/${isAmp ? price.routepage[0] + AMPurl.url : price.routepage[0]}`} as={`/${isAmp ? price.routepage[0] + AMPurl.url : price.routepage[0]}`} >
+                  <a title="Läs mer" style={{
                     fontSize: "1rem",
                     display: "inline-block",
                     textAlign: "center",
@@ -52,13 +52,10 @@ const PriceList = (props: any): React.ReactElement => {
                     padding: "0.5rem 1rem",
                     borderRadius: "30px",
                     color: "white",
-                    fontWeight: "bold",
                     backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
-                  }}
-                >
-                  LÄS MER
-                </a>
-              </Link>
+                  }} >LÄS MER</a>
+                </Link>
+              </div>
             </div>
           </div>
         ))}
@@ -79,6 +76,12 @@ const PriceList = (props: any): React.ReactElement => {
         .pricelist__card {
           padding: 1rem;
         }
+        .pricelist__card a{
+          transition: all 0.5s ease;
+        }
+        .pricelist__card a:hover {
+          transform: scale(1.05);
+        }
         .price {
           display: flex;
           justify-content: center;
@@ -91,8 +94,8 @@ const PriceList = (props: any): React.ReactElement => {
       `}</style>
     </>
   ) : (
-    <Loading />
-  );
+      <Loading />
+    );
 };
 
 export default PriceList;
