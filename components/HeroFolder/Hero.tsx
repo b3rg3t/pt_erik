@@ -16,8 +16,8 @@ const FirstComponent = (props: any): React.ReactElement => {
         <div className="hero__layer"></div>
         <div className="hero__content">
           <div className="hero__box">
-            <h1>{props.hero.header}</h1>
-            <p>
+            <h1 style={{ color: props.hero.textcolor.hex }}>{props.hero.header}</h1>
+            <p style={{ color: props.hero.textcolor.hex }}>
               {props.hero.content}
             </p>
           </div>
