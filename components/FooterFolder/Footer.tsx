@@ -91,7 +91,7 @@ const Footer = (): React.ReactElement => {
         }
         @media only screen and (max-width: 960px) {
           .footer__link {
-            padding: 1rem 0;
+            display: none;
           }
         }
       `}</style>

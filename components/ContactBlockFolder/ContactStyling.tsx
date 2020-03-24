@@ -17,7 +17,7 @@ const ContactStyling = (): React.ReactElement => {
       align-items: center;
       flex-wrap: wrap-reverse;
       z-index: 20;
-      padding: 2rem 0;
+      padding: 4rem 0;
     }
     .contact-block__layer {
       opacity: 0.9;

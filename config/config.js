@@ -8,6 +8,18 @@ export const headers = {
 
 export const body = JSON.stringify({
   query: `query GetAllData {
+        allCardoffers(orderBy: _createdAt_ASC) {
+          id
+          name
+          routepage
+          smallpic {
+            alt
+            height
+            width
+            url
+          }
+          description
+        }
         allArticles(orderBy: position_ASC){
           id
           opacity

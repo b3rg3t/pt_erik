@@ -6,8 +6,8 @@ import { AMPurl } from "../../helpers/helpdata";
 
 import CoursesStyling from "./CoursesStyling";
 
-const AmpCourses = (props: any): React.ReactElement => {
-  const courseData = props.offers.offers;
+const Courses = (props: any): React.ReactElement => {
+  const courseData = props.offers;
   return courseData.length > 0 ? (
     <>
       <div className="course">
@@ -17,14 +17,14 @@ const AmpCourses = (props: any): React.ReactElement => {
             {courseData &&
               courseData.map((course, index) => {
                 return (
-                  <article key={index} className="course__panels">
+                  <article key={course.id} className="course__panels">
                     <div className="course__panels__div background">
                       <div className="course__panels__div__img">
                         <Image
-                          src={course.image.src}
-                          width={course.image.width}
-                          height={course.image.height}
-                          alt={course.image.alt}
+                          src={course?.image.url}
+                          alt={course?.image.alt}
+                          height={course?.image.height}
+                          width={course?.image.width}
                           layout="intrinsic"
                         />
                       </div>
@@ -34,7 +34,12 @@ const AmpCourses = (props: any): React.ReactElement => {
                         <div className="course__panels__div__header__box">
                           <h3>{course.title}</h3>
                           <p style={{ fontWeight: "bold" }}>
-                          <span style={{ fontSize: "1.5rem", color: "orange"}}>{course.time ? course.time : "Okänd"}</span> MIN
+                            <span
+                              style={{ fontSize: "1.5rem", color: "orange" }}
+                            >
+                              {course.time ? course.time : "Okänd"}
+                            </span>{" "}
+                            MIN
                           </p>
                         </div>
                       </div>
@@ -50,7 +55,7 @@ const AmpCourses = (props: any): React.ReactElement => {
               })}
           </div>
           <p>{props.offers.text}</p>
-          <Link href={`/kontakt` + AMPurl.url} as={`/kontakt` + AMPurl.url}>
+          <Link href={`/kontakt${AMPurl.url}`} as={`/kontakt${AMPurl.url}`}>
             <a className="main-btn course-btn">KONTAKT</a>
           </Link>
         </div>
@@ -58,18 +63,18 @@ const AmpCourses = (props: any): React.ReactElement => {
       <CoursesStyling />
     </>
   ) : (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-        alignItems: "center"
-      }}
-    >
-      <Loading loading={true} />
-    </div>
-  );
+      <div
+        style={{
+          minHeight: "100vh",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+          alignItems: "center"
+        }}
+      >
+        <Loading loading={true} />
+      </div>
+    );
 };
 
-export default AmpCourses;
+export default Courses;

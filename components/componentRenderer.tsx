@@ -25,7 +25,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <Hero />
           </section>
           <section id="cards">
-            <CardBlock />
+            <CardBlock allCards={props.data.allCardoffers}/>
           </section>
           <section id="about">
             <ProfilBlock profil={profileData} />
@@ -33,7 +33,6 @@ const ComponentRenderer = (props: any): React.ReactElement => {
           <section id="articles">
             <ImageBlock allArticles={props.data.allArticles} />
           </section>
-          <section id="courses">{/* <Courses /> */}</section>
           <section id="contact">
             <ContactBlock />
           </section>
@@ -44,7 +43,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <Hero />
           </section>
           <section id="cards">
-            <CardBlock />
+            <CardBlock allCards={props.data.allCardoffers}/>
           </section>
           <section id="about">
             <AmpProfilBlock profil={profileData} />
@@ -52,7 +51,6 @@ const ComponentRenderer = (props: any): React.ReactElement => {
           <section id="articles">
             <AmpImageBlock allArticles={props.data.allArticles}/>
           </section>
-          <section id="courses">{/* <AmpCourses /> */}</section>
           <section id="contact">
             <AmpContact />
           </section>

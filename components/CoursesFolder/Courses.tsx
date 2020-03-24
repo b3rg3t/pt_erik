@@ -7,7 +7,6 @@ import Link from "next/link";
 import CoursesStyling from "./CoursesStyling";
 
 const Courses = (props: any): React.ReactElement => {
-  console.log(props)
   const courseData = props.offers;
   return courseData.length > 0 ? (
     <>
@@ -25,7 +24,7 @@ const Courses = (props: any): React.ReactElement => {
                           <Image
                             src={course?.image.url}
                             alt={course?.image.alt}
-                            height={course?.image.height}
+                            height="200"
                             width="auto"
                             layout="intrinsic"
                           />

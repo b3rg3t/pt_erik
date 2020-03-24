@@ -31,11 +31,6 @@ export interface Articles {
   };
 }
 
-// interface PageData {
-//   data: { allArticles: Articles[] };
-// }
-// export const DataContext = React.createContext<PageData | null>(null);
-
 export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = (props: any) => {

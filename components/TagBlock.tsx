@@ -1,6 +1,6 @@
 import React from "react";
 
-import { colors } from "../../helpers/helpdata";
+import { colors } from "../helpers/helpdata";
 
 const TagBlock = (props: any): React.ReactElement => {
   return (

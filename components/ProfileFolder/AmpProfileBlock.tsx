@@ -4,7 +4,7 @@ import Image from "../AMP/AmpImage";
 import ProfileStyling from "./ProfileStyling";
 import Link from "next/link";
 import EducationBlock from "./EducationBlock";
-import TagBlock from "../TagBlockFolder/TagBlock";
+import TagBlock from "../TagBlock";
 import { AMPurl } from "../../helpers/helpdata";
 
 interface AmpProfilBlockProps {

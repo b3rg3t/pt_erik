@@ -87,6 +87,9 @@ const ProfileStyling = (): React.ReactElement => (
     .utb_item__2 {
       margin-left: 0.5rem;
     }
+    .external-link{
+      margin: auto;
+    }
     @media only screen and (max-width: 600px) {
       .profile-block__content__boxes__img img {
         height: 200px;

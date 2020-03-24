@@ -5,7 +5,7 @@ import LazyLoad from "react-lazyload";
 import ProfileStyling from "./ProfileStyling";
 import Link from "next/link";
 import EducationBlock from "./EducationBlock";
-import TagBlock from "../TagBlockFolder/TagBlock";
+import TagBlock from "../TagBlock";
 
 interface ProfilBlockProps {
   profil: {

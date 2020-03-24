@@ -1,7 +1,8 @@
 import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
-import { SEOdata, heights } from "../helpers/helpdata";
+import { SEOdata, heights, AMPurl } from "../helpers/helpdata";
 import { BASE_URL, headers } from "../config/config";
+import Link from 'next/link';
 import { body } from "../config/priceconfig";
 import PriceList from "../components/PriceListFolder/PriceList";
 
@@ -28,12 +29,17 @@ const Priser = (props: any): React.ReactElement => {
         }}
       >
         <h2>Priser</h2>
-        <p>
+        <p style={{ padding: "2rem 1rem" }}>
           Den träning jag lär ut är bred och såklart anpassas den efter individ
           och förfrågan.
         </p>
         <PriceList pricelist={props.response.data} />
-        <p>Hör gärna av dig/er för mer information.</p>
+        <p style={{ paddingTop: "1rem" }}>Hör gärna av dig/er för mer information.</p>
+        <div style={{ paddingTop: "1rem" }}>
+          <Link href={`/kontakt${AMPurl.url}`} as={`/kontakt${AMPurl.url}`}>
+            <a className="main-btn course-btn" style={{ display: "flex", justifyContent: "center" }}>KONTAKT</a>
+          </Link>
+        </div>
       </div>
     </Layout>
   );
