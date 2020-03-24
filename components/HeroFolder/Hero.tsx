@@ -1,15 +1,14 @@
 import React from "react";
-import { SEOdata } from "../../helpers/helpdata";
 import { IoIosArrowDown } from "react-icons/io";
 
-const FirstComponent = (): React.ReactElement => {
+const FirstComponent = (props: any): React.ReactElement => {
   return (
     <>
       <div
         className="hero"
         style={{
           height: `calc(100vh )`,
-          backgroundImage: `url(./images/erik2.jpg)`,
+          backgroundImage: `url(${props.hero.backgroundimage.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
         }}
@@ -17,9 +16,9 @@ const FirstComponent = (): React.ReactElement => {
         <div className="hero__layer"></div>
         <div className="hero__content">
           <div className="hero__box">
-            <h1>{SEOdata.title}</h1>
+            <h1>{props.hero.header}</h1>
             <p>
-              Där hinder möter framgång
+              {props.hero.content}
             </p>
           </div>
           <div className="hero__bottom-arrow">
@@ -42,7 +41,7 @@ const FirstComponent = (): React.ReactElement => {
         }
         .hero__layer {
           position: absolute;
-          background: black;
+          background: ${props.hero.overlaycolor.hex};
           top: 50%;
           left: 50%;
           min-width: 100%;
@@ -54,7 +53,7 @@ const FirstComponent = (): React.ReactElement => {
           -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
           overflow: hidden;
-          opacity: 0.3;
+          opacity: ${props.hero.opacity};
           z-index: 5;
         }
         .hero__content {

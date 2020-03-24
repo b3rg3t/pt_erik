@@ -20,6 +20,24 @@ export const body = JSON.stringify({
           }
           description
         }
+        heroblock {
+          backgroundimage {
+            alt
+            url
+            width
+            height
+          }
+          id
+          header
+          content
+          opacity
+          overlaycolor {
+            hex
+          }
+          textcolor {
+            hex
+          }
+        }
         allArticles(orderBy: position_ASC){
           id
           opacity

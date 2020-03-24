@@ -10,8 +10,6 @@ import { SEOdata, profileData } from "../helpers/helpdata";
 import AmpImageBlock from "./ImageBlockFolder/AmpImageBlock";
 import AmpProfilBlock from "./ProfileFolder/AmpProfileBlock";
 import AmpContact from "./ContactBlockFolder/AmpContact";
-import Courses from "../components/CoursesFolder/Courses";
-import AmpCourses from "./CoursesFolder/AmpCourses";
 
 import { useAmp } from "next/amp";
 
@@ -22,7 +20,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
       {!isAmp ? (
         <>
           <section id="hero">
-            <Hero />
+            <Hero hero={props.data.heroblock}/>
           </section>
           <section id="cards">
             <CardBlock allCards={props.data.allCardoffers}/>

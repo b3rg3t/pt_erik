@@ -35,9 +35,7 @@ export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = (props: any) => {
   return (
-    // <DataContext.Provider value={props.response}>
-      <ComponentRenderer data={props.response.data}/>
-    // </DataContext.Provider>
+    <ComponentRenderer data={props.response.data} />
   );
 };
 
