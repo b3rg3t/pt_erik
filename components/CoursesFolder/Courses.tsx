@@ -7,7 +7,7 @@ import Link from "next/link";
 import CoursesStyling from "./CoursesStyling";
 
 const Courses = (props: any): React.ReactElement => {
-  console.log(props)
+  console.log("props",props)
   const courseData = props.offers;
   return courseData.length > 0 ? (
     <>

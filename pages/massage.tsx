@@ -14,17 +14,18 @@ import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
 export const config = { amp: "hybrid" };
 
 const Massage = (props: any): React.ReactElement => {
-  console.log(props)
+  console.log('props',props)
+  // console.log(massage)
   let massage = new Array;
-  massage.push(props.response.data.massage)
+  massage.push(props?.response?.data?.massage)
   console.log(massage)
   const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | Massage`}>
       {!isAmp ? (
         <>
-          <ProfilBlock profil={massageData} />
-          <Courses offers={props.response.data.allMassageoffers} />
+          <TrainingBlock profiles={massage} />
+          <Courses offers={props?.response?.data?.allMassageoffers} /> 
         </>
       ) : (
         <>

@@ -1,21 +1,19 @@
 import React from "react";
-// import { GiAllSeeingEye } from "react-icons/gi";
-import LazyLoad from "react-lazyload";
 import Image from "../AMP/AmpImage";
 import Link from "next/link";
 import { useAmp } from "next/amp";
-import { cardData } from "../dummyData";
-import { profileData, colors, blockHeight, AMPurl } from "../../helpers/helpdata";
+import { colors, blockHeight, AMPurl } from "../../helpers/helpdata";
 
-const CardBlock = (): React.ReactElement => {
+const CardBlock = (props: any): React.ReactElement => {
   const isAmp = useAmp();
+  console.log(props);
+  const cardData = props.allCards;
   return (
     cardData && (
       <>
         <div className="cards">
           <div className="card__header">
             <h2>Vad kan jag hjälpa dig med?</h2>
-            {/* <p>Behöver du hjälp med att komma igång med träningen</p> */}
           </div>
           <div className="cards__block">
             {cardData.length > 0 &&
@@ -27,20 +25,20 @@ const CardBlock = (): React.ReactElement => {
                         <h3>{card.name.toUpperCase()}</h3>
                       </div>
                       <Image
-                        src={card.smallPic}
-                        alt={profileData.alt}
+                        src={card.smallpic.url}
+                        alt={card.smallpic.alt}
                         height="200"
                         width={isAmp ? "300" : "auto"}
                         layout="intrinsic"
                       />
                     </div>
 
-                    <div className="card__panels__div">
-                      <p>{card.description.substring(0, 200)}..</p>
+                    <div className="card__panels__div description">
+                      <p>{card.description.substring(0, 180)}..</p>
                     </div>
                     <div className="card__panels__div button__div">
-                      <Link href={isAmp ? (card.link + AMPurl.url) : card.link}>
-                        <a className="main-btn card-btn">LÄS MER</a>
+                      <Link href={`/${isAmp ? card.routepage[0] + AMPurl : card.routepage[0]}`} as={`/${isAmp ? card.routepage[0] + AMPurl : card.routepage[0]}`} >
+                        <a title={card.routepage[0]} className="main-btn card-btn">LÄS MER</a>
                       </Link>
                     </div>
                   </div>
@@ -73,7 +71,7 @@ const CardBlock = (): React.ReactElement => {
             min-height: 100%;
             max-width: 300px;
             margin: 1rem 1rem;
-            background: #f9f9f9;
+            background: ${colors.color6};
             border-radius: 1rem;
             overflow: hidden;
             -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);

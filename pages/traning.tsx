@@ -15,11 +15,12 @@ export const config = { amp: "hybrid" };
 
 const Traning = (props: any): React.ReactElement => {
   const isAmp = useAmp();
+  console.log(props)
   return (
     <Layout title={`${SEOdata.title} | Träning`}>
       {!isAmp ? (
         <>
-        <TrainingBlock profiles={props.response.data} />
+        <TrainingBlock profiles={props.response.data.allTranings} />
           {/* <ProfilBlock profil={trainingData} />
           <ProfilBlock profil={hinderbanaData} tags={hinderbanaTags} />
           <ProfilBlock profil={lopningData} tags={lopningTags} /> */}

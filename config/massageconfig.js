@@ -22,6 +22,20 @@ export const body = JSON.stringify({
             }
             picposition
             secondtext
+            button
+            buttontext
+            bottomtext
+            tags
+            routepage
+            textcolor {
+              hex
+            }
+            backgroundimage {
+              url
+              width
+              height
+              alt
+            }
             smallimage {
               alt
               url

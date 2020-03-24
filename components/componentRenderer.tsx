@@ -17,6 +17,7 @@ import { useAmp } from "next/amp";
 
 const ComponentRenderer = (props: any): React.ReactElement => {
   const isAmp = useAmp();
+  console.log(props)
   return (
     <Layout title={`${SEOdata.title} | Hem`}>
       {!isAmp ? (
@@ -25,7 +26,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
             <Hero />
           </section>
           <section id="cards">
-            <CardBlock />
+            <CardBlock allCards={props.data.allCardoffers}/>
           </section>
           <section id="about">
             <ProfilBlock profil={profileData} />

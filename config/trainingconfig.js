@@ -10,7 +10,6 @@ export const body = JSON.stringify({
         hex
       }
       picposition
-      position
       routepage
       secondtext
       tags
