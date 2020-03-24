@@ -1,6 +1,4 @@
 import React from "react";
-// import heights from "../../helpers/helpdata";
-// import { colors } from "../AMP/AmpStyling";
 import { SEOdata } from "../../helpers/helpdata";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -10,7 +8,6 @@ const FirstComponent = (): React.ReactElement => {
       <div
         className="hero"
         style={{
-          // - ${heights.navHeigt}
           height: `calc(100vh )`,
           backgroundImage: `url(./images/erik2.jpg)`,
           backgroundSize: "cover",

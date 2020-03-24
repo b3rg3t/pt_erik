@@ -1,7 +1,4 @@
 import React from "react";
-
-// import ComponentRenderer from "../components/componentRenderer";
-// import { BASE_URL, headers, body } from "../config";
 import { SEOdata, fullprofileData, utbildning } from "../helpers/helpdata";
 import Layout from "../components/LayoutFolder/Layout";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
@@ -28,21 +25,5 @@ const Profil: React.FunctionComponent = (props: any) => {
     </Layout>
   );
 };
-
-// //@ts-ignore
-// Profile.getInitialProps = async (): Promise<{}> => {
-//   let response;
-//   try {
-//     response = await fetch(BASE_URL, {
-//       method: "POST",
-//       headers,
-//       body
-//     });
-//     response = await response.json();
-//   } catch (error) {
-//     console.error(error);
-//   }
-//   return { response };
-// };
 
 export default Profil;
