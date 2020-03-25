@@ -160,12 +160,12 @@ const Form = (): React.ReactElement => {
           font-family: "Dosis", sans-serif;
           font-weight: 400;
           font-size: 1rem;
-
           padding: 4px 0 4px 8px;
           border: 1px solid ${colors.transparent};
-          -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-          -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-          box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
+          -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
+          box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
+
         }
         .contact input:focus {
           outline: none;
@@ -179,12 +179,11 @@ const Form = (): React.ReactElement => {
           font-family: "Dosis", sans-serif;
           font-weight: 400;
           font-size: 1rem;
-
           border: 1px solid ${colors.transparent};
           padding: 0.5rem;
-          -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-          -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
-          box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+          -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
+          -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
+          box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
         }
         .contact textarea:focus {
           outline: none;
