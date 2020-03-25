@@ -23,6 +23,8 @@ export const body = JSON.stringify({
             picposition
             secondtext
             button
+            imageafter
+            roundedimage
             buttontext
             bottomtext
             tags

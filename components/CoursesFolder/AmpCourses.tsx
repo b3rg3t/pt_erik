@@ -56,7 +56,7 @@ const Courses = (props: any): React.ReactElement => {
           </div>
           <p>{props.offers.text}</p>
           <Link href={`/kontakt${AMPurl.url}`} as={`/kontakt${AMPurl.url}`}>
-            <a className="main-btn course-btn">KONTAKT</a>
+            <a className="main-btn course-btn">Kontakt</a>
           </Link>
         </div>
       </div>

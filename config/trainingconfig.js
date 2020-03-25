@@ -11,6 +11,8 @@ export const body = JSON.stringify({
       }
       picposition
       routepage
+      imageafter
+      roundedimage
       secondtext
       tags
       title

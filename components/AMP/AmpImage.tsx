@@ -9,6 +9,7 @@ interface AmpImage {
   layout?: string;
   className?: string;
   media?: string;
+  styling?: boolean;
 }
 
 const Image = (image: AmpImage): React.ReactElement => {
@@ -22,16 +23,18 @@ const Image = (image: AmpImage): React.ReactElement => {
         height={image.height}
         alt={image.alt}
         layout={image.layout ? image.layout : "responsive"}
+        style={{ borderRadius: image.styling ? "50%" : "0" }}
       ></amp-img>
     ) : (
-      <img
-        className={image.className}
-        src={image.src}
-        width={image.width}
-        height={image.height}
-        alt={image.alt}
-      />
-    );
+        <img
+          className={image.className}
+          src={image.src}
+          width={image.width}
+          height={image.height}
+          alt={image.alt}
+          style={{ borderRadius: image.styling ? "50%" : "0" }}
+        />
+      );
   }
   return null;
 };

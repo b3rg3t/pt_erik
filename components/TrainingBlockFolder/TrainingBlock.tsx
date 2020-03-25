@@ -23,7 +23,7 @@ const TrainingBlock = (props: any): React.ReactElement => {
                                 profil?.backgroundimage?.url &&
                                 `url(${profil?.backgroundimage?.url})`,
                             backgroundSize: "cover",
-                            backgroundPosition: "center center"
+                            backgroundPosition: "center center",
                         }}
                     >
                         <div
@@ -36,8 +36,8 @@ const TrainingBlock = (props: any): React.ReactElement => {
                         <div className="profile-block__content">
                             <div className={`profile-block__content__boxes ${
                                 profil?.picposition ? "left" : ""
-                                }`}>
-                                <div className="profile-block__content__boxes__img">
+                                }`} style={{ flexWrap: !profil.imageafter ? "wrap" : "wrap-reverse" }}>
+                                {profil?.smallimage && <div className="profile-block__content__boxes__img" style={{ borderRadius: profil.roundedimage ? "50%" : "0" }}>
                                     <LazyLoad height={350}>
                                         <Image
                                             src={profil?.smallimage?.url}
@@ -45,9 +45,11 @@ const TrainingBlock = (props: any): React.ReactElement => {
                                             height={profil?.smallimage?.height}
                                             width={profil?.smallimage?.width}
                                             layout="intrinsic"
+                                            styling={profil.roundedimage}
                                         />
                                     </LazyLoad>
-                                </div>
+                                </div>}
+
 
                                 <div className="profile-block__content__boxes__text">
                                     <h3 style={{ color: `${profil?.textcolor?.hex}` }}>{profil?.title}</h3>
@@ -57,12 +59,14 @@ const TrainingBlock = (props: any): React.ReactElement => {
                                     >
                                         {profil?.toptext}
                                     </p>
-                                    <p
-                                        style={{ color: `${profil?.textcolor?.hex}` }}
-                                        className="text-bottom"
-                                    >
-                                        {profil?.secondtext}
-                                    </p>
+                                    {profil?.bottomtext && (
+                                        <p
+                                            style={{ color: `${profil?.textcolor?.hex}` }}
+                                            className="text-bottom"
+                                        >
+                                            {profil?.secondtext}
+                                        </p>
+                                    )}
                                     {profil?.bottomtext && (
                                         <p
                                             style={{ color: `${profil.textcolor?.hex}` }}

@@ -36,11 +36,9 @@ const ProfileStyling = (): React.ReactElement => (
       align-items: center;
       position: relative;
       padding: 0 2rem;
-      border-radius: 50%;
     }
     .profile-block__content__boxes__img img {
       max-width: 350px;
-      border-radius: 50%;
       height: 350px;
       width: 350px;
       object-fit: cover;

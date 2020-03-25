@@ -37,7 +37,7 @@ const CardBlock = (props: any): React.ReactElement => {
                     </div>
                     <div className="card__panels__div button__div">
                       <Link href={`/${isAmp ? card.routepage[0] + AMPurl.url : card.routepage[0]}`} as={`/${isAmp ? card.routepage[0] + AMPurl.url : card.routepage[0]}`} >
-                        <a title={card.routepage[0]} className="main-btn card-btn">LÄS MER</a>
+                        <a title={card.routepage[0]} className="main-btn card-btn">Läs mer</a>
                       </Link>
                     </div>
                   </div>

@@ -46,6 +46,8 @@ export const body = JSON.stringify({
           }
           picposition
           secondtext
+          imageafter
+          roundedimage
           button
           buttontext
           bottomtext

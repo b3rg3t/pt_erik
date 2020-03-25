@@ -1,6 +1,7 @@
 import React from "react";
 import Loading from "../loading";
 import Image from "../AMP/AmpImage";
+
 import ProfileStyling from "../ProfileFolder/ProfileStyling";
 import Link from "next/link";
 import TagBlock from "../TagBlock";
@@ -21,7 +22,7 @@ const AmpTrainingBlock = (props: any): React.ReactElement => {
                             profil?.backgroundimage?.url &&
                             `url(${profil?.backgroundimage?.url})`,
                         backgroundSize: "cover",
-                        backgroundPosition: "center center"
+                        backgroundPosition: "center center",
                     }}
                 >
                     <div
@@ -34,8 +35,8 @@ const AmpTrainingBlock = (props: any): React.ReactElement => {
                     <div className="profile-block__content">
                         <div className={`profile-block__content__boxes ${
                             profil?.picposition ? "left" : ""
-                            }`}>
-                            <div className="profile-block__content__boxes__img">
+                            }`} style={{ flexWrap: !profil.imageafter ? "wrap" : "wrap-reverse" }}>
+                            {profil?.smallimage && <div className="profile-block__content__boxes__img" style={{ borderRadius: profil.roundedimage ? "50%" : "0" }}>
 
                                 <Image
                                     src={profil?.smallimage?.url}
@@ -43,9 +44,11 @@ const AmpTrainingBlock = (props: any): React.ReactElement => {
                                     height={profil?.smallimage?.height}
                                     width={profil?.smallimage?.width}
                                     layout="intrinsic"
+                                    styling={profil.roundedimage}
                                 />
 
-                            </div>
+                            </div>}
+
 
                             <div className="profile-block__content__boxes__text">
                                 <h3 style={{ color: `${profil?.textcolor?.hex}` }}>{profil?.title}</h3>
@@ -55,12 +58,14 @@ const AmpTrainingBlock = (props: any): React.ReactElement => {
                                 >
                                     {profil?.toptext}
                                 </p>
-                                <p
-                                    style={{ color: `${profil?.textcolor?.hex}` }}
-                                    className="text-bottom"
-                                >
-                                    {profil?.secondtext}
-                                </p>
+                                {profil?.bottomtext && (
+                                    <p
+                                        style={{ color: `${profil?.textcolor?.hex}` }}
+                                        className="text-bottom"
+                                    >
+                                        {profil?.secondtext}
+                                    </p>
+                                )}
                                 {profil?.bottomtext && (
                                     <p
                                         style={{ color: `${profil.textcolor?.hex}` }}
@@ -72,7 +77,7 @@ const AmpTrainingBlock = (props: any): React.ReactElement => {
                                 {profil?.tags && <TagBlock tags={profil.tags.data} color={profil.textcolor?.hex} />}
                                 {profil?.button && (
                                     <div>
-                                        <Link href={`/${profil.routepage[0] + AMPurl.url}`} as={`/${profil.routepage[0] + AMPurl.url}`} >
+                                        <Link href={`/${profil.routepage[0]}${AMPurl.url}`} as={`/${profil.routepage[0]}${AMPurl.url}`} >
                                             <a title={profil.routepage[0]} className="external-link">{profil.buttontext}</a>
                                         </Link>
                                     </div>
@@ -83,6 +88,7 @@ const AmpTrainingBlock = (props: any): React.ReactElement => {
                 </div>
             )}
             <ProfileStyling />
+
         </>
     ) : (
             <Loading loading={true} />

@@ -37,7 +37,7 @@ const Priser = (props: any): React.ReactElement => {
         <p style={{ paddingTop: "1rem" }}>Hör gärna av dig/er för mer information.</p>
         <div style={{ paddingTop: "1rem" }}>
           <Link href={`/kontakt${AMPurl.url}`} as={`/kontakt${AMPurl.url}`}>
-            <a className="main-btn course-btn" style={{ display: "flex", justifyContent: "center" }}>KONTAKT</a>
+            <a className="main-btn course-btn" style={{ display: "flex", justifyContent: "center" }}>Kontakt</a>
           </Link>
         </div>
       </div>
