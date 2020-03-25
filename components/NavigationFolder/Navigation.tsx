@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useAmp } from "next/amp";
 import { colors, Links, heights } from "../../helpers/helpdata";
@@ -9,8 +9,24 @@ import { FaBars } from "react-icons/fa";
 import Hamburger from "./Hamburger";
 import Logo from "./Logo";
 
-const Navigation = (): React.ReactElement => {
+const Navigation = ({ scrollValue }): React.ReactElement => {
   const isAmp = useAmp();
+  const [scroll, setScroll] = useState(0);
+  const [top] = useState(0);
+
+  const handleScroll = () => {
+    setScroll(window.scrollY);
+  };
+
+  useEffect(() => {
+    const el = document.querySelector(".nav");
+    if (el !== null) {
+      scroll > 0 ? el.classList.add("fixed-nav") : null;
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [top]);
 
   return (
     <>
@@ -20,29 +36,30 @@ const Navigation = (): React.ReactElement => {
             <Hamburger />
           </div>
         ) : (
-          <>
-            <AmpSidebar />
-            <div className="nav__boxes amp-button">
-              <button
-                style={{
-                  border: "none",
-                  color: `${colors.secondary}`,
-                  background: "none",
-                  fontSize: "2rem",
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center"
-                }}
-                className="hamburger"
-                on="tap:sidebar1.toggle"
-              >
-                <span aria-label="Toggle Navigation" />
-                <FaBars />
-              </button>
-            </div>
-          </>
-        )}
+            <>
+              <AmpSidebar />
+              <div className="nav__boxes amp-button">
+                <button
+                  style={{
+                    border: "none",
+                    color: `${colors.secondary}`,
+                    background: "none",
+                    fontSize: "2rem",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center"
+                  }}
+                  className="hamburger"
+                  on="tap:sidebar1.toggle"
+                >
+                  <span aria-label="Toggle Navigation" />
+                  <FaBars />
+                </button>
+              </div>
+            </>
+          )}
         <nav
+          className="nav" id={scroll > top || scrollValue === 1 ? "fixed-nav" : ""}
           style={{
             height: `${heights.navHeigt}`,
             display: `${isAmp ? "none" : ""}`
@@ -72,13 +89,17 @@ const Navigation = (): React.ReactElement => {
         {`
           nav {
             position: fixed;
+            transition: all 0.5s ease;
             top: 0;
             width: 100%;
-            background-color: ${colors.navbar};
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            border-top: 0.5rem solid #00000000;
+          }
+          #fixed-nav {
+            background-color: ${colors.navbar};
             border-top: 0.5rem solid ${colors.secondary};
           }
           nav a {

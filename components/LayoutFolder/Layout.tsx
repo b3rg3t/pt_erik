@@ -7,10 +7,17 @@ import { useAmp } from "next/amp";
 
 type LayoutProps = {
   title?: string;
+  navbar?: string;
 };
 
-const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => {
+const Layout: React.FunctionComponent<LayoutProps> = ({ children, title, navbar }) => {
   const isAmp = useAmp();
+  let renderBackgroundColor;
+  if (navbar === "/kontakt" || navbar === "/priser") {
+    console.log("yeah boy")
+    renderBackgroundColor = 1;
+  }
+
   return (
     <div className="layout">
       <Head>
@@ -35,7 +42,7 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title }) => {
           </>
         )}
       </Head>
-      <Navigation />
+      <Navigation scrollValue={renderBackgroundColor} />
       <main className="site-content">{children}</main>
       <Footer />
       <AmpStyling />

@@ -8,40 +8,44 @@ import MapContainer from "../components/MapFolder/MapContainer";
 
 export const config = { amp: "hybrid" };
 
-const Kontakt = (): React.ReactElement => {
+const Kontakt = ({ url }): React.ReactElement => {
   const isAmp = useAmp();
+  console.log(url.pathname)
   return (
-    <Layout title={`${SEOdata.title} | Kontakt`}>
+    <Layout title={`${SEOdata.title} | Kontakt`} navbar={url.pathname}>
       {!isAmp ? (
         <div style={{ minHeight: `calc(100vh - ${heights.footerheight})` }}>
           <ContactBlock />
         </div>
       ) : (
-        <>
-          <div
-            style={{
-              minHeight: `calc(100vh)`,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <Form />
-          </div>
-          <div
-            style={{
-              minHeight: `calc(100vh - ${heights.footerheight})`,
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <MapContainer />
-          </div>
-        </>
-      )}
+          <>
+            <div
+              style={{
+                minHeight: `calc(100vh)`,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <Form />
+            </div>
+            <div
+              style={{
+                minHeight: `calc(100vh - ${heights.footerheight})`,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center"
+              }}
+            >
+              <MapContainer />
+            </div>
+          </>
+        )}
     </Layout>
   );
 };
 
+Kontakt.getInitialProps = ({ query }) => {
+  return { query }
+}
 export default Kontakt;

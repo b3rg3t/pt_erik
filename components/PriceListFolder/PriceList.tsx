@@ -9,7 +9,7 @@ const PriceList = (props: any): React.ReactElement => {
   const isAmp = useAmp();
   return prices?.length > 0 ? (
     <>
-      <div className="price">
+      <div className="price" style={{maxWidth: "1100px"}}>
         {prices.map(price => (
           <div className="pricelist" key={price.id}>
             <div

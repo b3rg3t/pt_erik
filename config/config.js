@@ -38,6 +38,37 @@ export const body = JSON.stringify({
             hex
           }
         }
+        allHomepages(orderBy: _createdAt_ASC) {
+          id
+          opacity
+          overlaycolor {
+            hex
+          }
+          picposition
+          secondtext
+          button
+          buttontext
+          bottomtext
+          tags
+          routepage
+          textcolor {
+            hex
+          }
+          backgroundimage {
+            url
+            width
+            height
+            alt
+          }
+          smallimage {
+            alt
+            url
+            width
+            height
+          }
+          title
+          toptext
+        }
         allArticles(orderBy: position_ASC){
           id
           opacity
@@ -65,36 +96,4 @@ export const body = JSON.stringify({
           }
         },
       }`
-});
-
-export const pricebody = JSON.stringify({
-  query: `query GetAllData {
-    allArticles(orderBy: position_ASC){
-      id
-      opacity
-      picposition
-      secondtext
-      backgroundimage {
-        alt
-        url
-        width
-        height
-      }
-      smallimage {
-        alt
-        url
-        height
-        width
-      }
-      toptext
-      title
-      textcolor {
-        hex
-      }
-      overlaycolor {
-        hex
-      }
-    },
-  }
-  `
 });

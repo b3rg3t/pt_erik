@@ -17,7 +17,7 @@ export interface PriceProps {
 
 const Priser = (props: any): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | Priser`}>
+    <Layout title={`${SEOdata.title} | Priser`} navbar={props.url.pathname}>
       <div
         style={{
           minHeight: `calc(100vh - ${heights.footerheight})`,
@@ -45,8 +45,8 @@ const Priser = (props: any): React.ReactElement => {
   );
 };
 
-//@ts-ignore
-Priser.getInitialProps = async (): Promise<{}> => {
+
+Priser.getInitialProps = async ({ query }): Promise<{}> => {
   let response;
   try {
     response = await fetch(BASE_URL, {
@@ -58,7 +58,7 @@ Priser.getInitialProps = async (): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response };
+  return { query, response };
 };
 
 export default Priser;

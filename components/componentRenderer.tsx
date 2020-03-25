@@ -2,16 +2,15 @@ import React from "react";
 
 import Layout from "../components/LayoutFolder/Layout";
 import Hero from "../components/HeroFolder/Hero";
-import ImageBlock from "../components/ImageBlockFolder/ImageBlock";
-import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
+import TrainingBlock from "./TrainingBlockFolder/TrainingBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
 import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
-import { SEOdata, profileData } from "../helpers/helpdata";
-import AmpImageBlock from "./ImageBlockFolder/AmpImageBlock";
-import AmpProfilBlock from "./ProfileFolder/AmpProfileBlock";
+import AmpTrainingBlock from "./TrainingBlockFolder/AmpTrainingBlock";
 import AmpContact from "./ContactBlockFolder/AmpContact";
 
+import { SEOdata } from "../helpers/helpdata";
 import { useAmp } from "next/amp";
+
 
 const ComponentRenderer = (props: any): React.ReactElement => {
   const isAmp = useAmp();
@@ -20,40 +19,34 @@ const ComponentRenderer = (props: any): React.ReactElement => {
       {!isAmp ? (
         <>
           <section id="hero">
-            <Hero hero={props.data.heroblock}/>
+            <Hero hero={props.data.heroblock} />
           </section>
           <section id="cards">
-            <CardBlock allCards={props.data.allCardoffers}/>
+            <CardBlock allCards={props.data.allCardoffers} />
           </section>
           <section id="about">
-            <ProfilBlock profil={profileData} />
-          </section>
-          <section id="articles">
-            <ImageBlock allArticles={props.data.allArticles} />
+            <TrainingBlock profiles={props.data.allHomepages} />
           </section>
           <section id="contact">
             <ContactBlock />
           </section>
         </>
       ) : (
-        <>
-          <section id="hero">
-            <Hero />
-          </section>
-          <section id="cards">
-            <CardBlock allCards={props.data.allCardoffers}/>
-          </section>
-          <section id="about">
-            <AmpProfilBlock profil={profileData} />
-          </section>
-          <section id="articles">
-            <AmpImageBlock allArticles={props.data.allArticles}/>
-          </section>
-          <section id="contact">
-            <AmpContact />
-          </section>
-        </>
-      )}
+          <>
+            <section id="hero">
+              <Hero hero={props.data.heroblock} />
+            </section>
+            <section id="cards">
+              <CardBlock allCards={props.data.allCardoffers} />
+            </section>
+            <section id="about">
+              <AmpTrainingBlock profiles={props.data.allHomepages}/>
+            </section>
+            <section id="contact">
+              <AmpContact />
+            </section>
+          </>
+        )}
     </Layout>
   );
 };

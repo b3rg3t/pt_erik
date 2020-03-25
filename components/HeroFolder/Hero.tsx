@@ -8,7 +8,7 @@ const FirstComponent = (props: any): React.ReactElement => {
         className="hero"
         style={{
           height: `calc(100vh )`,
-          backgroundImage: `url(${props.hero.backgroundimage.url})`,
+          backgroundImage: `url(${props?.hero?.backgroundimage?.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
         }}
