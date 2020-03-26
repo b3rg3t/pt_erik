@@ -5,6 +5,8 @@ import { BASE_URL, headers } from "../config/config";
 import Link from 'next/link';
 import { body } from "../config/priceconfig";
 import PriceList from "../components/PriceListFolder/PriceList";
+import { useAmp } from "next/amp";
+
 
 export const config = { amp: "hybrid" };
 import { withRouter } from 'next/router'
@@ -17,6 +19,7 @@ export interface PriceProps {
 }
 
 const Priser = (props: any): React.ReactElement => {
+  const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | Priser`} navbar={props.router.pathname}>
       <div
@@ -35,9 +38,9 @@ const Priser = (props: any): React.ReactElement => {
           och förfrågan.
         </p>
         <PriceList pricelist={props.response.data} />
-        <p style={{ paddingTop: "1rem" }}>Hör gärna av dig/er för mer information.</p>
+        <p style={{ paddingTop: "1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
         <div style={{ paddingTop: "1rem" }}>
-          <Link href={`/kontakt${AMPurl.url}`} as={`/kontakt${AMPurl.url}`}>
+          <Link href={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`} as={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}>
             <a className="main-btn course-btn" style={{ display: "flex", justifyContent: "center" }}>Kontakt</a>
           </Link>
         </div>

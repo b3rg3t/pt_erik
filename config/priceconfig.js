@@ -4,6 +4,7 @@ export const body = JSON.stringify({
         id
         title
         prices
+        description
         routepage
         secondcolor {
           hex
