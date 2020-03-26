@@ -25,6 +25,15 @@ const TagBlock = (props: any): React.ReactElement => {
           border-radius: 1rem;
           color: ${props.color};
         }
+        @media only screen and (max-width: 600px) {
+          .tags li {
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+          }
+          .tags ul {
+            margin-bottom: 0.5rem;
+          }
+        }
       `}</style>
     </>
   );
