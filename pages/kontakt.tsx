@@ -5,14 +5,14 @@ import { SEOdata, heights } from "../helpers/helpdata";
 import { useAmp } from "next/amp";
 import Form from "../components/FormFolder/Form";
 import MapContainer from "../components/MapFolder/MapContainer";
+import { withRouter } from 'next/router'
 
 export const config = { amp: "hybrid" };
 
-const Kontakt = ({ url }): React.ReactElement => {
+const Kontakt = ({ router }): React.ReactElement => {
   const isAmp = useAmp();
-  console.log(url.pathname)
   return (
-    <Layout title={`${SEOdata.title} | Kontakt`} navbar={url.pathname}>
+    <Layout title={`${SEOdata.title} | Kontakt`} navbar={router.pathname}>
       {!isAmp ? (
         <div style={{ minHeight: `calc(100vh - ${heights.footerheight})` }}>
           <ContactBlock />
@@ -45,7 +45,4 @@ const Kontakt = ({ url }): React.ReactElement => {
   );
 };
 
-Kontakt.getInitialProps = ({ query }) => {
-  return { query }
-}
-export default Kontakt;
+export default withRouter(Kontakt);

@@ -7,6 +7,7 @@ import { body } from "../config/priceconfig";
 import PriceList from "../components/PriceListFolder/PriceList";
 
 export const config = { amp: "hybrid" };
+import { withRouter } from 'next/router'
 var fetch = require("isomorphic-unfetch");
 
 export interface PriceProps {
@@ -17,7 +18,7 @@ export interface PriceProps {
 
 const Priser = (props: any): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | Priser`} navbar={props.url.pathname}>
+    <Layout title={`${SEOdata.title} | Priser`} navbar={props.router.pathname}>
       <div
         style={{
           minHeight: `calc(100vh - ${heights.footerheight})`,
@@ -46,7 +47,7 @@ const Priser = (props: any): React.ReactElement => {
 };
 
 
-Priser.getInitialProps = async ({ query }): Promise<{}> => {
+Priser.getInitialProps = async (): Promise<{}> => {
   let response;
   try {
     response = await fetch(BASE_URL, {
@@ -58,7 +59,7 @@ Priser.getInitialProps = async ({ query }): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { query, response };
+  return { response };
 };
 
-export default Priser;
+export default withRouter(Priser);

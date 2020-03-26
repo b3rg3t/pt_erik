@@ -14,7 +14,6 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title, navbar 
   const isAmp = useAmp();
   let renderBackgroundColor;
   if (navbar === "/kontakt" || navbar === "/priser") {
-    console.log("yeah boy")
     renderBackgroundColor = 1;
   }
 

@@ -14,7 +14,6 @@ export const config = { amp: "hybrid" };
 
 const Profil = (props: any): React.ReactElement => {
   const isAmp = useAmp();
-  console.log(props);
   return (
     <Layout title={`${SEOdata.title} | Profil`}>
       {isAmp ? (

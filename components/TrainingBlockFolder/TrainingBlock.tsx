@@ -59,7 +59,7 @@ const TrainingBlock = (props: any): React.ReactElement => {
                                     >
                                         {profil?.toptext}
                                     </p>
-                                    {profil?.bottomtext && (
+                                    {profil?.secondtext && (
                                         <p
                                             style={{ color: `${profil?.textcolor?.hex}` }}
                                             className="text-bottom"
