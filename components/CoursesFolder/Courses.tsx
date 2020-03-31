@@ -12,7 +12,7 @@ const Courses = (props: any): React.ReactElement => {
     <>
       <div className="course">
         <div className="course__b">
-          <h2>{props.offers.title}</h2>
+          <h2>Varianter</h2>
           <div className="course__block">
             {courseData &&
               courseData.map((course, index) => {
@@ -56,7 +56,7 @@ const Courses = (props: any): React.ReactElement => {
                 );
               })}
           </div>
-          <p>{props.offers.text}</p>
+          <p style={{ paddingTop: "1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
           <Link href="/kontakt" as="kontakt">
             <a className="main-btn course-btn">Kontakt</a>
           </Link>

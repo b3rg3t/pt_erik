@@ -14,72 +14,74 @@ const PriceList = (props: any): React.ReactElement => {
         {prices.map(price => {
           const id = price?.linkpage?.id;
           console.log(id);
-
           return (
-            <div className="pricelist" key={price.id}>
-              <div
-                className="pricelist__card"
-                style={{
-                  width: "100%",
-                  height: "60px",
-                  backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
-                }}
-              ></div>
-              <div className="pricelist__card">
-                <h3 style={{ color: `${price.color.hex}` }}>{price.title}</h3>
-              </div>
-
-              <div className="pricelist__card list">
-                <ul>
-                  {price.prices.map((obj, index) => (
-                    <li
-                      key={index}
-                      style={{
-                        minWidth: "150px",
-                        padding: `${index[0] ? "0 0 0.5rem 0" : "0.5rem 0"}`,
-                        borderBottom: "1px solid lightgray",
-                        textAlign: "center"
-                      }}
-                    >
-                      <p>
-                        <span>{obj.name}</span> <span>{obj.price} kr</span>
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-                <div><p style={{ padding: "1rem 1rem 0 1rem" }}><i>{price.description}</i></p></div>
-                {price.routepage.length ? <div className="pricelist__card" style={{
-                  textAlign: "center",
-                  justifyContent: "center",
-                  margin: "auto",
-                }}>
-                  <Link href={`/${isAmp ? price.routepage[0] + `/${id}` + AMPurl.url : price.routepage[0] + `/${id}`}`} as={`/${isAmp ? price.routepage[0] + `/${id}` + AMPurl.url : price.routepage[0] + `/${id}`}`} >
-                    <a title="Läs mer" style={{
-                      fontSize: "1rem",
-                      display: "inline-block",
-                      border: "none",
-                      padding: "0.5rem 1rem",
-                      borderRadius: "30px",
-                      color: "white",
-                      fontWeight: "bold",
-                      backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
-                    }} >Läs mer</a>
-                  </Link>
+            <div className="pricelist" key={price.id} >
+              <div style={{ width: "100%" }}>
+                <div
+                  className="pricelist__card"
+                  style={{
+                    width: "100%",
+                    height: "60px",
+                    backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
+                  }}
+                ></div>
+                <div className="pricelist__card">
+                  <h3 style={{ color: `${price.color.hex}`, textAlign: "center", }}>{price.title}</h3>
                 </div>
-                  : null}
+
+                <div className="pricelist__card list">
+                  <ul style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                    {price.prices.map((obj, index) => (
+                      <li
+                        key={index}
+                        style={{
+                          minWidth: "150px",
+                          padding: `${index[0] ? "0 0 0.5rem 0" : "0.5rem 0"}`,
+                          borderBottom: "1px solid lightgray",
+                          textAlign: "center",
+                        }}
+                      >
+                        <p>
+                          <span>{obj.name}</span> <span>{obj.price} kr</span>
+                        </p>
+                      </li>
+                    ))}
+                  </ul>
+                  <div><p style={{ padding: "1rem 1rem 0 1rem" }}><i>{price.description}</i></p></div>
+                </div>
               </div>
+              {price.routepage.length ? <div className="pricelist__card" style={{
+                textAlign: "center",
+              }}>
+                <Link
+                  href={`/${isAmp ? price.routepage[0] + `${id ? `/${id}` : ''}` + AMPurl.url : price.routepage[0] + `${id ? `/${id}` : ''}`}`} as={`/${isAmp ? price.routepage[0] + `${id ? `/${id}` : ''}` + AMPurl.url : price.routepage[0] + `${id ? `/${id}` : ''}`}`} >
+                  <a title="Läs mer" style={{
+                    fontSize: "1rem",
+                    display: "inline-block",
+                    border: "none",
+                    padding: "0.5rem 1rem",
+                    borderRadius: "30px",
+                    color: "white",
+                    fontWeight: "bold",
+                    backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
+                  }} >Läs mer</a>
+                </Link>
+              </div>
+                : ''}
             </div>
           )
         })}
       </div>
       <style jsx>{`
         .pricelist {
+          flex: 1 1 300px;
+          position: relative;
           display: flex;
           flex-direction: column;
-          justify-content: center;
+          justify-content: space-between;
           align-items: center;
           margin: 1rem;
-          min-width: 300px;
+          min-height: 300px;
           max-width: 300px;
           -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
@@ -97,7 +99,6 @@ const PriceList = (props: any): React.ReactElement => {
         .price {
           display: flex;
           justify-content: center;
-          align-items: center;
           flex-wrap: wrap;      
         }
         .list {

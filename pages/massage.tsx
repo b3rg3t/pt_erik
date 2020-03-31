@@ -32,7 +32,6 @@ const Massage = (props: any): React.ReactElement => {
   );
 };
 
-//@ts-ignore
 Massage.getInitialProps = async (): Promise<{}> => {
   let response;
   try {
