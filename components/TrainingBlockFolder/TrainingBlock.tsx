@@ -10,12 +10,13 @@ import { blockHeight } from "../../helpers/helpdata";
 
 const TrainingBlock = (props: any): React.ReactElement => {
     const profiles = props?.profiles;
-    return profiles.length > 0 ? (
+    console.log(props.profiles)
+    return profiles ? (
         <>
             <LazyLoad height={"100vh"}>
-                {profiles.map(profil =>
+                {profiles.map((profil, index) =>
                     <div
-                        key={profil?.id}
+                        key={profil?.id ? profil?.id : index}
                         className="profile-block"
                         style={{
                             minHeight: blockHeight,
@@ -36,7 +37,7 @@ const TrainingBlock = (props: any): React.ReactElement => {
                         <div className="profile-block__content">
                             <div className={`profile-block__content__boxes ${
                                 profil?.picposition ? "left" : ""
-                                }`} style={{ flexWrap: !profil.imageafter ? "wrap" : "wrap-reverse" }}>
+                                }`} style={{ flexWrap: !profil?.imageafter ? "wrap" : "wrap-reverse" }}>
                                 {profil?.smallimage && <div className="profile-block__content__boxes__img" style={{ borderRadius: profil.roundedimage ? "50%" : "0" }}>
                                     <LazyLoad height={350}>
                                         <Image

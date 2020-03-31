@@ -7,64 +7,70 @@ import { AMPurl } from "../../helpers/helpdata";
 const PriceList = (props: any): React.ReactElement => {
   const prices = props?.pricelist?.allPricelists;
   const isAmp = useAmp();
+
   return prices?.length > 0 ? (
     <>
       <div className="price" style={{ maxWidth: "1100px" }}>
-        {prices.map(price => (
-          <div className="pricelist" key={price.id}>
-            <div
-              className="pricelist__card"
-              style={{
-                width: "100%",
-                height: "60px",
-                backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
-              }}
-            ></div>
-            <div className="pricelist__card">
-              <h3 style={{ color: `${price.color.hex}` }}>{price.title}</h3>
-            </div>
+        {prices.map(price => {
+          const id = price?.linkpage?.id;
+          console.log(id);
 
-            <div className="pricelist__card list">
-              <ul>
-                {price.prices.map((obj, index) => (
-                  <li
-                    key={index}
-                    style={{
-                      minWidth: "150px",
-                      padding: `${index[0] ? "0 0 0.5rem 0" : "0.5rem 0"}`,
-                      borderBottom: "1px solid lightgray",
-                      textAlign: "center"
-                    }}
-                  >
-                    <p>
-                      <span>{obj.name}</span> <span>{obj.price} kr</span>
-                    </p>
-                  </li>
-                ))}
-              </ul>
-              <div><p style={{ padding: "1rem 1rem 0 1rem" }}><i>{price.description}</i></p></div>
-              {price.routepage.length ? <div className="pricelist__card" style={{
-                textAlign: "center",
-                justifyContent: "center",
-                margin: "auto",
-              }}>
-                <Link href={`/${isAmp ? price.routepage[0] + AMPurl.url : price.routepage[0]}`} as={`/${isAmp ? price.routepage[0] + AMPurl.url : price.routepage[0]}`} >
-                  <a title="Läs mer" style={{
-                    fontSize: "1rem",
-                    display: "inline-block",
-                    border: "none",
-                    padding: "0.5rem 1rem",
-                    borderRadius: "30px",
-                    color: "white",
-                    fontWeight: "bold",
-                    backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
-                  }} >Läs mer</a>
-                </Link>
+          return (
+            <div className="pricelist" key={price.id}>
+              <div
+                className="pricelist__card"
+                style={{
+                  width: "100%",
+                  height: "60px",
+                  backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
+                }}
+              ></div>
+              <div className="pricelist__card">
+                <h3 style={{ color: `${price.color.hex}` }}>{price.title}</h3>
               </div>
-                : null}
+
+              <div className="pricelist__card list">
+                <ul>
+                  {price.prices.map((obj, index) => (
+                    <li
+                      key={index}
+                      style={{
+                        minWidth: "150px",
+                        padding: `${index[0] ? "0 0 0.5rem 0" : "0.5rem 0"}`,
+                        borderBottom: "1px solid lightgray",
+                        textAlign: "center"
+                      }}
+                    >
+                      <p>
+                        <span>{obj.name}</span> <span>{obj.price} kr</span>
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+                <div><p style={{ padding: "1rem 1rem 0 1rem" }}><i>{price.description}</i></p></div>
+                {price.routepage.length ? <div className="pricelist__card" style={{
+                  textAlign: "center",
+                  justifyContent: "center",
+                  margin: "auto",
+                }}>
+                  <Link href={`/${isAmp ? price.routepage[0] + `/${id}` + AMPurl.url : price.routepage[0] + `/${id}`}`} as={`/${isAmp ? price.routepage[0] + `/${id}` + AMPurl.url : price.routepage[0] + `/${id}`}`} >
+                    <a title="Läs mer" style={{
+                      fontSize: "1rem",
+                      display: "inline-block",
+                      border: "none",
+                      padding: "0.5rem 1rem",
+                      borderRadius: "30px",
+                      color: "white",
+                      fontWeight: "bold",
+                      backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
+                    }} >Läs mer</a>
+                  </Link>
+                </div>
+                  : null}
+              </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
       <style jsx>{`
         .pricelist {

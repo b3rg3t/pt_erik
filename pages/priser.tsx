@@ -9,8 +9,6 @@ import { useAmp } from "next/amp";
 
 
 export const config = { amp: "hybrid" };
-import { withRouter } from 'next/router'
-var fetch = require("isomorphic-unfetch");
 
 export interface PriceProps {
   prices: [{ name: string; price: string }];
@@ -21,7 +19,7 @@ export interface PriceProps {
 const Priser = (props: any): React.ReactElement => {
   const isAmp = useAmp();
   return (
-    <Layout title={`${SEOdata.title} | Priser`} navbar={props.router.pathname}>
+    <Layout title={`${SEOdata.title} | Priser`} navbar={true}>
       <div
         style={{
           minHeight: `calc(100vh - ${heights.footerheight})`,
@@ -65,4 +63,4 @@ Priser.getInitialProps = async (): Promise<{}> => {
   return { response };
 };
 
-export default withRouter(Priser);
+export default Priser;

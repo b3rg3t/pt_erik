@@ -6,6 +6,10 @@ export const body = JSON.stringify({
         prices
         description
         routepage
+        linkpage {
+          id
+          title
+        }
         secondcolor {
           hex
         }

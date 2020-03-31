@@ -7,13 +7,13 @@ import { useAmp } from "next/amp";
 
 type LayoutProps = {
   title?: string;
-  navbar?: string;
+  navbar?: boolean;
 };
 
 const Layout: React.FunctionComponent<LayoutProps> = ({ children, title, navbar }) => {
   const isAmp = useAmp();
   let renderBackgroundColor;
-  if (navbar === "/kontakt" || navbar === "/priser") {
+  if (navbar) {
     renderBackgroundColor = 1;
   }
 
