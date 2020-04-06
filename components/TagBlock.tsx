@@ -8,7 +8,9 @@ const TagBlock = (props: any): React.ReactElement => {
       <div className="tags">
         <ul>
           {props.tags.map((tag, index) => (
-            <li key={index}><span style={{color: props.color}}>{tag}</span></li>
+            <li key={index}>
+              <span style={{ color: props.color }}>{tag}</span>
+            </li>
           ))}
         </ul>
       </div>

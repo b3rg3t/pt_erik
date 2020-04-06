@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "../FormFolder/Form";
 import MapContainer from "../MapFolder/MapContainer";
-// import { profileData } from "../../helpers/helpdata";
 import ContactStyling from "./ContactStyling";
 import LazyLoad from "react-lazyload";
 

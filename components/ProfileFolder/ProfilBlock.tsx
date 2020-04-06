@@ -1,7 +1,6 @@
 import React from "react";
 import Loading from "../loading";
 import Image from "../AMP/AmpImage";
-import LazyLoad from "react-lazyload";
 import ProfileStyling from "./ProfileStyling";
 import Link from "next/link";
 import EducationBlock from "./EducationBlock";
@@ -32,7 +31,6 @@ const ProfilBlock = ({
 }: ProfilBlockProps): React.ReactElement => {
   return profil ? (
     <>
-      <LazyLoad height={"100vh"}>
         <div
           className="profile-block"
           style={{
@@ -51,7 +49,6 @@ const ProfilBlock = ({
           <div className="profile-block__content">
             <div className={`profile-block__content__boxes ${profil.position}`}>
               <div className="profile-block__content__boxes__img">
-                <LazyLoad height={350}>
                   <Image
                     src={profil.smallPic}
                     alt={profil.alt}
@@ -59,7 +56,6 @@ const ProfilBlock = ({
                     width="500"
                     layout="intrinsic"
                   />
-                </LazyLoad>
               </div>
 
               <div className="profile-block__content__boxes__text">
@@ -100,7 +96,6 @@ const ProfilBlock = ({
           </div>
         </div>
         <ProfileStyling />
-      </LazyLoad>
     </>
   ) : (
     <Loading loading={true} />

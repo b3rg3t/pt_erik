@@ -15,40 +15,6 @@ export const font = {
   url: `https://fonts.googleapis.com/css?family=Dosis&display=swap`
 };
 
-export const profileData = {
-  name: "Erik Johanssson",
-  pic: "./images/erik3.jpg",
-  smallPic: "./images/erik1.jpg",
-  position: "left",
-  alt: "Cat behind bars",
-  overlayColor: "black",
-  opacity: 0.6,
-  description:
-    "Mitt namn är Erik Johansson och jag tycker inte om träning, jag ÄLSKAR träning. Jag vill ständigt utvecklas i träning och som människa. På samma sätt tänker jag när jag tränar mina kunder för att förmedla träning på bästa sätt samt öka kundens välmående.",
-  time: "5 minutes",
-  author: "James Cameron",
-  button: true,
-  text: "",
-  fulltext: ""
-};
-export const fullprofileData = {
-  name: "Erik Johanssson",
-  pic: "",
-  smallPic: "./images/erik1.jpg",
-  position: "left",
-  alt: "Cat behind bars",
-  overlayColor: "black",
-  opacity: 0.6,
-  description:
-    "Mitt namn är Erik Johansson och jag tycker inte om träning, jag ÄLSKAR träning. Jag vill ständigt utvecklas i träning och som människa. På samma sätt tänker jag när jag tränar mina kunder för att förmedla träning på bästa sätt samt öka kundens välmående.",
-  time: "5 minutes",
-  author: "James Cameron",
-  button: false,
-  text:
-    "Eftersom jag inte längre kan spela fotboll har jag funnit ny träningsglädje i löpning och hinderbaneträning eftersom det ger en stor variation av träning. Alltifrån Löpning till tung styrketräning.",
-  fulltext:
-    "Jag har en bakgrund inom elitfotbollen , men på grund av skador fick jag tyvärr lägga fotbollsskorna på hyllan. Efter mycket rebilitering fann jag nytt intresse i att förmedla träning till andra och se dem utvecklas. Det jag brinner för är just att förmedla träningsglädje och framgång."
-};
 export const utbildning = {
   name: "Mina utbildningar",
   pic: "",

@@ -1,15 +1,18 @@
 import React from "react";
 import Image from "../AMP/AmpImage";
-import LazyLoad from "react-lazyload";
 import Loading from "../loading";
 import Link from "next/link";
+import { useAmp } from "next/amp";
+import { AMPurl } from "../../helpers/helpdata";
 
 import CoursesStyling from "./CoursesStyling";
 
 const Courses = (props: any): React.ReactElement => {
   const courseData = props.offers;
+  const isAmp = useAmp();
   return courseData.length > 0 ? (
     <>
+      <CoursesStyling />
       <div className="course">
         <div className="course__b">
           <h2>Varianter</h2>
@@ -20,15 +23,13 @@ const Courses = (props: any): React.ReactElement => {
                   <article key={course.id} className="course__panels">
                     <div className="course__panels__div background">
                       <div className="course__panels__div__img">
-                        <LazyLoad height={200}>
-                          <Image
-                            src={course?.image.url}
-                            alt={course?.image.alt}
-                            height="200"
-                            width="auto"
-                            layout="intrinsic"
-                          />
-                        </LazyLoad>
+                        <Image
+                          src={course?.image.url}
+                          alt={course?.image.alt}
+                          height={isAmp ? course?.image.height : "200"}
+                          width={isAmp ? course?.image.width : "auto"}
+                          layout="intrinsic"
+                        />
                       </div>
                     </div>
                     <div className="course__panels__div text">
@@ -57,12 +58,11 @@ const Courses = (props: any): React.ReactElement => {
               })}
           </div>
           <p style={{ paddingTop: "1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
-          <Link href="/kontakt" as="kontakt">
+          <Link href={isAmp ? `/kontakt${AMPurl.url}` : "/kontakt"} as={isAmp ? `/kontakt${AMPurl.url}` : "/kontakt"} >
             <a className="main-btn course-btn">Kontakt</a>
           </Link>
         </div>
       </div>
-      <CoursesStyling />
     </>
   ) : (
       <div
