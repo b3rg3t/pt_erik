@@ -5,7 +5,6 @@ import Hero from "../components/HeroFolder/Hero";
 import TrainingBlock from "./TrainingBlockFolder/TrainingBlock";
 import CardBlock from "../components/CardBlockFolder/CardBlock";
 import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
-import AmpTrainingBlock from "./TrainingBlockFolder/AmpTrainingBlock";
 import AmpContact from "./ContactBlockFolder/AmpContact";
 
 import { SEOdata } from "../helpers/helpdata";
@@ -40,7 +39,7 @@ const ComponentRenderer = (props: any): React.ReactElement => {
               <CardBlock allCards={props.data.allCardoffers} />
             </section>
             <section id="about">
-              <AmpTrainingBlock profiles={props.data.allHomepages}/>
+              <TrainingBlock profiles={props.data.allHomepages} />
             </section>
             <section id="contact">
               <AmpContact />

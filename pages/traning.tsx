@@ -1,28 +1,16 @@
 import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import { SEOdata } from "../helpers/helpdata";
-import { useAmp } from "next/amp";
 import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/trainingconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
-import AmpTrainingBlock from "../components/TrainingBlockFolder/AmpTrainingBlock";
-
 
 export const config = { amp: "hybrid" };
 
 const Traning = (props: any): React.ReactElement => {
-  const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | Träning`}>
-      {!isAmp ? (
-        <>
-          <TrainingBlock profiles={props.response.data.allTranings} />
-        </>
-      ) : (
-          <>
-            <AmpTrainingBlock profiles={props.response.data.allTranings} />
-          </>
-        )}
+      <TrainingBlock profiles={props.response.data.allTranings} />
     </Layout>
   );
 };

@@ -2,21 +2,16 @@ import Layout from '../../components/LayoutFolder/Layout';
 import { SEOdata } from "../../helpers/helpdata";
 import { BASE_URL, headers } from "../../config/config";
 import TrainingBlock from '../../components/TrainingBlockFolder/TrainingBlock';
-import { useAmp } from "next/amp";
-import AmpTrainingBlock from '../../components/TrainingBlockFolder/AmpTrainingBlock';
 import Loading from '../../components/loading';
 
 export const config = { amp: "hybrid" };
 
 const Post = (props: any) => {
-  const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | ${props?.response?.data?.allTranings[0] ? props.response.data.allTranings[0].title : null}`} navbar={true}>
-      {props?.response?.data?.allTranings ? (!isAmp ?
+      {props?.response?.data?.allTranings ?
         <TrainingBlock profiles={props?.response?.data?.allTranings} />
-        :
-        <AmpTrainingBlock profiles={props?.response?.data?.allTranings} />
-      ) : <Loading />}
+        : <Loading />}
     </Layout>
   );
 }
@@ -25,7 +20,6 @@ const Post = (props: any) => {
 Post.getInitialProps = async ({ query }): Promise<{}> => {
   let response;
   const id = query.id;
-
   try {
     response = await fetch(BASE_URL, {
       method: "POST",

@@ -13,7 +13,6 @@ const PriceList = (props: any): React.ReactElement => {
       <div className="price" style={{ maxWidth: "1100px" }}>
         {prices.map(price => {
           const id = price?.linkpage?.id;
-          console.log(id);
           return (
             <div className="pricelist" key={price.id} >
               <div style={{ width: "100%" }}>

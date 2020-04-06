@@ -43,9 +43,13 @@ const Loading = ({ loading }: LoadingProps): React.ReactElement => {
         `}
       </style>
     </>
-  ) : <><div className="sweet-loading" style={{ minHeight: blockHeight.height }}>            <p>
-    No data could be retrived at the moment, please try again later.
-</p></div>      <style jsx>
+  ) : <>
+      <div className="sweet-loading" style={{ minHeight: blockHeight.height }}>
+        <p>
+          No data could be retrived at the moment, please try again later.
+        </p>
+      </div>
+      <style jsx>
         {`
           .sweet-loading {
             display: flex;

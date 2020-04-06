@@ -1,4 +1,5 @@
 import React from "react";
+import LazyLoad from "react-lazyload";
 import { useAmp } from "next/amp";
 
 interface AmpImage {
@@ -26,6 +27,7 @@ const Image = (image: AmpImage): React.ReactElement => {
         style={{ borderRadius: image.styling ? "50%" : "0" }}
       ></amp-img>
     ) : (
+      <LazyLoad height={350}>
         <img
           className={image.className}
           src={image.src}
@@ -34,6 +36,7 @@ const Image = (image: AmpImage): React.ReactElement => {
           alt={image.alt}
           style={{ borderRadius: image.styling ? "50%" : "0" }}
         />
+        </LazyLoad>
       );
   }
   return null;
