@@ -13,7 +13,8 @@
     "react-dom": "^16.12.0",
     "react-icons": "^3.9.0",
     "react-lazyload": "^2.6.5",
-    "react-spinners": "^0.8.0"
+    "react-spinners": "^0.8.0",
+    "strip-ansi": "^6.0.0"
   },
   "scripts": {
     "dev": "next"
