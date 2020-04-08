@@ -8,7 +8,6 @@ import fetch from 'isomorphic-unfetch';
 export const config = { amp: "hybrid" };
 
 const Post = (props: any) => {
-  console.log("props training", props);
   return (
     <Layout title={`${SEOdata.title} | ${props?.response?.data?.allTranings[0] ? props.response.data.allTranings[0].title : ""}`} navbar={true}>
       {props?.response?.data?.allTranings ?
@@ -22,7 +21,6 @@ const Post = (props: any) => {
 Post.getInitialProps = async (context): Promise<{}> => {
   let response;
   const { id } = context.query;
-  console.log(id);
   try {
     response = await fetch(BASE_URL, {
       method: "POST",

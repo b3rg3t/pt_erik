@@ -19,7 +19,6 @@ export interface PriceProps {
 
 const Priser = (props: any): React.ReactElement => {
   const isAmp = useAmp();
-  console.log(props);
   return (
     <Layout title={`${SEOdata.title} | Priser`} navbar={true}>
       <div

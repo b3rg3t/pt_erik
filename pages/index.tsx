@@ -33,7 +33,6 @@ export interface Articles {
 export const config = { amp: "hybrid" };
 
 const Index: React.FunctionComponent = (props: any) => {
-  console.log(props);
   return (
     <ComponentRenderer data={props.response.data} />
   );

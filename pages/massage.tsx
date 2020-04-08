@@ -12,7 +12,6 @@ export const config = { amp: "hybrid" };
 const Massage = (props: any): React.ReactElement => {
   let massage = new Array;
   massage.push(props?.response?.data?.massage)
-  console.log(props);
   return (
     <Layout title={`${SEOdata.title} | Massage`}>
         <TrainingBlock profiles={massage} />

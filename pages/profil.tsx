@@ -10,7 +10,6 @@ import fetch from 'isomorphic-unfetch';
 export const config = { amp: "hybrid" };
 
 const Profil = (props: any): React.ReactElement => {
-  console.log(props);
   return (
     <Layout title={`${SEOdata.title} | Profil`}>
       <TrainingBlock profiles={props.response.data.allProfiles} />
