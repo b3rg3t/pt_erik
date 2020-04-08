@@ -5,11 +5,12 @@ import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/profilconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
-
+import fetch from 'isomorphic-unfetch';
 
 export const config = { amp: "hybrid" };
 
 const Profil = (props: any): React.ReactElement => {
+  console.log(props);
   return (
     <Layout title={`${SEOdata.title} | Profil`}>
       <TrainingBlock profiles={props.response.data.allProfiles} />
@@ -24,7 +25,7 @@ Profil.getInitialProps = async (): Promise<{}> => {
     response = await fetch(BASE_URL, {
       method: "POST",
       headers,
-      body
+      body,
     });
     response = await response.json();
   } catch (error) {

@@ -3,6 +3,7 @@ import { SEOdata } from "../../helpers/helpdata";
 import { BASE_URL, headers } from "../../config/config";
 import TrainingBlock from '../../components/TrainingBlockFolder/TrainingBlock';
 import Loading from '../../components/loading';
+import fetch from 'isomorphic-unfetch';
 
 export const config = { amp: "hybrid" };
 

@@ -5,12 +5,14 @@ import Courses from "../components/CoursesFolder/Courses";
 import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/massageconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
+import fetch from 'isomorphic-unfetch';
 
 export const config = { amp: "hybrid" };
 
 const Massage = (props: any): React.ReactElement => {
   let massage = new Array;
   massage.push(props?.response?.data?.massage)
+  console.log(props);
   return (
     <Layout title={`${SEOdata.title} | Massage`}>
         <TrainingBlock profiles={massage} />
