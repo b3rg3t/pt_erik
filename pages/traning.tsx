@@ -16,19 +16,19 @@ const Traning = (props: any): React.ReactElement => {
   );
 };
 
-// Traning.getInitialProps = async (): Promise<{}> => {
-//   let response;
-//   try {
-//     response = await fetch(BASE_URL, {
-//       method: "POST",
-//       headers,
-//       body
-//     });
-//     response = await response.json();
-//   } catch (error) {
-//     console.error(error);
-//   }
-//   return { response };
-// };
+Traning.getInitialProps = async (): Promise<{}> => {
+  let response;
+  try {
+    response = await fetch(BASE_URL, {
+      method: "POST",
+      headers,
+      body
+    });
+    response = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+  return { response };
+};
 
 export default Traning;

@@ -19,20 +19,20 @@ const Massage = (props: any): React.ReactElement => {
   );
 };
 
-// Massage.getInitialProps = async (): Promise<{}> => {
-//   let response;
-//   try {
-//     response = await fetch(BASE_URL, {
-//       method: "POST",
-//       headers,
-//       body
-//     });
-//     response = await response.json();
-//   } catch (error) {
-//     console.error("THIS ERROR IS SENT FROM HERE", error);
-//   }
-//   return { response };
-// };
+Massage.getInitialProps = async (): Promise<{}> => {
+  let response;
+  try {
+    response = await fetch(BASE_URL, {
+      method: "POST",
+      headers,
+      body
+    });
+    response = await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+  return { response };
+};
 
 
 export default Massage;
