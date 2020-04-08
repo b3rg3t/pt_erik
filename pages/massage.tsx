@@ -13,28 +13,26 @@ const Massage = (props: any): React.ReactElement => {
   massage.push(props?.response?.data?.massage)
   return (
     <Layout title={`${SEOdata.title} | Massage`}>
-      <>
         <TrainingBlock profiles={massage} />
         <Courses offers={props?.response?.data?.allMassageoffers} />
-      </>
     </Layout>
   );
 };
 
-Massage.getInitialProps = async (): Promise<{}> => {
-  let response;
-  try {
-    response = await fetch(BASE_URL, {
-      method: "POST",
-      headers,
-      body
-    });
-    response = await response.json();
-  } catch (error) {
-    console.error(error);
-  }
-  return { response };
-};
+// Massage.getInitialProps = async (): Promise<{}> => {
+//   let response;
+//   try {
+//     response = await fetch(BASE_URL, {
+//       method: "POST",
+//       headers,
+//       body
+//     });
+//     response = await response.json();
+//   } catch (error) {
+//     console.error("THIS ERROR IS SENT FROM HERE", error);
+//   }
+//   return { response };
+// };
 
 
 export default Massage;

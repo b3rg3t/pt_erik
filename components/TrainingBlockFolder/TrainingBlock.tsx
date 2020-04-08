@@ -92,7 +92,7 @@ const TrainingBlock = (props: any): React.ReactElement => {
             <ProfileStyling />
         </>
     ) : (
-            <Loading loading={true} />
+            <Loading />
         );
 };
 
