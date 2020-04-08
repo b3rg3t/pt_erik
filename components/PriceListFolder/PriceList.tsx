@@ -13,6 +13,8 @@ const PriceList = (props: any): React.ReactElement => {
       <div className="price" style={{ maxWidth: "1100px" }}>
         {prices.map(price => {
           const id = price?.linkpage?.id;
+          const href = `/${price.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
+          const as = `/${price.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
           return (
             <div className="pricelist" key={price.id} >
               <div style={{ width: "100%" }}>
@@ -53,7 +55,9 @@ const PriceList = (props: any): React.ReactElement => {
                 textAlign: "center",
               }}>
                 <Link
-                  href={`/${isAmp ? price.routepage[0] + `${id ? `/${id}` : ''}` + AMPurl.url : price.routepage[0] + `${id ? `/${id}` : ''}`}`} as={`/${isAmp ? price.routepage[0] + `${id ? `/${id}` : ''}` + AMPurl.url : price.routepage[0] + `${id ? `/${id}` : ''}`}`} >
+                  href={href}
+                  as={as}
+                >
                   <a title="Läs mer" style={{
                     fontSize: "1rem",
                     display: "inline-block",

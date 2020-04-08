@@ -98,7 +98,7 @@ const ProfilBlock = ({
         <ProfileStyling />
     </>
   ) : (
-    <Loading loading={true} />
+    <Loading />
   );
 };
 

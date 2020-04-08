@@ -4,13 +4,15 @@ import { SEOdata } from "../helpers/helpdata";
 import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/trainingconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
+import Loading from "../components/loading";
+import fetch from 'isomorphic-unfetch';
 
 export const config = { amp: "hybrid" };
 
 const Traning = (props: any): React.ReactElement => {
   return (
     <Layout title={`${SEOdata.title} | Träning`}>
-      <TrainingBlock profiles={props.response.data.allTranings} />
+      {props?.response?.data?.allTranings ? <TrainingBlock profiles={props.response.data.allTranings} /> : <Loading />}
     </Layout>
   );
 };

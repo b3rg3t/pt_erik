@@ -4,6 +4,7 @@ import Document, { Html, Head, Main, NextScript } from "next/document";
 import { font } from "../helpers/helpdata";
 import SEOTags from "../components/SEO/seoTags";
 import { colors } from "../helpers/helpdata";
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);

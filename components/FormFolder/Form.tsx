@@ -35,7 +35,6 @@ const Form = (): React.ReactElement => {
       });
       response = await postBasin;
       if (response.status === 200) {
-        console.log("status", response.status);
         setLoading(false);
         setName("");
         setEmail("");

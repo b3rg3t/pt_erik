@@ -10,7 +10,7 @@ import CoursesStyling from "./CoursesStyling";
 const Courses = (props: any): React.ReactElement => {
   const courseData = props.offers;
   const isAmp = useAmp();
-  return courseData.length > 0 ? (
+  return courseData ? (
     <>
       <CoursesStyling />
       <div className="course">
@@ -65,17 +65,7 @@ const Courses = (props: any): React.ReactElement => {
       </div>
     </>
   ) : (
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center"
-        }}
-      >
-        <Loading loading={true} />
-      </div>
+      <Loading />
     );
 };
 

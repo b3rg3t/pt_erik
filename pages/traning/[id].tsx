@@ -3,12 +3,13 @@ import { SEOdata } from "../../helpers/helpdata";
 import { BASE_URL, headers } from "../../config/config";
 import TrainingBlock from '../../components/TrainingBlockFolder/TrainingBlock';
 import Loading from '../../components/loading';
+import fetch from 'isomorphic-unfetch';
 
 export const config = { amp: "hybrid" };
 
 const Post = (props: any) => {
   return (
-    <Layout title={`${SEOdata.title} | ${props?.response?.data?.allTranings[0] ? props.response.data.allTranings[0].title : null}`} navbar={true}>
+    <Layout title={`${SEOdata.title} | ${props?.response?.data?.allTranings[0] ? props.response.data.allTranings[0].title : ""}`} navbar={true}>
       {props?.response?.data?.allTranings ?
         <TrainingBlock profiles={props?.response?.data?.allTranings} />
         : <Loading />}
@@ -17,9 +18,9 @@ const Post = (props: any) => {
 }
 
 
-Post.getInitialProps = async ({ query }): Promise<{}> => {
+Post.getInitialProps = async (context): Promise<{}> => {
   let response;
-  const id = query.id;
+  const { id } = context.query;
   try {
     response = await fetch(BASE_URL, {
       method: "POST",

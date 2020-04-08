@@ -3,8 +3,7 @@ import React from "react";
 import ComponentRenderer from "../components/componentRenderer";
 import { BASE_URL, headers, body } from "../config/config";
 
-var fetch = require("isomorphic-unfetch");
-
+import fetch from 'isomorphic-unfetch';
 export interface Articles {
   id: string;
   picposition: boolean;
