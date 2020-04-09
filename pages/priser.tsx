@@ -37,7 +37,7 @@ const Priser = (props: any): React.ReactElement => {
           och förfrågan.
         </p>
         <PriceList pricelist={props.response.data} />
-        <p style={{ padding: "1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
+        <p style={{ padding: "1rem 1rem 0.5rem 1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
         <div style={{ paddingTop: "1rem" }}>
           <Link href={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`} as={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}>
             <a className="main-btn course-btn" style={{ display: "flex", justifyContent: "center" }}>Kontakt</a>

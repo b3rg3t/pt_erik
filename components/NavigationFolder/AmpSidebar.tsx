@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { colors, SocialMedia, Links, AMPurl } from "../../helpers/helpdata";
+import { colors, SocialMedia, Links, AMPurl, gradientBackground } from "../../helpers/helpdata";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import { useAmp } from "next/amp";
 import Logo from "./Logo";
@@ -64,7 +64,7 @@ const AmpSidebar = (): React.ReactElement => {
         </div>
         <style jsx>{`
           #sidebar1 {
-            background-color: ${colors.secondary};
+            ${gradientBackground.src}
             z-index: 2147483647;
             display: flex;
             flex-direction: column;
