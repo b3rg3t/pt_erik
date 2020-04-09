@@ -57,7 +57,7 @@ const Courses = (props: any): React.ReactElement => {
                 );
               })}
           </div>
-          <p style={{ paddingTop: "1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
+          <p style={{ padding: "0.5rem 2rem 0.5rem 2rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
           <Link href={isAmp ? `/kontakt${AMPurl.url}` : "/kontakt"} as={isAmp ? `/kontakt${AMPurl.url}` : "/kontakt"} >
             <a className="main-btn course-btn">Kontakt</a>
           </Link>
@@ -65,17 +65,7 @@ const Courses = (props: any): React.ReactElement => {
       </div>
     </>
   ) : (
-      <div
-        style={{
-          minHeight: "100vh",
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-          alignItems: "center"
-        }}
-      >
-        <Loading loading={true} />
-      </div>
+      <Loading />
     );
 };
 
