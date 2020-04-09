@@ -2,7 +2,7 @@ import React from "react";
 
 import { useAmp } from "next/amp";
 
-import { colors, blockHeight } from "../../helpers/helpdata";
+import { colors, blockHeight, gradientBackground } from "../../helpers/helpdata";
 
 const CoursesStyling = (): React.ReactElement => {
   const isAmp = useAmp();
@@ -111,7 +111,7 @@ const CoursesStyling = (): React.ReactElement => {
         
       }
       .price p {
-        background-color: ${colors.secondary};
+        ${gradientBackground.src}
         color: white;
         font-size: 1.2rem;
         padding: 0.2rem 0.5rem;
