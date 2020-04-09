@@ -13,7 +13,6 @@
 /out/
 /public/
 
-
 # production
 /build
 
@@ -32,3 +31,4 @@ yarn-error.log*
 .eslintcache
 
 .env
+.now
