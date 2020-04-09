@@ -1,5 +1,6 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { blockHeight } from "../../helpers/helpdata";
 
 const FirstComponent = (props: any): React.ReactElement => {
   return (
@@ -109,6 +110,11 @@ const FirstComponent = (props: any): React.ReactElement => {
           100% {
             opacity: 1;
             transform: translate(0, 10px);
+          }
+        }
+        @media only screen and (max-width: 600px) {
+          .hero {
+            transition: ${blockHeight.transition};
           }
         }
       `}</style>

@@ -132,5 +132,6 @@ export const AMPurl = {
 };
 
 export const blockHeight = {
-  height: "calc(100vh - 200px)"
+  height: "calc(100vh - 200px)",
+  transition: "height 999999s"
 };
