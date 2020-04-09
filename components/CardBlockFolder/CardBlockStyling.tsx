@@ -1,5 +1,5 @@
 import React from 'react';
-import { colors, blockHeight } from "../../helpers/helpdata";
+import { colors, blockHeight, gradientBackground } from "../../helpers/helpdata";
 
 const CardBlockStyling = () => (
     <style jsx global>{`
@@ -49,7 +49,7 @@ const CardBlockStyling = () => (
             font-size: 1.2rem;
             padding: 0.5rem 1rem;
             color: ${colors.white};
-            background: ${colors.secondary};
+            ${gradientBackground.src}
             border-radius: 0 0 0.5rem 0;
         }
         .card-block__content__boxes__img {
