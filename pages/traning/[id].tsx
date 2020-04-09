@@ -4,14 +4,22 @@ import { BASE_URL, headers } from "../../config/config";
 import TrainingBlock from '../../components/TrainingBlockFolder/TrainingBlock';
 import Loading from '../../components/loading';
 import fetch from 'isomorphic-unfetch';
+import { typescriptobj } from "../../helpers/typescriptobj";
 
 export const config = { amp: "hybrid" };
 
-const Post = (props: any) => {
+interface PostProps {
+  response: {
+    allTranings: [typescriptobj];
+  }
+
+}
+
+const Post = ({ response }: PostProps): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | ${props?.response?.data?.allTranings[0] ? props.response.data.allTranings[0].title : ""}`} navbar={true}>
-      {props?.response?.data?.allTranings ?
-        <TrainingBlock profiles={props?.response?.data?.allTranings} />
+    <Layout title={`${SEOdata.title} | ${response?.allTranings[0] ? response.allTranings[0].title : ""}`} navbar={true}>
+      {response?.allTranings ?
+        <TrainingBlock profiles={response?.allTranings} />
         : <Loading />}
     </Layout>
   );
@@ -68,6 +76,6 @@ Post.getInitialProps = async (context): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response };
+  return { response: response.data };
 };
 export default Post;

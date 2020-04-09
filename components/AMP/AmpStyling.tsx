@@ -1,4 +1,4 @@
-import { colors, font, gradientBackground } from "../../helpers/helpdata";
+import { colors, font } from "../../helpers/helpdata";
 
 const AmpStyling = (): React.ReactElement => {
   return (

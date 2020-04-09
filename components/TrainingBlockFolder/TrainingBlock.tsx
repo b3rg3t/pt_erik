@@ -6,13 +6,13 @@ import Link from "next/link";
 import TagBlock from "../TagBlock";
 import { useAmp } from "next/amp";
 import { blockHeight, AMPurl } from "../../helpers/helpdata";
+import { typescriptobj } from "../../helpers/typescriptobj";
 
 interface TrainingBlockProps {
-
+    profiles: [typescriptobj];
 }
 
-const TrainingBlock = (props: any): React.ReactElement => {
-    const profiles = props?.profiles;
+const TrainingBlock = ({ profiles }: TrainingBlockProps): React.ReactElement => {
     const isAmp = useAmp();
     return profiles ? (
         <>
@@ -76,7 +76,7 @@ const TrainingBlock = (props: any): React.ReactElement => {
                                         {profil?.bottomtext}
                                     </p>
                                 )}
-                                {profil?.tags && <TagBlock tags={profil.tags.data} color={profil.textcolor?.hex} />}
+                                {profil?.tags && <TagBlock tags={profil?.tags?.data} color={profil.textcolor?.hex} />}
                                 {profil?.button && (
                                     <div>
                                         <Link href={isAmp ? `/${profil.routepage[0]}${AMPurl.url}` : `/${profil.routepage[0]}`} as={isAmp ? `/${profil.routepage[0]}${AMPurl.url}` : `/${profil.routepage[0]}`} >

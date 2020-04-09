@@ -10,21 +10,20 @@ import AmpContact from "./ContactBlockFolder/AmpContact";
 import { SEOdata } from "../helpers/helpdata";
 import { useAmp } from "next/amp";
 
-
-const ComponentRenderer = (props: any): React.ReactElement => {
+const ComponentRenderer = ({ response }): React.ReactElement => {
   const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | Hem`}>
       {!isAmp ? (
         <>
           <section id="hero">
-            <Hero hero={props.data.heroblock} />
+            <Hero hero={response.heroblock} />
           </section>
           <section id="cards">
-            <CardBlock allCards={props.data.allCardoffers} />
+            <CardBlock allCards={response.allCardoffers} />
           </section>
           <section id="about">
-            <TrainingBlock profiles={props.data.allHomepages} />
+            <TrainingBlock profiles={response.allHomepages} />
           </section>
           <section id="contact">
             <ContactBlock />
@@ -33,13 +32,13 @@ const ComponentRenderer = (props: any): React.ReactElement => {
       ) : (
           <>
             <section id="hero">
-              <Hero hero={props.data.heroblock} />
+              <Hero hero={response.heroblock} />
             </section>
             <section id="cards">
-              <CardBlock allCards={props.data.allCardoffers} />
+              <CardBlock allCards={response.allCardoffers} />
             </section>
             <section id="about">
-              <TrainingBlock profiles={props.data.allHomepages} />
+              <TrainingBlock profiles={response.allHomepages} />
             </section>
             <section id="contact">
               <AmpContact />
