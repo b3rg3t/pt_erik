@@ -22,7 +22,7 @@ interface ProfilBlockProps {
     textColor?: string;
     utbildningar?: string[];
   };
-  tags?: string[];
+  tags?: [string];
 }
 
 const ProfilBlock = ({

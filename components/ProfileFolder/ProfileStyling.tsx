@@ -1,5 +1,5 @@
 import React from "react";
-import { colors, blockHeight } from "../../helpers/helpdata";
+import { colors, blockHeight, gradientBackground } from "../../helpers/helpdata";
 
 const ProfileStyling = (): React.ReactElement => (
   <style jsx global>{`
@@ -80,7 +80,7 @@ const ProfileStyling = (): React.ReactElement => (
       margin-bottom: 1rem;
       display: flex;
       align-items: center;
-      background: ${colors.secondary};
+      ${gradientBackground.src};
     }
     .utb_item__2 {
       margin-left: 0.5rem;

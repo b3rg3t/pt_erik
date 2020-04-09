@@ -2,43 +2,57 @@ import React from "react";
 
 import ComponentRenderer from "../components/componentRenderer";
 import { BASE_URL, headers, body } from "../config/config";
+import { typescriptobj } from "../helpers/typescriptobj";
 
 import fetch from 'isomorphic-unfetch';
-export interface Articles {
-  id: string;
-  picposition: boolean;
-  title: string;
-  textcolor: { hex: string };
-  toptext: string;
-  secondtext: string;
-  smallImagePosition: boolean;
-  opacity: number;
-  overlaycolor: { hex: string };
-  backgroundimage?: {
-    alt: string;
-    title?: string;
-    url?: string;
-    width: string;
-    height: string;
-  };
-  smallimage: {
-    alt: string;
-    title?: string;
-    url?: string;
-    width: string;
-    height: string;
-  };
-}
 
 export const config = { amp: "hybrid" };
 
-const Index: React.FunctionComponent = (props: any) => {
+interface allCardoffersProps {
+  id: string;
+  name: string;
+  routepage: string;
+  smallpic: {
+    alt: string;
+    height: string;
+    width: string;
+    url: string;
+  }
+  description: string;
+}
+interface heroblock {
+  backgroundimage: {
+    alt: string;
+    url: string;
+    width: string;
+    height: string;
+  }
+  id: string;
+  header: string;
+  content: string;
+  opacity: number;
+  overlaycolor: {
+    hex: string;
+  }
+  textcolor: {
+    hex: string;
+  }
+}
+
+interface IndexProps {
+  response: {
+    allHomepages: typescriptobj,
+    allCardoffers: allCardoffersProps,
+    heroblock: heroblock,
+  }
+}
+
+const Index = ({ response }: IndexProps): React.ReactElement => {
   return (
-    <ComponentRenderer data={props.response.data} />
+    <ComponentRenderer response={response} />
   );
 };
 
-//@ts-ignore
 Index.getInitialProps = async (): Promise<{}> => {
   let response;
   try {
@@ -51,7 +65,7 @@ Index.getInitialProps = async (): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response };
+  return { response: response.data };
 };
 
 export default Index;

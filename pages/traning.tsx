@@ -6,13 +6,20 @@ import { body } from "../config/trainingconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
 import Loading from "../components/loading";
 import fetch from 'isomorphic-unfetch';
+import { typescriptobj } from "../helpers/typescriptobj";
 
 export const config = { amp: "hybrid" };
 
-const Traning = (props: any): React.ReactElement => {
+export interface TraningProps {
+  response: {
+    allTranings: [typescriptobj]
+  }
+}
+
+const Traning = ({ response }: TraningProps): React.ReactElement => {
   return (
     <Layout title={`${SEOdata.title} | Träning`}>
-      {props?.response?.data?.allTranings ? <TrainingBlock profiles={props.response.data.allTranings} /> : <Loading />}
+      {response.allTranings ? <TrainingBlock profiles={response.allTranings} /> : <Loading />}
     </Layout>
   );
 };
@@ -29,7 +36,7 @@ Traning.getInitialProps = async (): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response };
+  return { response: response.data };
 };
 
 export default Traning;

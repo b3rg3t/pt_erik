@@ -11,13 +11,33 @@ import fetch from 'isomorphic-unfetch';
 
 export const config = { amp: "hybrid" };
 
-export interface PriceProps {
-  prices: [{ name: string; price: string }];
-  title: string;
+export interface PrisListaProps {
   id: string;
+  title: string;
+  prices: [{
+    name: string;
+    price: string;
+  }];
+  description: string;
+  routepage: [string];
+  linkpage: {
+    id: string;
+    title: string;
+  }
+  secondcolor: {
+    hex: string;
+  }
+  color: {
+    hex: string;
+  }
+}
+export interface PrisProps {
+  response: {
+    allPricelists: PrisListaProps[]
+  }
 }
 
-const Priser = (props: any): React.ReactElement => {
+const Priser = ({ response }: PrisProps): React.ReactElement => {
   const isAmp = useAmp();
   return (
     <Layout title={`${SEOdata.title} | Priser`} navbar={true}>
@@ -36,7 +56,7 @@ const Priser = (props: any): React.ReactElement => {
           Den träning jag lär ut är bred och såklart anpassas den efter individ
           och förfrågan.
         </p>
-        <PriceList pricelist={props.response.data} />
+        <PriceList pricelist={response.allPricelists} />
         <p style={{ padding: "1rem 1rem 0.5rem 1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
         <div style={{ paddingTop: "1rem" }}>
           <Link href={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`} as={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}>
@@ -61,7 +81,7 @@ Priser.getInitialProps = async (): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response };
+  return { response: response.data };
 };
 
 export default Priser;

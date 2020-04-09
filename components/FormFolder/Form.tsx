@@ -116,7 +116,7 @@ const Form = (): React.ReactElement => {
               value="Submit"
               disabled={!isAmp ? (loading ? isDisabled : !isDisabled) : null}
             >
-              {!loading ? "Skicka" : <Loading loading={loading} />}
+              {!loading ? "Skicka" : "Laddar.."}
             </button>
             <br />
           </form>

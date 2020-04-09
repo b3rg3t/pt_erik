@@ -8,7 +8,6 @@ const FirstComponent = (props: any): React.ReactElement => {
       <div
         className="hero"
         style={{
-          height: `calc(100vh )`,
           backgroundImage: `url(${props?.hero?.backgroundimage?.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
@@ -32,9 +31,8 @@ const FirstComponent = (props: any): React.ReactElement => {
       </div>
       <style jsx>{`
         .hero {
-          position: relative;
-          background: #ffffff50;
           height: 100vh;
+          position: relative;
           display: flex;
           justify-content: center;
           align-items: center;

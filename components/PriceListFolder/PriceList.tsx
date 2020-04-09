@@ -3,12 +3,16 @@ import Loading from "../loading";
 import Link from "next/link";
 import { useAmp } from "next/amp";
 import { AMPurl } from "../../helpers/helpdata";
+import { PrisListaProps } from "../../pages/priser";
 
-const PriceList = (props: any): React.ReactElement => {
-  const prices = props?.pricelist?.allPricelists;
+interface PriceListProps {
+  pricelist: PrisListaProps[]
+}
+
+const PriceList = ({ pricelist }:PriceListProps): React.ReactElement => {
+  const prices = pricelist;
   const isAmp = useAmp();
-
-  return prices?.length > 0 ? (
+  return prices ? (
     <>
       <div className="price" style={{ maxWidth: "1100px" }}>
         {prices.map(price => {
@@ -32,7 +36,7 @@ const PriceList = (props: any): React.ReactElement => {
 
                 <div className="pricelist__card list">
                   <ul style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                    {price.prices.map((obj, index) => (
+                    {price.prices.map((priceitem, index) => (
                       <li
                         key={index}
                         style={{
@@ -43,7 +47,7 @@ const PriceList = (props: any): React.ReactElement => {
                         }}
                       >
                         <p>
-                          <span>{obj.name}</span> <span>{obj.price} kr</span>
+                          <span>{priceitem.name}</span> <span>{priceitem.price} kr</span>
                         </p>
                       </li>
                     ))}
