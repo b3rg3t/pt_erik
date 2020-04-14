@@ -5,7 +5,7 @@ const CardBlockStyling = () => (
     <style jsx global>{`
         .cards {
             min-height: ${blockHeight.height};
-            max-widht: 100%;
+            max-width: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -15,17 +15,17 @@ const CardBlockStyling = () => (
             padding-bottom: 3rem;
         }
         .cards__block {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            align-items: center;
+            max-width: 1200px;
+            display: grid;
+            grid-gap: 1rem;
+            justify-content: center;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-column-gap: 1rem;
+            grid-row-gap: 1rem;
         }
         .cards__panels {
             postion: relative;
-            height: 300px;
-            width: 300px;
-            margin: 1rem 1rem;
-            background: ${colors.color6};
+            background-color: rgba(255, 255, 255, 0.8);
             border-radius: 0.5rem;
             overflow: hidden;
             -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
@@ -51,7 +51,7 @@ const CardBlockStyling = () => (
             font-size: 1.4rem;
             padding: 0.5rem 1rem;
             ${gradientBackground.src}
-            border-radius: 0.5rem 0 0.5rem 0;
+            border-radius: 0 0 0.5rem 0;
             color: ${colors.white};
         }
         .description {

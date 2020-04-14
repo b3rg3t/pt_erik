@@ -27,7 +27,7 @@ const CardBlock = (props: any): React.ReactElement => {
                   }}>
                     <div className="header"><h3 className="h-tag">{card.name.toUpperCase()}</h3></div>
                     <div className="description">
-                      <p style={{ color: "white" }}>{card.description.substring(0, 180)}..</p>
+                      <p style={{ color: "white" }}>{card.description.substring(0, 180)}</p>
                     </div>
                     <div className="button__div">
                       <Link href={`/${isAmp ? card.routepage[0] + AMPurl.url : card.routepage[0]}`} as={`/${isAmp ? card.routepage[0] + AMPurl.url : card.routepage[0]}`} >
@@ -46,3 +46,4 @@ const CardBlock = (props: any): React.ReactElement => {
 };
 
 export default CardBlock;
+
