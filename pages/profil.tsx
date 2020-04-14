@@ -1,5 +1,5 @@
 import React from "react";
-import { SEOdata, utbildning } from "../helpers/helpdata";
+import { SEOdata } from "../helpers/helpdata";
 import Layout from "../components/LayoutFolder/Layout";
 import ProfilBlock from "../components/ProfileFolder/ProfilBlock";
 import { BASE_URL, headers } from "../config/config";
@@ -10,9 +10,42 @@ import { typescriptobj } from "../helpers/typescriptobj";
 
 export const config = { amp: "hybrid" };
 
+export interface EducationProps {
+  id: string;
+  opacity: number;
+  overlaycolor: {
+    hex: string;
+  }
+  roundedimage: boolean;
+  picposition: boolean;
+  smallimage: {
+    alt: string;
+    id: string;
+    width: string;
+    height: string;
+    url: string;
+  }
+  textcolor: {
+    hex: string;
+  }
+  title: string;
+  backgroundimage: {
+    alt: string;
+    id: string;
+    height: string;
+    url: string;
+    width: string;
+  }
+  educations: {
+    data: [string]
+  };
+  imageafter: string;
+}
+
 interface ProfilProps {
   response: {
     allProfiles: [typescriptobj]
+    education: EducationProps
   }
 }
 
@@ -20,7 +53,7 @@ const Profil = ({ response }: ProfilProps): React.ReactElement => {
   return (
     <Layout title={`${SEOdata.title} | Profil`}>
       <TrainingBlock profiles={response.allProfiles} />
-      <ProfilBlock profil={utbildning} />
+      <ProfilBlock profil={response.education} />
     </Layout>
   );
 };

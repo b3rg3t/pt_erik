@@ -1,10 +1,14 @@
 import React from "react";
 import { IoIosSchool } from "react-icons/io";
 
-const EducationBlock = (props: any): React.ReactElement => {
+interface EducationBlockProps {
+  utbildningar: { data: [string] }
+}
+
+const EducationBlock = ({ utbildningar }: EducationBlockProps): React.ReactElement => {
   return (
     <ul className="utb">
-      {props.utbildningar.map((utb, index) => (
+      {utbildningar.data.map((utb, index) => (
         <li key={index} className="utb_item">
           <p>
             <IoIosSchool />

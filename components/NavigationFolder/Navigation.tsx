@@ -100,8 +100,14 @@ const Navigation = ({ scrollValue }): React.ReactElement => {
           }
           #fixed-nav {
             background-color: ${colors.navbar};
+            
             border-top: 0.5rem solid ${colors.secondary};
           }
+          @supports (-ms-ime-align:auto) {
+            #fixed-nav {
+              background-color: black;
+            }
+        }
           nav a {
             color: white;
             transition: all 0.5s ease;

@@ -15,33 +15,6 @@ export const font = {
   url: `https://fonts.googleapis.com/css?family=Dosis&display=swap`
 };
 
-export const utbildning = {
-  name: "Mina utbildningar",
-  pic: "",
-  smallPic: "./images/erik4.jpg",
-  position: "right",
-  alt: "Cat behind bars",
-  overlayColor: "white",
-  textColor: "rgb(61, 61, 61)",
-  utbildningar: [
-    "Personlig Tränare-Hälsocoach Lillsveds idrottsfolkhögskola",
-    "Entreprenörskap inom träning och hälsa Lillsveds idrottsfolkhögskola",
-    "Fystränarutbildning Bosön idrottsfolkhögskola",
-    "OCR-Instructor Obstacle Training AB",
-    "Löpcoach Lillsveds idrottsfokhögskola",
-    "Klassisk Massör Lillsveds idrottsfolkhögskola",
-    "EMS-instructor X-Shape Fitness AB",
-    "100% Ren hårdträning (Anti doping)"
-  ],
-  opacity: 0.6,
-  description: "",
-  time: "5 minutes",
-  author: "James Cameron",
-  button: false,
-  text: "",
-  fulltext: ""
-};
-
 //colors for page
 export const colors = {
   primary: "#b07113", //darkorange
