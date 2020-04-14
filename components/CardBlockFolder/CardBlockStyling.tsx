@@ -14,9 +14,6 @@ const CardBlockStyling = () => (
             padding-top: 3rem;
             padding-bottom: 3rem;
         }
-        .card__header {
-            padding: 2rem;
-        }
         .cards__block {
             display: flex;
             flex-wrap: wrap;
@@ -24,45 +21,41 @@ const CardBlockStyling = () => (
             align-items: center;
         }
         .cards__panels {
-            min-height: 100%;
-            max-width: 300px;
+            postion: relative;
+            height: 300px;
+            width: 300px;
             margin: 1rem 1rem;
             background: ${colors.color6};
-            border-radius: 1rem;
+            border-radius: 0.5rem;
             overflow: hidden;
             -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
             -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
             box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
         }
         .cards__panels__content {
-            height: 100%;
+            postition: absolute;
+            top: 0;
+            height: 300px;
+            width: 300px;
+           height: 100%;
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
         }
-        .cards__panels__content p {
-            padding: 1rem;
-        }
-        .text {
-            position: absolute;
-            left: 0;
-            z-index: 10;
-        }
-        .cards__panels__content h3 {
-            font-size: 1.2rem;
-            padding: 0.5rem 1rem;
-            color: ${colors.white};
-            ${gradientBackground.src}
-            border-radius: 0 0 0.5rem 0;
-        }
-        .card-block__content__boxes__img {
-            position: relative;
+        .header{
             display: flex;
-            justify-content: center;
-            max-widht: 100px;
-            overflow: hidden;
-            background: lightgray;
+
         }
-        .card-block__content__boxes__img img {
-            object-fit: contain;
+        .h-tag {
             max-widht: 100px;
+            font-size: 1.4rem;
+            padding: 0.5rem 1rem;
+            ${gradientBackground.src}
+            border-radius: 0.5rem 0 0.5rem 0;
+            color: ${colors.white};
+        }
+        .description {
+            padding: 1rem;
         }
         .card-btn {
             display: flex;
@@ -70,6 +63,8 @@ const CardBlockStyling = () => (
             align-items: center;
             font-size: 1rem;
             margin-bottom: 1rem;
+            background: none;
+            border: 1px solid white;
         }
         .button__div {
             display: flex;
