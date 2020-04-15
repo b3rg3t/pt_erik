@@ -12,6 +12,10 @@ export const body = JSON.stringify({
           id
           name
           routepage
+          linkpage {
+            id
+            title
+          }
           smallpic {
             alt
             height

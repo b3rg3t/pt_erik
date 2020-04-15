@@ -5,83 +5,69 @@ const CardBlockStyling = () => (
     <style jsx global>{`
         .cards {
             min-height: ${blockHeight.height};
-            max-widht: 100%;
+            max-width: 100%;
+            background: white;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: white;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
-        }
-        .card__header {
-            padding: 2rem;
+            padding: 2rem 1rem;
         }
         .cards__block {
+            max-width: 1000px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
+            height: 100%;
         }
         .cards__panels {
-            min-height: 100%;
+            margin: 0.5rem;
+            flex: 1 1 300px;
+            flex-grow: 1;
+            postion: relative;
+            min-height: 300px;
             max-width: 300px;
-            margin: 1rem 1rem;
-            background: ${colors.color6};
-            border-radius: 1rem;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 0.5rem;
             overflow: hidden;
             -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
             -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
             box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
         }
         .cards__panels__content {
-            height: 100%;
+           postition: absolute; 
+           width: 100%;
+           min-height: 300px;
+           top: 0;
+           height: 100%;    
+           display: flex;
+           flex-direction: column;
+           justify-content: space-between;
         }
-        .cards__panels__content p {
-            padding: 1rem;
+        .header{
+            display: flex;
         }
-        .text {
-            position: absolute;
-            left: 0;
-            z-index: 10;
-        }
-        .cards__panels__content h3 {
-            font-size: 1.2rem;
+        .h-tag {
+            max-widht: 100px;
+            font-size: 1.4rem;
             padding: 0.5rem 1rem;
-            color: ${colors.white};
             ${gradientBackground.src}
             border-radius: 0 0 0.5rem 0;
+            color: ${colors.white};
         }
-        .card-block__content__boxes__img {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            max-widht: 100px;
-            overflow: hidden;
-            background: lightgray;
-        }
-        .card-block__content__boxes__img img {
-            object-fit: contain;
-            max-widht: 100px;
-        }
-        .card-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1rem;
-            margin-bottom: 1rem;
+        .description {
+            padding: 1rem;
         }
         .button__div {
             display: flex;
             justify-content: center;
         }
-        @media only screen and (max-width: 1100 px) {
-            .cards {
-            padding-top: 4rem;
-            margin-bottom: 2rem;
+        @media only screen and (max-width: 600 px) {
+            .cards__panels {
+               width: 200px;
             }
-            .card__header {
-            padding: 2rem;
+            .cards__panels__content {
+              width: 200px;
             }
         }
   `}</style>
