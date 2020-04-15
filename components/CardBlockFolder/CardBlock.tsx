@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "../AMP/AmpImage";
 import Link from "next/link";
 import { useAmp } from "next/amp";
 import { AMPurl } from "../../helpers/helpdata";

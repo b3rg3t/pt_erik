@@ -7,16 +7,16 @@ import LazyLoad from "react-lazyload";
 const ContactBlock = (): React.ReactElement => {
   return (
     <>
-      <LazyLoad>
-        <div
-          className="contact-block"
-          style={{
-            // backgroundImage: `url(./images/ropes.jpg)`,
-            backgroundSize: "cover",
-            backgroundPosition: "center center"
-          }}
-        >
-          {/* <div
+
+      <div
+        className="contact-block"
+        style={{
+          // backgroundImage: `url(./images/ropes.jpg)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center center"
+        }}
+      >
+        {/* <div
             className="contact-block__layer"
             style={{
               background: `${profileData.overlayColor}`,
@@ -24,12 +24,14 @@ const ContactBlock = (): React.ReactElement => {
             }}
           /> */}
 
-          <div className="contact-block__container">
+        <div className="contact-block__container">
+          <LazyLoad height={350}>
             <MapContainer />
-            <Form />
-          </div>
+          </LazyLoad>
+          <Form />
         </div>
-      </LazyLoad>
+      </div>
+
       <ContactStyling />
     </>
   );

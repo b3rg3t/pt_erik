@@ -6,25 +6,27 @@ const CardBlockStyling = () => (
         .cards {
             min-height: ${blockHeight.height};
             max-width: 100%;
+            background: white;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: white;
-            padding-top: 3rem;
-            padding-bottom: 3rem;
+            padding: 2rem 1rem;
         }
         .cards__block {
-            max-width: 1200px;
-            display: grid;
-            grid-gap: 1rem;
+            max-width: 1000px;
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-column-gap: 1rem;
-            grid-row-gap: 1rem;
+            align-items: center;
+            height: 100%;
         }
         .cards__panels {
+            margin: 0.5rem;
+            flex: 1 1 300px;
+            flex-grow: 1;
             postion: relative;
+            min-height: 300px;
+            max-width: 300px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 0.5rem;
             overflow: hidden;
@@ -33,18 +35,17 @@ const CardBlockStyling = () => (
             box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
         }
         .cards__panels__content {
-            postition: absolute;
-            top: 0;
-            height: 300px;
-            width: 300px;
-           height: 100%;
+           postition: absolute; 
+           width: 100%;
+           min-height: 300px;
+           top: 0;
+           height: 100%;    
            display: flex;
            flex-direction: column;
            justify-content: space-between;
         }
         .header{
             display: flex;
-
         }
         .h-tag {
             max-widht: 100px;
@@ -57,7 +58,7 @@ const CardBlockStyling = () => (
         .description {
             padding: 1rem;
         }
-        .card-btn {
+        .button__div .card-btn {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -70,13 +71,12 @@ const CardBlockStyling = () => (
             display: flex;
             justify-content: center;
         }
-        @media only screen and (max-width: 1100 px) {
-            .cards {
-            padding-top: 4rem;
-            margin-bottom: 2rem;
+        @media only screen and (max-width: 600 px) {
+            .cards__panels {
+               width: 200px;
             }
-            .card__header {
-            padding: 2rem;
+            .cards__panels__content {
+              width: 200px;
             }
         }
   `}</style>
