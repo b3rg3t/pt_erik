@@ -110,6 +110,7 @@ const AmpStyling = (): React.ReactElement => {
         transition: all 0.5s ease;
         height: 40px;
         width: 160px;
+        color: white;
         font-weight: 700;
         font-size: 1rem;
         display: flex;
@@ -117,15 +118,16 @@ const AmpStyling = (): React.ReactElement => {
         align-items: center;
         margin-bottom: 1rem;
         background: none;
+        border-radius: 30px;
         border: 1px solid white;
         padding: 0.5rem 1rem;
         cursor: pointer;
       }
-      .main-btn:hover {
+      .card-btn:hover {
         background: ${colors.primary};
         border: 1px solid ${colors.primary};
       }
-      .main-btn:focus {
+      .card-btn:focus {
         outline: none;
         border: 1px solid ${colors.primary};
         border-radius: 30px;
