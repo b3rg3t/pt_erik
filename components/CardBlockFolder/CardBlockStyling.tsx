@@ -58,15 +58,6 @@ const CardBlockStyling = () => (
         .description {
             padding: 1rem;
         }
-        .button__div .card-btn {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1rem;
-            margin-bottom: 1rem;
-            background: none;
-            border: 1px solid white;
-        }
         .button__div {
             display: flex;
             justify-content: center;

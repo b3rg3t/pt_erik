@@ -106,6 +106,30 @@ const AmpStyling = (): React.ReactElement => {
         background-color: ${colors.lightgray};
         border: 1px solid ${colors.lightgray};
       }
+      .card-btn {
+        transition: all 0.5s ease;
+        height: 40px;
+        width: 160px;
+        font-weight: 700;
+        font-size: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        background: none;
+        border: 1px solid white;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+      }
+      .main-btn:hover {
+        background: ${colors.primary};
+        border: 1px solid ${colors.primary};
+      }
+      .main-btn:focus {
+        outline: none;
+        border: 1px solid ${colors.primary};
+        border-radius: 30px;
+      }
       .external-link {
         transition: all 0.5s ease;
         display: flex;
