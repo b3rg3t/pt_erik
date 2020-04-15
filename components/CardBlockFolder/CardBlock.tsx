@@ -7,7 +7,6 @@ import CardBlockStyling from "./CardBlockStyling";
 const CardBlock = (props: any): React.ReactElement => {
   const isAmp = useAmp();
   const cardData = props.allCards;
-  console.log(cardData)
   return (
     cardData && (
       <>
