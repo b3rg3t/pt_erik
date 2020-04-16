@@ -16,7 +16,7 @@ const Footer = (): React.ReactElement => {
               Links.map((link, index) => (
                 <li key={index}>
                   <Link href={link.href + (isAmp ? AMPurl.url : "")}>
-                    <a>{link.title}</a>
+                    <a>{link.title.toUpperCase()}</a>
                   </Link>
                 </li>
               ))}

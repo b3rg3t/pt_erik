@@ -76,7 +76,7 @@ const Navigation = ({ scrollValue }): React.ReactElement => {
                   Links.map((link, index) => (
                     <li key={index}>
                       <Link href={link.href}>
-                        <a>{link.title}</a>
+                        <a>{link.title.toUpperCase()}</a>
                       </Link>
                     </li>
                   ))}

@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { colors, SocialMedia, Links, AMPurl, gradientBackground } from "../../helpers/helpdata";
+import { SocialMedia, Links, AMPurl, gradientBackground } from "../../helpers/helpdata";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import { useAmp } from "next/amp";
 import Logo from "./Logo";
@@ -20,7 +20,7 @@ const AmpSidebar = (): React.ReactElement => {
                 {Links.map((link, index) => (
                   <li key={index}>
                     <Link href={link.href + (isAmp ? AMPurl.url : "")}>
-                      <a>{link.title}</a>
+                      <a>{link.title.toUpperCase()}</a>
                     </Link>
                   </li>
                 ))}

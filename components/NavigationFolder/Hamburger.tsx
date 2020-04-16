@@ -162,7 +162,7 @@ class Hamburger extends React.Component {
                   className="ham-li"
                 >
                   <Link href={link.href}>
-                    <a className="ham-links">{link.title}</a>
+                    <a className="ham-links">{link.title.toUpperCase()}</a>
                   </Link>
                 </li>
               ))}
