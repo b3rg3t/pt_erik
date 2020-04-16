@@ -9,8 +9,11 @@ const CardBlockStyling = () => (
             background: white;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             align-items: center;
             padding: 2rem 1rem;
+            position: relative;
+            z-index: 10;
         }
         .cards__block {
             max-width: 1000px;
@@ -19,6 +22,12 @@ const CardBlockStyling = () => (
             justify-content: center;
             align-items: center;
             height: 100%;
+        }
+        .card-block__layer {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: -1;
         }
         .cards__panels {
             margin: 0.5rem;
@@ -44,10 +53,10 @@ const CardBlockStyling = () => (
            flex-direction: column;
            justify-content: space-between;
         }
-        .header{
+        .cards__panels__content__header{
             display: flex;
         }
-        .h-tag {
+        .cards__panels__content__h-tag {
             max-widht: 100px;
             font-size: 1.4rem;
             padding: 0.5rem 1rem;
@@ -55,10 +64,10 @@ const CardBlockStyling = () => (
             border-radius: 0 0 0.5rem 0;
             color: ${colors.white};
         }
-        .description {
+        .cards__panels__content__description {
             padding: 1rem;
         }
-        .button__div {
+        .cards__panels__content__button__div {
             display: flex;
             justify-content: center;
         }

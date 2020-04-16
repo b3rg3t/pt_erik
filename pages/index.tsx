@@ -39,11 +39,52 @@ interface heroblock {
   }
 }
 
+export interface contactblock {
+  id: string;
+  opacity: number;
+  secondtext?: string;
+  backgroundimage: {
+    alt: string;
+    url: string;
+    width: string;
+    height: string;
+  }
+  toptext?: string;
+  title?: string;
+  textcolor: {
+    hex: string;
+  }
+  overlaycolor: {
+    hex: string;
+  }
+}
+export interface cardblock {
+  id: string;
+  opacity: number;
+  secondtext?: string;
+  backgroundimage: {
+    alt: string;
+    url: string;
+    width: string;
+    height: string;
+  }
+  toptext?: string;
+  title?: string;
+  textcolor: {
+    hex: string;
+  }
+  overlaycolor: {
+    hex: string;
+  }
+}
+
 interface IndexProps {
   response: {
     allHomepages: typescriptobj,
     allCardoffers: allCardoffersProps,
     heroblock: heroblock,
+    contactblock: contactblock,
+    cardblock: cardblock
   }
 }
 

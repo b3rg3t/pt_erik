@@ -1,5 +1,6 @@
 import React from "react";
 import { useAmp } from "next/amp";
+import LazyLoad from "react-lazyload";
 import { contactBlockStyle } from "../../helpers/helpdata";
 
 const MapContainer = (): React.ReactElement => {
@@ -19,6 +20,7 @@ const MapContainer = (): React.ReactElement => {
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130265.72825529518!2d17.841971702265422!3d59.32624196689264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640bcb%3A0xa80d27d3679d7766!2sStockholm!5e0!3m2!1ssv!2sse!4v1586957984746!5m2!1ssv!2sse"
           ></amp-iframe>
         ) : (
+          <LazyLoad height={350}>
             <iframe
               title="Linköping"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d130265.72825529518!2d17.841971702265422!3d59.32624196689264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f763119640bcb%3A0xa80d27d3679d7766!2sStockholm!5e0!3m2!1ssv!2sse!4v1586957984746!5m2!1ssv!2sse"
@@ -28,6 +30,7 @@ const MapContainer = (): React.ReactElement => {
               style={{ border: 0 }}
               allowFullScreen=""
             ></iframe>
+            </LazyLoad>
           )}
       </section>
       <style jsx>{`
