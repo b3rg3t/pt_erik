@@ -11,7 +11,7 @@ const CardBlockStyling = () => (
             justify-content: center;
             flex-direction: column;
             align-items: center;
-            padding: 2rem 1rem;
+            padding: 2rem 0;
             position: relative;
             z-index: 10;
         }
