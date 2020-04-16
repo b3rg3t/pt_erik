@@ -55,6 +55,10 @@ export const body = JSON.stringify({
           button
           buttontext
           bottomtext
+          linkpage {
+            id
+            title
+          }
           tags
           routepage
           textcolor {
@@ -75,22 +79,15 @@ export const body = JSON.stringify({
           title
           toptext
         }
-        allArticles(orderBy: position_ASC){
+        contactblock {
           id
           opacity
-          picposition
           secondtext
           backgroundimage {
             alt
             url
             width
             height
-          }
-          smallimage {
-            alt
-            url
-            height
-            width
           }
           toptext
           title
@@ -100,6 +97,25 @@ export const body = JSON.stringify({
           overlaycolor {
             hex
           }
-        },
+        }
+        cardblock {
+          id
+          opacity
+          secondtext
+          backgroundimage {
+            alt
+            url
+            width
+            height
+          }
+          toptext
+          title
+          textcolor {
+            hex
+          }
+          overlaycolor {
+            hex
+          }
+        }
       }`
 });

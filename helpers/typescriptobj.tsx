@@ -10,6 +10,10 @@ export interface typescriptobj {
     tags?: { data?: [string] },
     toptext: string;
     secondtext?: string;
+    linkpage?: {
+        id?: string;
+        title?: string;
+    }
     bottomtext?: string;
     smallImagePosition: boolean;
     opacity: number;

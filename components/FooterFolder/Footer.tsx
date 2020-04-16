@@ -67,7 +67,7 @@ const Footer = (): React.ReactElement => {
         }
         .footer__link {
           display: flex;
-          margin: 0.5rem 0;
+          margin: 0 0 2rem 0;
           padding: 1rem;
           border-top: 1px solid ${colors.secondary};
           border-bottom: 1px solid ${colors.secondary};
