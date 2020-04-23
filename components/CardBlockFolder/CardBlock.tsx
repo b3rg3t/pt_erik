@@ -4,6 +4,7 @@ import { useAmp } from "next/amp";
 import { AMPurl, colors } from "../../helpers/helpdata";
 import CardBlockStyling from "./CardBlockStyling";
 import { cardblock } from "../../pages/index";
+import Loading from "../loading";
 
 interface CardBlockProps {
   allCards: [{
@@ -29,7 +30,7 @@ const CardBlock = ({ allCards, cardblock }: CardBlockProps): React.ReactElement 
   const isAmp = useAmp();
   const cardData = allCards;
   return (
-    cardData.length > 0 && (
+    cardData ? (
       <>
         <div
           className="cards"
@@ -85,7 +86,7 @@ const CardBlock = ({ allCards, cardblock }: CardBlockProps): React.ReactElement 
         </div>
         <CardBlockStyling />
       </>
-    )
+    ): <Loading/>
   );
 };
 

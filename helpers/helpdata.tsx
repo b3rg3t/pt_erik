@@ -1,7 +1,6 @@
 export const heights = {
   navHeigt: "60px",
   footerheight: "200px",
-  url: "https://www.usebasin.com/f/c177f0920b56.json"
 };
 
 export const contactBlockStyle = {

@@ -18,7 +18,7 @@ export interface TraningProps {
 
 const Traning = ({ response }: TraningProps): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | Träning`}>
+    <Layout title={`${SEOdata.title} | Träning`} >
       {response.allTranings ? <TrainingBlock profiles={response.allTranings} /> : <Loading />}
     </Layout>
   );
@@ -36,7 +36,7 @@ Traning.getInitialProps = async (): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response: response.data };
+  return { response: response?.data ? response.data : "" };
 };
 
 export default Traning;

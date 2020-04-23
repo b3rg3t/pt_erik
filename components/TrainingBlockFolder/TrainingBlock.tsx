@@ -18,8 +18,8 @@ const TrainingBlock = ({ profiles }: TrainingBlockProps): React.ReactElement => 
         <>
             {profiles.map((profil, index) => {
                 const id = profil?.linkpage?.id;
-                const href = profil.routepage && `/${profil.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
-                const as = profil.routepage && `/${profil.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
+                const href = profil?.routepage && `/${profil.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
+                const as = profil?.routepage && `/${profil.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
                 return (
                     <div
                         key={profil?.id ? profil?.id : index}

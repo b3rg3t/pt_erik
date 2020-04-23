@@ -7,6 +7,7 @@ import { body } from "../config/priceconfig";
 import PriceList from "../components/PriceListFolder/PriceList";
 import { useAmp } from "next/amp";
 import fetch from 'isomorphic-unfetch';
+import Loading from "../components/loading";
 
 
 export const config = { amp: "hybrid" };
@@ -56,7 +57,7 @@ const Priser = ({ response }: PrisProps): React.ReactElement => {
           Den träning jag lär ut är bred och såklart anpassas den efter individ
           och förfrågan.
         </p>
-        <PriceList pricelist={response.allPricelists} />
+        {response.allPricelists ? <PriceList pricelist={response.allPricelists} /> : <Loading />}
         <p style={{ padding: "1rem 1rem 0.5rem 1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
         <div style={{ paddingTop: "1rem" }}>
           <Link href={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`} as={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}>
@@ -81,7 +82,7 @@ Priser.getInitialProps = async (): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response: response.data };
+  return { response: response?.data ? response.data : "" };
 };
 
 export default Priser;

@@ -13,6 +13,14 @@ interface AmpImage {
   styling?: boolean;
 }
 
+const PlaceHolderImage = (): React.ReactElement => {
+  return (
+    <div style={{width: "350px", height: "350px"}}>
+
+    </div>
+  )
+}
+
 const Image = (image: AmpImage): React.ReactElement => {
   const isAmp = useAmp();
   if (image && image.src) {
@@ -27,7 +35,7 @@ const Image = (image: AmpImage): React.ReactElement => {
         style={{ borderRadius: image.styling ? "50%" : "0" }}
       ></amp-img>
     ) : (
-      <LazyLoad height={350}>
+      <LazyLoad height={350} offset={200} placeholder={<PlaceHolderImage />}>
         <img
           className={image.className}
           src={image.src}
