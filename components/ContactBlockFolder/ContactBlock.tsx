@@ -3,13 +3,14 @@ import Form from "../FormFolder/Form";
 import MapContainer from "../MapFolder/MapContainer";
 import ContactStyling from "./ContactStyling";
 import { contactblock } from "../../pages/index";
+import Loading from "../loading";
 
 interface ContactBlockProps {
   contactblock: contactblock
 }
 
 const ContactBlock = ({ contactblock }: ContactBlockProps): React.ReactElement => {
-  return contactblock && (
+  return contactblock ? (
     <>
       <div
         className="contact-block"
@@ -43,7 +44,7 @@ const ContactBlock = ({ contactblock }: ContactBlockProps): React.ReactElement =
       </div>
       <ContactStyling />
     </>
-  );
+  ) : <Loading />;
 };
 
 export default ContactBlock;

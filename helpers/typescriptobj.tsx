@@ -8,7 +8,7 @@ export interface typescriptobj {
     routepage?: [string];
     imageafter: boolean,
     tags?: { data?: [string] },
-    toptext: string;
+    toptext?: string;
     secondtext?: string;
     linkpage?: {
         id?: string;
@@ -16,17 +16,17 @@ export interface typescriptobj {
     }
     bottomtext?: string;
     smallImagePosition: boolean;
-    opacity: number;
-    overlaycolor: { hex: string };
-    textcolor: { hex: string };
+    opacity?: number;
+    overlaycolor?: { hex: string };
+    textcolor?: { hex: string };
     backgroundimage?: {
-        alt: string;
+        alt?: string;
         url: string;
         width: string;
         height: string;
     };
-    smallimage: {
-        alt: string;
+    smallimage?: {
+        alt?: string;
         url: string;
         width: string;
         height: string;

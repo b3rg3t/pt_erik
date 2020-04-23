@@ -2,13 +2,34 @@ import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { blockHeight } from "../../helpers/helpdata";
 
-const FirstComponent = (props: any): React.ReactElement => {
+interface FirstComponentProps {
+  hero: {
+    backgroundimage: {
+      alt?: string;
+      url: string;
+      width: string;
+      height: string;
+    }
+    id: string;
+    header: string;
+    content: string;
+    opacity?: number;
+    overlaycolor?: {
+      hex: string;
+    }
+    textcolor?: {
+      hex: string;
+    }
+  }
+}
+
+const FirstComponent = ({ hero }: FirstComponentProps): React.ReactElement => {
   return (
     <>
       <div
         className="hero"
         style={{
-          backgroundImage: `url(${props?.hero?.backgroundimage?.url})`,
+          backgroundImage: `url(${hero?.backgroundimage?.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
         }}
@@ -16,9 +37,9 @@ const FirstComponent = (props: any): React.ReactElement => {
         <div className="hero__layer"></div>
         <div className="hero__content">
           <div className="hero__box">
-            <h1 style={{ color: props.hero.textcolor.hex }}>{props.hero.header}</h1>
-            <p style={{ color: props.hero.textcolor.hex }}>
-              {props.hero.content}
+            <h1 style={{ color: hero.textcolor.hex }}>{hero.header}</h1>
+            <p style={{ color: hero.textcolor.hex }}>
+              {hero.content}
             </p>
           </div>
           <div className="hero__bottom-arrow">
@@ -40,7 +61,7 @@ const FirstComponent = (props: any): React.ReactElement => {
         }
         .hero__layer {
           position: absolute;
-          background: ${props.hero.overlaycolor.hex};
+          background: ${hero.overlaycolor.hex};
           top: 50%;
           left: 50%;
           min-width: 100%;
@@ -52,7 +73,7 @@ const FirstComponent = (props: any): React.ReactElement => {
           -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
           overflow: hidden;
-          opacity: ${props.hero.opacity};
+          opacity: ${hero.opacity};
           z-index: 5;
         }
         .hero__content {

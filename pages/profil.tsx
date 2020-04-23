@@ -7,6 +7,7 @@ import { body } from "../config/profilconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
 import fetch from 'isomorphic-unfetch';
 import { typescriptobj } from "../helpers/typescriptobj";
+import Loading from "../components/loading";
 
 export const config = { amp: "hybrid" };
 
@@ -52,8 +53,8 @@ interface ProfilProps {
 const Profil = ({ response }: ProfilProps): React.ReactElement => {
   return (
     <Layout title={`${SEOdata.title} | Profil`}>
-      <TrainingBlock profiles={response.allProfiles} />
-      <ProfilBlock profil={response.education} />
+      {response.allProfiles ? <TrainingBlock profiles={response.allProfiles} /> : <Loading />}
+      {response.education ? <ProfilBlock profil={response.education} /> : <Loading />}
     </Layout>
   );
 };
