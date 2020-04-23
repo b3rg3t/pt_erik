@@ -29,7 +29,7 @@ const PopUp = ({
           <button className="popup-modal__close" onClick={closeModal}>
             <IoIosClose />
           </button>
-          {messageStatus ? (
+          {!submitMessage.includes("404") ? (
             <>
               <h3>
                 {submitMessage}

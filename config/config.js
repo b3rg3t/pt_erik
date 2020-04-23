@@ -1,9 +1,9 @@
-export const BASE_URL = "https://graphql.datocms.com/";
+export const BASE_URL = process.env.REACT_APP_DATABASE_URL;
 
 export const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Authorization: `Bearer d08a1eb18ab572e54dc724b47fd6ad`
+  Authorization: `Bearer ${process.env.REACT_APP_API_KEY}`
 };
 
 export const body = JSON.stringify({

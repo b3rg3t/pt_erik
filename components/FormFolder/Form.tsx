@@ -30,7 +30,7 @@ const Form = (): React.ReactElement => {
     };
     let response;
     try {
-      const postBasin = await axios.post(`${heights.url}`, data, {
+      const postBasin = await axios.post(`${process.env.USEBASIN_EMAIL}`, data, {
         headers
       });
       response = await postBasin;
@@ -47,7 +47,10 @@ const Form = (): React.ReactElement => {
     } catch (error) {
       console.log(error);
       setLoading(false);
-      setMessageStatus(false);
+      setName("");
+      setEmail("");
+      setMessage("");
+      setMessageStatus(true);
       setSubmitMessage(error.message);
     }
   };
@@ -76,9 +79,9 @@ const Form = (): React.ReactElement => {
           <form
             className="contact__form"
             onSubmit={handleSubmit}
-            verify-xhr={isAmp ? `${heights.url}` : null}
+            verify-xhr={isAmp ? `${process.env.USEBASIN_EMAIL}` : null}
             method="post"
-            action-xhr={isAmp ? `${heights.url}` : null}
+            action-xhr={isAmp ? `${process.env.USEBASIN_EMAIL}` : null}
             target="_top"
           >
             <h3 className="contact__head">Kontakt</h3>

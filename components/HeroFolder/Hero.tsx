@@ -1,6 +1,7 @@
 import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { blockHeight } from "../../helpers/helpdata";
+import Loading from "../loading";
 
 interface FirstComponentProps {
   hero: {
@@ -24,7 +25,7 @@ interface FirstComponentProps {
 }
 
 const FirstComponent = ({ hero }: FirstComponentProps): React.ReactElement => {
-  return (
+  return ( hero ?
     <>
       <div
         className="hero"
@@ -138,7 +139,7 @@ const FirstComponent = ({ hero }: FirstComponentProps): React.ReactElement => {
         }
       `}</style>
     </>
-  );
+  : <Loading />);
 };
 
 export default FirstComponent;
