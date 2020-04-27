@@ -31,14 +31,35 @@ export interface PrisListaProps {
     hex: string;
   }
 }
+export interface priceblockprops {
+  id: string;
+  opacity: number;
+  secondtext?: string;
+  backgroundimage: {
+    alt?: string;
+    url: string;
+    width: string;
+    height: string;
+  }
+  toptext?: string;
+  title?: string;
+  textcolor: {
+    hex: string;
+  }
+  overlaycolor: {
+    hex: string;
+  }
+}
 export interface PrisProps {
   response: {
-    allPricelists: PrisListaProps[]
+    allPricelists: PrisListaProps[],
+    priceblock: priceblockprops
   }
 }
 
 const Priser = ({ response }: PrisProps): React.ReactElement => {
   const isAmp = useAmp();
+  console.log(response.priceblock)
   return (
     <Layout title={`${SEOdata.title} | Priser`} navbar={true}>
       <div
@@ -48,17 +69,16 @@ const Priser = ({ response }: PrisProps): React.ReactElement => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
-        <h2>Priser</h2>
-        <p style={{ padding: "1rem" }}>
-          Den träning jag lär ut är bred och såklart anpassas den efter individ
-          och förfrågan.
+        <h2 style={{ color: `${response.priceblock?.textcolor?.hex}` }}>{response.priceblock.title}</h2>
+        <p style={{ color: `${response.priceblock?.textcolor?.hex}`, padding: "1rem" }}>
+          {response.priceblock.toptext}
         </p>
         <PriceList pricelist={response.allPricelists} />
-        <p style={{ padding: "1rem 1rem 0.5rem 1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
-        <div style={{ paddingTop: "1rem" }}>
+        <p style={{ color: `${response.priceblock?.textcolor?.hex}`, padding: "1rem" }}>{response.priceblock.secondtext}</p>
+        <div style={{  paddingTop: "1rem" }}>
           <Link href={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`} as={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}>
             <a className="main-btn course-btn" style={{ display: "flex", justifyContent: "center" }}>Kontakt</a>
           </Link>

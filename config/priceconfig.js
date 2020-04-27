@@ -17,6 +17,15 @@ export const body = JSON.stringify({
           hex
         }
       }
+      priceblock {
+        id
+        secondtext
+        toptext
+        title
+        textcolor {
+          hex
+        }
+      }
     }
     `
 });

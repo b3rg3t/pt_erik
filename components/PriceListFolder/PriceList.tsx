@@ -89,6 +89,7 @@ const PriceList = ({ pricelist }:PriceListProps): React.ReactElement => {
           align-items: center;
           margin: 1rem;
           min-height: 300px;
+          background-color: white;
           max-width: 300px;
           -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
           -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);

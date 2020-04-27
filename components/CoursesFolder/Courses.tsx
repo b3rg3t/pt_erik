@@ -15,10 +15,10 @@ const Courses = (props: any): React.ReactElement => {
       <CoursesStyling />
       <div className="course">
         <div className="course__b">
-          <h2>Varianter</h2>
+          <h2>Massage erbjudanden</h2>
           <div className="course__block">
             {courseData &&
-              courseData.map((course, index) => {
+              courseData.map((course) => {
                 return (
                   <article key={course.id} className="course__panels">
                     <div className="course__panels__div background">
