@@ -1,0 +1,7 @@
+{
+    "env": {
+        "REACT_APP_API_KEY": "@react_app_api_key",
+        "REACT_APP_DATABASE_URL": "@react_app_database_url",
+        "USEBASIN_EMAIL": "@usebasin_email"
+    }
+}

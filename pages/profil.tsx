@@ -19,8 +19,8 @@ export interface EducationProps {
   roundedimage: boolean;
   picposition: boolean;
   smallimage: {
-    alt: string;
-    id: string;
+    alt?: string;
+    id?: string;
     width: string;
     height: string;
     url: string;
@@ -30,8 +30,8 @@ export interface EducationProps {
   }
   title: string;
   backgroundimage: {
-    alt: string;
-    id: string;
+    alt?: string;
+    id?: string;
     height: string;
     url: string;
     width: string;

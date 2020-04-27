@@ -20,13 +20,13 @@ export interface typescriptobj {
     overlaycolor: { hex: string };
     textcolor: { hex: string };
     backgroundimage?: {
-        alt: string;
+        alt?: string;
         url: string;
         width: string;
         height: string;
     };
     smallimage: {
-        alt: string;
+        alt?: string;
         url: string;
         width: string;
         height: string;

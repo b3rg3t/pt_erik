@@ -13,7 +13,7 @@ interface allCardoffersProps {
   name: string;
   routepage: string;
   smallpic: {
-    alt: string;
+    alt?: string;
     height: string;
     width: string;
     url: string;
@@ -22,7 +22,7 @@ interface allCardoffersProps {
 }
 interface heroblock {
   backgroundimage: {
-    alt: string;
+    alt?: string;
     url: string;
     width: string;
     height: string;
@@ -44,7 +44,7 @@ export interface contactblock {
   opacity: number;
   secondtext?: string;
   backgroundimage: {
-    alt: string;
+    alt?: string;
     url: string;
     width: string;
     height: string;
@@ -63,7 +63,7 @@ export interface cardblock {
   opacity: number;
   secondtext?: string;
   backgroundimage: {
-    alt: string;
+    alt?: string;
     url: string;
     width: string;
     height: string;

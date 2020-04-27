@@ -82,7 +82,7 @@ const AmpStyling = (): React.ReactElement => {
       .main-btn {
         transition: all 0.5s ease;
         height: 40px;
-        width: 160px;
+        width: 180px;
         font-weight: 700;
         font-size: 1rem;
         background-color: ${colors.secondary};
@@ -138,7 +138,7 @@ const AmpStyling = (): React.ReactElement => {
         align-items: center;
         justify-content: center;
         height: 40px;
-        width: 160px;
+        width: 180px;
         font-weight: 700;
         font-size: 1rem;
         background-color: ${colors.secondary};
