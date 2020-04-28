@@ -10,7 +10,7 @@ import { typescriptobj } from "../helpers/typescriptobj";
 
 export const config = { amp: "hybrid" };
 
-interface allMassageoffersProps {
+export interface allMassageoffersProps {
   id: string;
   price: string;
   time: number;
@@ -18,15 +18,15 @@ interface allMassageoffersProps {
   content: string;
   position: string;
   image: {
-    alt: string;
+    alt?: string;
     url: string;
-    height: string;
-    width: string;
+    height: string | number;
+    width: string | number;
   }
 }
 interface MassageProps {
   response: {
-    allMassageoffers: allMassageoffersProps;
+    allMassageoffers: [allMassageoffersProps];
     massage: typescriptobj;
   }
 }

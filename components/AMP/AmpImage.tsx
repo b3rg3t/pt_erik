@@ -4,8 +4,8 @@ import { useAmp } from "next/amp";
 
 interface AmpImage {
   src: string;
-  width?: string;
-  height?: string;
+  width?: string | number;
+  height?: string | number;
   alt: string;
   layout?: string;
   className?: string;

@@ -6,19 +6,24 @@ import { useAmp } from "next/amp";
 import { AMPurl } from "../../helpers/helpdata";
 
 import CoursesStyling from "./CoursesStyling";
+import { allMassageoffersProps } from "../../pages/massage";
 
-const Courses = (props: any): React.ReactElement => {
-  const courseData = props.offers;
+interface CoursesProps {
+  offers: [allMassageoffersProps]
+}
+
+const Courses = ({ offers }: CoursesProps): React.ReactElement => {
+  const courseData = offers;
   const isAmp = useAmp();
   return courseData ? (
     <>
       <CoursesStyling />
       <div className="course">
         <div className="course__b">
-          <h2>Massage erbjudanden</h2>
+          <h2 style={{ padding: "0 2rem" }}>Massage erbjudanden</h2>
           <div className="course__block">
             {courseData &&
-              courseData.map((course) => {
+              courseData.map(course => {
                 return (
                   <article key={course.id} className="course__panels">
                     <div className="course__panels__div background">
@@ -26,8 +31,8 @@ const Courses = (props: any): React.ReactElement => {
                         <Image
                           src={course?.image.url}
                           alt={course?.image.alt}
-                          height={isAmp ? course?.image.height : "200"}
-                          width={isAmp ? course?.image.width : "auto"}
+                          height={isAmp ? course?.image.height : "auto"}
+                          width={isAmp ? course?.image.width : "350"}
                           layout="intrinsic"
                         />
                       </div>

@@ -65,7 +65,7 @@ const CoursesStyling = (): React.ReactElement => {
         box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
       }
       h2 {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
       }
       .course__panels__div {
         display: flex;
@@ -125,6 +125,12 @@ const CoursesStyling = (): React.ReactElement => {
         }
         .course__panels {
           margin-bottom: 2rem;
+        }
+        .course__panels__div__img img {
+          max-width: 350px;
+          max-height: 100%;
+          height: auto;
+          object-fit: cover;
         }
       }
     `}</style>
