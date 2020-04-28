@@ -1,6 +1,6 @@
 export const body = JSON.stringify({
   query: `query GetAllData {
-    allTranings(orderBy: _createdAt_ASC) {
+    allTranings(orderBy: position_ASC) {
       id
       button
       buttontext

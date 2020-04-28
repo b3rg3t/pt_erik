@@ -8,7 +8,7 @@ export const headers = {
 
 export const body = JSON.stringify({
   query: `query GetAllData {
-        allCardoffers(orderBy: _createdAt_ASC) {
+        allCardoffers(orderBy: position_ASC) {
           id
           name
           routepage
@@ -42,7 +42,7 @@ export const body = JSON.stringify({
             hex
           }
         }
-        allHomepages(orderBy: _createdAt_ASC) {
+        allHomepages(orderBy: position_ASC) {
           id
           opacity
           overlaycolor {

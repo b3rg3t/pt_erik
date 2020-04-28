@@ -1,6 +1,6 @@
 export const body = JSON.stringify({
   query: `query GetAllData {
-    allMassageoffers(orderBy: _createdAt_ASC) {
+    allMassageoffers(orderBy: position_ASC) {
             id
             price
             time

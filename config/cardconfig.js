@@ -1,6 +1,6 @@
 export const body = JSON.stringify({
     query: `query GetAllData {
-        allCardoffers(orderBy: _createdAt_ASC) {
+        allCardoffers(orderBy: position_ASC) {
             id
             name
             smallpic {
