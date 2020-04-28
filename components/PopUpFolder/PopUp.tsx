@@ -6,13 +6,13 @@ import { useOnClickOutside } from "../../helpers/hooks";
 
 interface PopUpProps {
   submitMessage: string;
-  messageStatus: boolean;
   handleClick(status: boolean): void;
+  showErrorMessage: string;
 }
 
 const PopUp = ({
   submitMessage,
-  messageStatus,
+  showErrorMessage,
   handleClick
 }: PopUpProps): React.ReactElement => {
   const ref = useRef();
@@ -29,7 +29,7 @@ const PopUp = ({
           <button className="popup-modal__close" onClick={closeModal}>
             <IoIosClose />
           </button>
-          {messageStatus ? (
+          {showErrorMessage === "false" ? (
             <>
               <h3>
                 {submitMessage}

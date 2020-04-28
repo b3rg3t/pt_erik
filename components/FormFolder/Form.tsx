@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Loading from "../loading";
 import { colors, heights } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 import { contactBlockStyle } from "../../helpers/helpdata";
@@ -13,7 +12,8 @@ const Form = (): React.ReactElement => {
   const [message, setMessage] = useState("");
   const [loading, setLoading] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-  const [messageStatus, setMessageStatus] = useState(false);
+  const [showPopUp, setShowPopUp] = useState(false);
+  const [showErrorMessage, setShowErrorMessage] = useState("");
 
   const isAmp = useAmp();
 
@@ -39,29 +39,34 @@ const Form = (): React.ReactElement => {
         setName("");
         setEmail("");
         setMessage("");
-        setMessageStatus(true);
+        setShowPopUp(true);
         setSubmitMessage("Meddelande skickat!");
+        setShowErrorMessage("false");
       } else {
         console.log("Something went wrong" + response.status);
       }
     } catch (error) {
       console.log(error);
       setLoading(false);
-      setMessageStatus(false);
+      setName("");
+      setEmail("");
+      setMessage("");
+      setShowPopUp(true);
       setSubmitMessage(error.message);
+      setShowErrorMessage("error");
     }
   };
   const handleClick = (status: boolean) => {
-    setMessageStatus(status);
+    setShowPopUp(status);
   };
   const isDisabled = message.length > 0 && email.length > 0 && name.length > 0;
   return (
     <>
-      {messageStatus && (
+      {showPopUp && (
         <PopUp
           submitMessage={submitMessage}
-          messageStatus={messageStatus}
           handleClick={handleClick}
+          showErrorMessage={showErrorMessage}
         />
       )}
 
@@ -76,9 +81,9 @@ const Form = (): React.ReactElement => {
           <form
             className="contact__form"
             onSubmit={handleSubmit}
-            verify-xhr={isAmp ? `${heights.url}` : null}
+            verify-xhr={isAmp ? `${process.env.USEBASIN_EMAIL}` : null}
             method="post"
-            action-xhr={isAmp ? `${heights.url}` : null}
+            action-xhr={isAmp ? `${process.env.USEBASIN_EMAIL}` : null}
             target="_top"
           >
             <h3 className="contact__head">Kontakt</h3>
@@ -164,7 +169,6 @@ const Form = (): React.ReactElement => {
           -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
           -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
           box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.16);
-
         }
         .contact input:focus {
           outline: none;

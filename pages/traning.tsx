@@ -36,7 +36,7 @@ Traning.getInitialProps = async (): Promise<{}> => {
   } catch (error) {
     console.error(error);
   }
-  return { response: response.data };
+  return { response: response?.data ? response.data : "" };
 };
 
 export default Traning;
