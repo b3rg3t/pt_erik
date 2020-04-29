@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useAmp } from "next/amp";
-import { AMPurl, colors } from "../../helpers/helpdata";
+import { AMPurl } from "../../helpers/helpdata";
 import CardBlockStyling from "./CardBlockStyling";
 import { cardblock } from "../../pages/index";
 
@@ -62,10 +62,16 @@ const CardBlock = ({ allCards, cardblock }: CardBlockProps): React.ReactElement 
                   backgroundSize: "cover",
                   backgroundPosition: "center center"
                 }}>
-                  <div className="cards__panels__content" style={{
-                    background: `rgb(0,0,0,0.75)`,
-                  }}>
-                    <div className="cards__panels__content__header"><h3 className="cards__panels__content__h-tag">{card.name.toUpperCase()}</h3></div>
+                  <div className="card-block__layer" style={{
+                    background: `#000000`,
+                    opacity: "0.75"
+                  }} />
+                  <div className="cards__panels__content">
+                    <div className="cards__panels__content__header">
+                      <h3 className="cards__panels__content__h-tag">
+                        {card.name.toUpperCase()}
+                      </h3>
+                    </div>
                     <div className="cards__panels__content__description">
                       <p style={{ color: "white" }}>{card.description.substring(0, 180)}</p>
                     </div>
@@ -75,12 +81,13 @@ const CardBlock = ({ allCards, cardblock }: CardBlockProps): React.ReactElement 
                       </Link>
                     </div>
                   </div>
+
                 </article>
               )
             })}
           </div>
           <div className="contact-block__content__text">
-          {cardblock.secondtext ? <p style={{ color: `${cardblock?.textcolor?.hex}`, padding: "0 0 0 0" }}>{cardblock.secondtext}</p> : null}
+            {cardblock.secondtext ? <p style={{ color: `${cardblock?.textcolor?.hex}`, padding: "0 0 0 0" }}>{cardblock.secondtext}</p> : null}
           </div>
         </div>
         <CardBlockStyling />

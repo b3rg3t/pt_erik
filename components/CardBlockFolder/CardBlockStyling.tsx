@@ -12,7 +12,6 @@ const CardBlockStyling = () => (
             flex-direction: column;
             align-items: center;
             padding: 2rem 0;
-            position: relative;
             z-index: 10;
         }
         .cards__block {
@@ -23,25 +22,27 @@ const CardBlockStyling = () => (
             align-items: center;
             height: 100%;
         }
-        .card-block__layer {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            z-index: -1;
-        }
         .cards__panels {
             margin: 0.5rem;
             flex: 1 1 300px;
             flex-grow: 1;
-            postion: relative;
+            position: relative;
             min-height: 300px;
             max-width: 300px;
             background-color: rgba(255, 255, 255, 0.8);
             border-radius: 0.5rem;
             overflow: hidden;
+            z-index: 2;
             -webkit-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
             -moz-box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
             box-shadow: 0px 2px 6px -1px rgba(173, 173, 173, 1);
+        }
+        .card-block__layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.5rem;
+            z-index: -1;
         }
         .cards__panels__content {
            postition: absolute; 
@@ -72,12 +73,7 @@ const CardBlockStyling = () => (
             justify-content: center;
         }
         @media only screen and (max-width: 600 px) {
-            .cards__panels {
-               width: 200px;
-            }
-            .cards__panels__content {
-              width: 200px;
-            }
+
         }
   `}</style>
 )
