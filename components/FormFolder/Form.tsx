@@ -179,6 +179,7 @@ const Form = (): React.ReactElement => {
         }
         .contact textarea {
           width: 100%;
+          resize: none;
           font-family: "Dosis", sans-serif;
           font-weight: 400;
           font-size: 1rem;

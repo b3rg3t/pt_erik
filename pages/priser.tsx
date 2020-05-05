@@ -56,7 +56,6 @@ export interface PrisProps {
 }
 
 const Priser = ({ response }: PrisProps): React.ReactElement => {
-  console.log(response.priceblock)
   return (
     <Layout title={`${SEOdata.title} | Priser`} navbar={true}>
       <PriceBlock response={response} />
