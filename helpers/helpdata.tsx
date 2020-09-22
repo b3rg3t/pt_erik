@@ -46,15 +46,15 @@ export const SEOdata = {
 //Social Media links
 export const SocialMedia = {
   instagram: {
-    url: "https://www.instagram.com/",
+    url: "https://www.instagram.com/erik.johansson.908",
     title: "Instagram"
   },
   facebook: {
-    url: "https://www.facebook.com/",
+    url: "https://www.facebook.com/erik.johansson.908",
     title: "Facebook"
   },
   linkedin: {
-    url: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/in/erik-johansson-3b1bb7a5",
     title: "LinkedIn"
   }
 };
