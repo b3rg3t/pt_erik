@@ -40,7 +40,7 @@ const FirstComponent = (props: any): React.ReactElement => {
         }
         .hero__layer {
           position: absolute;
-          background: ${props.hero.overlaycolor.hex};
+          background: ${props?.hero?.overlaycolor?.hex};
           top: 50%;
           left: 50%;
           min-width: 100%;

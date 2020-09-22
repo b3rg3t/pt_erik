@@ -9,11 +9,12 @@ import ContactBlock from "../components/ContactBlockFolder/ContactBlock";
 import { SEOdata } from "../helpers/helpdata";
 
 const ComponentRenderer = ({ response }): React.ReactElement => {
+  console.log(response.heroblock)
   return (
     <Layout title={`${SEOdata.title} | Hem`}>
         <>
           <section id="hero">
-            <Hero hero={response.heroblock} />
+            {/* <Hero hero={response.heroblock} /> */}
           </section>
           <section id="cards">
             <CardBlock allCards={response.allCardoffers} cardblock={response.cardblock} />
