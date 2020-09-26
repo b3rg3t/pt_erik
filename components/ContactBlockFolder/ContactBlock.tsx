@@ -23,7 +23,7 @@ const ContactBlock = ({ contactblock }: ContactBlockProps): React.ReactElement =
         <div
           className="contact-block__layer"
           style={{
-            background: `${contactblock.overlaycolor.hex}`,
+            background: `${contactblock?.overlaycolor?.hex}`,
             opacity: `${contactblock.opacity}`
           }}
         />

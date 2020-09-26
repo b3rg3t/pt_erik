@@ -2,24 +2,42 @@ import React from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { blockHeight } from "../../helpers/helpdata";
 
-const FirstComponent = (props: any): React.ReactElement => {
+interface HeroProps {
+  hero: {
+    backgroundimage: {
+      alt: string | null;
+      url: string;
+      width: number;
+      height: number;
+    };
+    content: string;
+    header: string;
+    id: string;
+    opacity: number;
+    overlaycolor: { hex: string };
+    textcolor: { hex: string };
+  };
+}
+
+const FirstComponent = ({ hero }: HeroProps): React.ReactElement => {
+  console.log(hero);
   return (
     <>
       <div
         className="hero"
         style={{
-          backgroundImage: `url(${props?.hero?.backgroundimage?.url})`,
+          backgroundImage: `${
+            hero?.backgroundimage?.url && `url(${hero?.backgroundimage?.url})`
+          }`,
           backgroundSize: "cover",
-          backgroundPosition: "center center"
+          backgroundPosition: "center center",
         }}
       >
         <div className="hero__layer"></div>
         <div className="hero__content">
           <div className="hero__box">
-            <h1 style={{ color: props.hero.textcolor.hex }}>{props.hero.header}</h1>
-            <p style={{ color: props.hero.textcolor.hex }}>
-              {props.hero.content}
-            </p>
+            <h1 style={{ color: hero?.textcolor?.hex }}>{hero?.header}</h1>
+            <p style={{ color: hero?.textcolor?.hex }}>{hero?.content}</p>
           </div>
           <div className="hero__bottom-arrow">
             <a className="arrow-down" href="#cards">
@@ -40,7 +58,7 @@ const FirstComponent = (props: any): React.ReactElement => {
         }
         .hero__layer {
           position: absolute;
-          background: ${props?.hero?.overlaycolor?.hex};
+          background: ${hero?.overlaycolor?.hex && hero?.overlaycolor?.hex};
           top: 50%;
           left: 50%;
           min-width: 100%;
@@ -52,7 +70,7 @@ const FirstComponent = (props: any): React.ReactElement => {
           -webkit-transform: translateX(-50%) translateY(-50%);
           transform: translateX(-50%) translateY(-50%);
           overflow: hidden;
-          opacity: ${props.hero.opacity};
+          opacity: ${hero.opacity};
           z-index: 5;
         }
         .hero__content {
@@ -61,7 +79,6 @@ const FirstComponent = (props: any): React.ReactElement => {
         }
         .hero__box {
           padding: 0 2rem;
-          
         }
         .hero p {
           color: white;

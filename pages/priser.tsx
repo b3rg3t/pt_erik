@@ -2,39 +2,40 @@ import React from "react";
 import Layout from "../components/LayoutFolder/Layout";
 import { SEOdata, heights, AMPurl } from "../helpers/helpdata";
 import { BASE_URL, headers } from "../config/config";
-import Link from 'next/link';
+import Link from "next/link";
 import { body } from "../config/priceconfig";
 import PriceList from "../components/PriceListFolder/PriceList";
 import { useAmp } from "next/amp";
-import fetch from 'isomorphic-unfetch';
-
+import fetch from "isomorphic-unfetch";
 
 export const config = { amp: "hybrid" };
 
 export interface PrisListaProps {
   id: string;
   title: string;
-  prices: [{
-    name: string;
-    price: string;
-  }];
+  prices: [
+    {
+      name: string;
+      price: string;
+    }
+  ];
   description: string;
   routepage: [string];
   linkpage: {
     id: string;
     title: string;
-  }
+  };
   secondcolor: {
     hex: string;
-  }
+  };
   color: {
     hex: string;
-  }
+  };
 }
 export interface PrisProps {
   response: {
-    allPricelists: PrisListaProps[]
-  }
+    allPricelists: PrisListaProps[];
+  };
 }
 
 const Priser = ({ response }: PrisProps): React.ReactElement => {
@@ -48,7 +49,7 @@ const Priser = ({ response }: PrisProps): React.ReactElement => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
-          alignItems: "center"
+          alignItems: "center",
         }}
       >
         <h2>Priser</h2>
@@ -57,10 +58,21 @@ const Priser = ({ response }: PrisProps): React.ReactElement => {
           och förfrågan.
         </p>
         <PriceList pricelist={response.allPricelists} />
-        <p style={{ padding: "1rem 1rem 0.5rem 1rem" }}>Hör gärna av dig/er för mer information.  För att boka något var vänligen använd kontakt formuläret.</p>
+        <p style={{ padding: "1rem 1rem 0.5rem 1rem" }}>
+          Hör gärna av dig/er för mer information. För att boka något var
+          vänligen använd kontakt formuläret.
+        </p>
         <div style={{ paddingTop: "1rem" }}>
-          <Link href={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`} as={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}>
-            <a className="main-btn course-btn" style={{ display: "flex", justifyContent: "center" }}>Kontakt</a>
+          <Link
+            href={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}
+            as={`/${isAmp ? "kontakt" + AMPurl.url : "kontakt"}`}
+          >
+            <a
+              className="main-btn course-btn"
+              style={{ display: "flex", justifyContent: "center" }}
+            >
+              Kontakt
+            </a>
           </Link>
         </div>
       </div>
@@ -68,20 +80,21 @@ const Priser = ({ response }: PrisProps): React.ReactElement => {
   );
 };
 
-
 Priser.getInitialProps = async (): Promise<{}> => {
   let response;
   try {
     response = await fetch(BASE_URL, {
       method: "POST",
       headers,
-      body
+      body,
     });
     response = await response.json();
+    if (response) {
+      return { response: response.data };
+    }
   } catch (error) {
     console.error(error);
   }
-  return { response: response.data };
 };
 
 export default Priser;

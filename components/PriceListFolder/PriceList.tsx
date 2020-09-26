@@ -11,14 +11,15 @@ interface PriceListProps {
 
 const PriceList = ({ pricelist }:PriceListProps): React.ReactElement => {
   const prices = pricelist;
+  console.log(pricelist)
   const isAmp = useAmp();
-  return prices ? (
+  return prices.length ? (
     <>
       <div className="price" style={{ maxWidth: "1100px" }}>
         {prices.map(price => {
           const id = price?.linkpage?.id;
-          const href = `/${price.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
-          const as = `/${price.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
+          const href = `/${price.routepage && price.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
+          const as = `/${price.routepage && price.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
           return (
             <div className="pricelist" key={price.id} >
               <div style={{ width: "100%" }}>
@@ -27,16 +28,16 @@ const PriceList = ({ pricelist }:PriceListProps): React.ReactElement => {
                   style={{
                     width: "100%",
                     height: "60px",
-                    backgroundImage: `linear-gradient(to bottom right, ${price.color.hex}, ${price.secondcolor.hex})`
+                    backgroundImage: `linear-gradient(to bottom right, ${price?.color?.hex}, ${price.secondcolor.hex})`
                   }}
                 ></div>
                 <div className="pricelist__card">
-                  <h3 style={{ color: `${price.color.hex}`, textAlign: "center", }}>{price.title}</h3>
+                  <h3 style={{ color: `${price?.color?.hex}`, textAlign: "center", }}>{price.title}</h3>
                 </div>
 
                 <div className="pricelist__card list">
                   <ul style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-                    {price.prices.map((priceitem, index) => (
+                    {price.prices && price.prices.map((priceitem, index) => (
                       <li
                         key={index}
                         style={{
@@ -55,7 +56,7 @@ const PriceList = ({ pricelist }:PriceListProps): React.ReactElement => {
                   <div><p style={{ padding: "1rem 1rem 0 1rem" }}><i>{price.description}</i></p></div>
                 </div>
               </div>
-              {price.routepage.length ? <div className="pricelist__card" style={{
+              {price?.routepage?.length ? <div className="pricelist__card" style={{
                 textAlign: "center",
               }}>
                 <Link

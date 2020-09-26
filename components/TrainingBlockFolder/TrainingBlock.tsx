@@ -18,8 +18,8 @@ const TrainingBlock = ({ profiles }: TrainingBlockProps): React.ReactElement => 
         <>
             {profiles.map((profil, index) => {
                 const id = profil?.linkpage?.id;
-                const href = profil.routepage && `/${profil.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
-                const as = profil.routepage && `/${profil.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
+                const href = profil.routepage && `/${profil.routepage.length && profil.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
+                const as = profil.routepage && `/${profil.routepage.length && profil.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
                 return (
                     <div
                         key={profil?.id ? profil?.id : index}
@@ -81,10 +81,10 @@ const TrainingBlock = ({ profiles }: TrainingBlockProps): React.ReactElement => 
                                         </p>
                                     )}
                                     {profil?.tags && <TagBlock tags={profil?.tags?.data} color={profil.textcolor?.hex} />}
-                                    {profil?.button && (
+                                    {profil?.button && href && (
                                         <div>
                                             <Link href={href} as={as} >
-                                                <a title={profil.routepage[0]} className="external-link">{profil.buttontext}</a>
+                                                <a title={profil.routepage && profil.routepage[0]} className="external-link">{profil.buttontext}</a>
                                             </Link>
                                         </div>
                                     )}
