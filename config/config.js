@@ -3,7 +3,7 @@ export const BASE_URL = "https://graphql.datocms.com/";
 export const headers = {
   "Content-Type": "application/json",
   Accept: "application/json",
-  Authorization: `Bearer d08a1eb18ab572e54dc724b47fd6ad`
+  Authorization: `Bearer 76be29bb647a648ffc75fe6baa2de3`
 };
 
 export const body = JSON.stringify({

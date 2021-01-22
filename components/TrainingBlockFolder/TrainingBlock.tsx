@@ -57,7 +57,7 @@ const TrainingBlock = ({ profiles }: TrainingBlockProps): React.ReactElement => 
 
 
                                 <div className="profile-block__content__boxes__text">
-                                    <h3 style={{ color: `${profil?.textcolor?.hex}` }}>{profil?.title}</h3>
+                                    <h3 style={{ textAlign: "center", color: `${profil?.textcolor?.hex}` }}>{profil?.title}</h3>
                                     <p
                                         style={{ color: `${profil?.textcolor?.hex}` }}
                                         className="text-top"

@@ -15,10 +15,13 @@ const CardBlockStyling = () => (
             z-index: 10;
         }
         .cards__block {
+            width: 100%;
             max-width: 1000px;
             display: flex;
             flex-wrap: wrap;
+            -webkit-box-pack: center;
             justify-content: center;
+            -webkit-box-align: center;
             align-items: center;
             height: 100%;
         }

@@ -15,7 +15,7 @@ const ContactBlock = ({ contactblock }: ContactBlockProps): React.ReactElement =
         className="contact-block"
         style={{
           backgroundImage: contactblock?.backgroundimage?.url &&
-            `url(${contactblock.backgroundimage.url})`,
+            `url(${contactblock?.backgroundimage?.url})`,
           backgroundSize: "cover",
           backgroundPosition: "center center"
         }}
@@ -23,8 +23,8 @@ const ContactBlock = ({ contactblock }: ContactBlockProps): React.ReactElement =
         <div
           className="contact-block__layer"
           style={{
-            background: `${contactblock.overlaycolor.hex}`,
-            opacity: `${contactblock.opacity}`
+            background: `${contactblock?.overlaycolor?.hex}`,
+            opacity: `${contactblock?.opacity}`
           }}
         />
         <div className="contact-block__content">

@@ -12,13 +12,14 @@ interface PriceListProps {
 const PriceList = ({ pricelist }:PriceListProps): React.ReactElement => {
   const prices = pricelist;
   const isAmp = useAmp();
+  console.log(prices)
   return prices ? (
     <>
       <div className="price" style={{ maxWidth: "1100px" }}>
         {prices.map(price => {
           const id = price?.linkpage?.id;
-          const href = `/${price.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
-          const as = `/${price.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
+          const href = `/${price?.routepage[0]}${id ? `/[id]` : ""}${isAmp ? AMPurl.url : ""}`
+          const as = `/${price?.routepage[0] + `${id ? `/${id}` : ""}` + `${isAmp ? AMPurl.url : ""}`}`
           return (
             <div className="pricelist" key={price.id} >
               <div style={{ width: "100%" }}>

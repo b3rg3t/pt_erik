@@ -42,7 +42,7 @@ const CardBlock = ({ allCards, cardblock }: CardBlockProps): React.ReactElement 
           <div
             className="card-block__layer"
             style={{
-              background: `${cardblock?.overlaycolor.hex}`,
+              background: `${cardblock?.overlaycolor?.hex}`,
               opacity: `${cardblock?.opacity}`
             }}
           />
