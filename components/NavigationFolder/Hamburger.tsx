@@ -1,7 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import { slide as Menu } from "react-burger-menu";
-import { Links, colors, SocialMedia, gradientBackground } from "../../helpers/helpdata";
+import {
+  Links,
+  colors,
+  SocialMedia,
+  gradientBackground,
+} from "../../helpers/helpdata";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import Logo from "./Logo";
 
@@ -9,7 +14,7 @@ class Hamburger extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      menuOpen: false
+      menuOpen: false,
     };
   }
   handleStateChange(state) {
@@ -148,11 +153,11 @@ class Hamburger extends React.Component {
           width={"200px"}
           //@ts-ignore
           isOpen={this.state.menuOpen}
-          onStateChange={state => this.handleStateChange(state)}
+          onStateChange={(state) => this.handleStateChange(state)}
         >
           <ul className="ham-ul">
             <li onClick={() => this.closeMenu()} className="logo-link">
-              <Logo />
+              <Logo logo={""} />
             </li>
             {Links &&
               Links.map((link, index) => (
