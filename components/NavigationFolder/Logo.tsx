@@ -10,9 +10,9 @@ const Logo = (): React.ReactElement => {
       <Link href={!isAmp ? `/` : `${AMPurl.url}`}>
         <a>
           <img
-            src="/static/images/obstacle_fitness-dumbell-transparent.png"
+            src={"/static/images/obstacle_fitness-dumbell-transparent.png"}
             alt="Obstacle fitness logo"
-            width={"auto"}
+            width={"auto"}  
             height={40}
           />
           {SEOdata.title.toUpperCase()}
