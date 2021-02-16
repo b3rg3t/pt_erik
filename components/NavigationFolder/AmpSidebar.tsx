@@ -1,11 +1,17 @@
 import React from "react";
 import Link from "next/link";
-import { colors, SocialMedia, Links, AMPurl, gradientBackground } from "../../helpers/helpdata";
+import {
+  colors,
+  SocialMedia,
+  Links,
+  AMPurl,
+  gradientBackground,
+} from "../../helpers/helpdata";
 import { FaLinkedin, FaFacebook, FaInstagram } from "react-icons/fa";
 import { useAmp } from "next/amp";
 import Logo from "./Logo";
 
-const AmpSidebar = (): React.ReactElement => {
+const AmpSidebar = ({ logo }): React.ReactElement => {
   const isAmp = useAmp();
   return (
     Links && (
@@ -15,7 +21,7 @@ const AmpSidebar = (): React.ReactElement => {
             <nav>
               <ul>
                 <li className="logo-link">
-                  <Logo />
+                  <Logo logo={logo} />
                 </li>
                 {Links.map((link, index) => (
                   <li key={index}>

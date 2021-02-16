@@ -1,5 +1,11 @@
 export const body = JSON.stringify({
     query: `query GetAllData {
+          logo {
+            pageLogo {
+              alt
+              url
+            }
+          }
           contactblock {
             id
             opacity

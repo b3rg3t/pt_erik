@@ -5,7 +5,7 @@ import Courses from "../components/CoursesFolder/Courses";
 import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/massageconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
-import fetch from 'isomorphic-unfetch';
+import fetch from "isomorphic-unfetch";
 import { typescriptobj } from "../helpers/typescriptobj";
 
 export const config = { amp: "hybrid" };
@@ -22,20 +22,24 @@ export interface allMassageoffersProps {
     url: string;
     height: string | number;
     width: string | number;
-  }
+  };
 }
 interface MassageProps {
   response: {
     allMassageoffers: [allMassageoffersProps];
     massage: typescriptobj;
-  }
+  };
 }
 
 const Massage = ({ response }: MassageProps): React.ReactElement => {
-  let massage:any = new Array;
+  let massage: any = new Array();
   massage.push(response?.massage);
   return (
-    <Layout title={`${SEOdata.title} | Massage`}>
+    <Layout
+      title={`${SEOdata.title} | Massage`}
+      //@ts-ignore
+      logo={response?.logo?.pageLogo}
+    >
       <TrainingBlock profiles={massage} />
       <Courses offers={response?.allMassageoffers} />
     </Layout>
@@ -48,7 +52,7 @@ Massage.getInitialProps = async (): Promise<{}> => {
     response = await fetch(BASE_URL, {
       method: "POST",
       headers,
-      body
+      body,
     });
     response = await response.json();
   } catch (error) {
@@ -56,6 +60,5 @@ Massage.getInitialProps = async (): Promise<{}> => {
   }
   return { response: response?.data ? response.data : "" };
 };
-
 
 export default Massage;

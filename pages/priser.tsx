@@ -3,31 +3,32 @@ import Layout from "../components/LayoutFolder/Layout";
 import { SEOdata } from "../helpers/helpdata";
 import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/priceconfig";
-import fetch from 'isomorphic-unfetch';
+import fetch from "isomorphic-unfetch";
 import PriceBlock from "../components/PriceListFolder/PriceBlock";
-
 
 export const config = { amp: "hybrid" };
 
 export interface PrisListaProps {
   id: string;
   title: string;
-  prices: [{
-    name: string;
-    price: string;
-  }];
+  prices: [
+    {
+      name: string;
+      price: string;
+    }
+  ];
   description: string;
   routepage: [string];
   linkpage: {
     id: string;
     title: string;
-  }
+  };
   secondcolor: {
     hex: string;
-  }
+  };
   color: {
     hex: string;
-  }
+  };
 }
 export interface priceblockprops {
   id: string;
@@ -38,31 +39,35 @@ export interface priceblockprops {
     url: string;
     width: string;
     height: string;
-  }
+  };
   toptext?: string;
   title?: string;
   textcolor: {
     hex: string;
-  }
+  };
   overlaycolor: {
     hex: string;
-  }
+  };
 }
 export interface PrisProps {
   response: {
-    allPricelists: PrisListaProps[],
-    priceblock: priceblockprops
-  }
+    allPricelists: PrisListaProps[];
+    priceblock: priceblockprops;
+  };
 }
 
 const Priser = ({ response }: PrisProps): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | Priser`} navbar={true}>
+    <Layout
+      title={`${SEOdata.title} | Priser`}
+      navbar={true}
+      //@ts-ignore
+      logo={response?.logo?.pageLogo}
+    >
       <PriceBlock response={response} />
     </Layout>
   );
 };
-
 
 Priser.getInitialProps = async (): Promise<{}> => {
   let response;
@@ -70,7 +75,7 @@ Priser.getInitialProps = async (): Promise<{}> => {
     response = await fetch(BASE_URL, {
       method: "POST",
       headers,
-      body
+      body,
     });
     response = await response.json();
   } catch (error) {

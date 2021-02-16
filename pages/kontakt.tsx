@@ -13,7 +13,7 @@ export const config = { amp: "hybrid" };
 const Kontakt = ({ response }): React.ReactElement => {
   const isAmp = useAmp();
   return (
-    <Layout title={`${SEOdata.title} | Kontakt`} navbar={true}>
+    <Layout title={`${SEOdata.title} | Kontakt`} navbar={true} logo={response?.logo?.pageLogo} >
       {!isAmp ? (
         <div style={{ minHeight: `calc(100vh - ${heights.footerheight})` }}>
           <ContactBlock contactblock={response.contactblock} />

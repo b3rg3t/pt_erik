@@ -9,7 +9,7 @@ import { FaBars } from "react-icons/fa";
 import Hamburger from "./Hamburger";
 import Logo from "./Logo";
 
-const Navigation = ({ scrollValue }): React.ReactElement => {
+const Navigation = ({ scrollValue, logo }): React.ReactElement => {
   const isAmp = useAmp();
   const [scroll, setScroll] = useState(0);
   const [top] = useState(0);
@@ -37,7 +37,7 @@ const Navigation = ({ scrollValue }): React.ReactElement => {
           </div>
         ) : (
             <>
-              <AmpSidebar />
+              <AmpSidebar logo={logo}/>
               <div className="nav__boxes amp-button">
                 <button
                   style={{
@@ -66,7 +66,7 @@ const Navigation = ({ scrollValue }): React.ReactElement => {
           }}
         >
           <div className="nav__boxes">
-            <Logo />
+            <Logo logo={logo} />
           </div>
           <div className="nav__boxes"></div>
           {!isAmp && (

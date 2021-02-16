@@ -1,5 +1,11 @@
 export const body = JSON.stringify({
   query: `query GetAllData {
+      logo {
+        pageLogo {
+          alt
+          url
+        }
+      }
       allPricelists(orderBy: position_ASC) {
         id
         title

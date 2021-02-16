@@ -8,9 +8,10 @@ import { useAmp } from "next/amp";
 type LayoutProps = {
   title?: string;
   navbar?: boolean;
+  logo?: any;
 };
 
-const Layout: React.FunctionComponent<LayoutProps> = ({ children, title, navbar }) => {
+const Layout: React.FunctionComponent<LayoutProps> = ({ children, title, navbar, logo }) => {
   const isAmp = useAmp();
   let renderBackgroundColor;
   if (navbar) {
@@ -41,11 +42,12 @@ const Layout: React.FunctionComponent<LayoutProps> = ({ children, title, navbar 
           </>
         )}
       </Head>
-      <Navigation scrollValue={renderBackgroundColor} />
+      <Navigation scrollValue={renderBackgroundColor} logo={logo} />
       <main className="site-content">{children}</main>
       <Footer />
       <AmpStyling />
     </div>
   );
 };
+
 export default Layout;

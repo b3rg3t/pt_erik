@@ -10,7 +10,7 @@ import { SEOdata } from "../helpers/helpdata";
 
 const ComponentRenderer = ({ response }): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | Hem`}>
+    <Layout title={`${SEOdata.title} | Hem`} logo={response?.logo?.pageLogo}>
         <>
           <section id="hero">
             <Hero hero={response.heroblock} />

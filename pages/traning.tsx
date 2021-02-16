@@ -5,21 +5,29 @@ import { BASE_URL, headers } from "../config/config";
 import { body } from "../config/trainingconfig";
 import TrainingBlock from "../components/TrainingBlockFolder/TrainingBlock";
 import Loading from "../components/loading";
-import fetch from 'isomorphic-unfetch';
+import fetch from "isomorphic-unfetch";
 import { typescriptobj } from "../helpers/typescriptobj";
 
 export const config = { amp: "hybrid" };
 
 export interface TraningProps {
   response: {
-    allTranings: [typescriptobj]
-  }
+    allTranings: [typescriptobj];
+  };
 }
 
 const Traning = ({ response }: TraningProps): React.ReactElement => {
   return (
-    <Layout title={`${SEOdata.title} | Träning`}>
-      {response.allTranings ? <TrainingBlock profiles={response.allTranings} /> : <Loading />}
+    <Layout
+      title={`${SEOdata.title} | Träning`}
+      //@ts-ignore
+      logo={response?.logo?.pageLogo}
+    >
+      {response.allTranings ? (
+        <TrainingBlock profiles={response.allTranings} />
+      ) : (
+        <Loading />
+      )}
     </Layout>
   );
 };
@@ -30,7 +38,7 @@ Traning.getInitialProps = async (): Promise<{}> => {
     response = await fetch(BASE_URL, {
       method: "POST",
       headers,
-      body
+      body,
     });
     response = await response.json();
   } catch (error) {

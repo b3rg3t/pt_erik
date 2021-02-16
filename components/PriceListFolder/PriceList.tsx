@@ -12,7 +12,6 @@ interface PriceListProps {
 const PriceList = ({ pricelist }:PriceListProps): React.ReactElement => {
   const prices = pricelist;
   const isAmp = useAmp();
-  console.log(prices)
   return prices ? (
     <>
       <div className="price" style={{ maxWidth: "1100px" }}>

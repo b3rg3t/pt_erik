@@ -3,18 +3,13 @@ import Link from "next/link";
 import { SEOdata, AMPurl, colors } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 
-const Logo = (): React.ReactElement => {
+const Logo = ({ logo }): React.ReactElement => {
   const isAmp = useAmp();
   return (
     <>
       <Link href={!isAmp ? `/` : `${AMPurl.url}`}>
         <a>
-          <img
-            src={"../images/obstacle_fitness-dumbell-transparent.png"}
-            alt="Obstacle fitness logo"
-            width={"auto"}  
-            height={40}
-          />
+          <img src={logo?.url} alt={logo?.alt} width={"auto"} height={40} />
           {SEOdata.title.toUpperCase()}
         </a>
       </Link>
