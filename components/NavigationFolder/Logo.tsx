@@ -10,7 +10,7 @@ const Logo = (): React.ReactElement => {
       <Link href={!isAmp ? `/` : `${AMPurl.url}`}>
         <a>
           <img
-            src={"./images/obstacle_fitness-dumbell-transparent.png"}
+            src={"../images/obstacle_fitness-dumbell-transparent.png"}
             alt="Obstacle fitness logo"
             width={"auto"}  
             height={40}
