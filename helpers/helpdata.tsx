@@ -1,7 +1,7 @@
 export const heights = {
   navHeigt: "60px",
   footerheight: "200px",
-  url: "https://www.usebasin.com/f/c177f0920b56.json"
+  url: "https://usebasin.com/f/580747f3a72c.json"
 };
 
 export const contactBlockStyle = {
@@ -38,7 +38,7 @@ export const gradientBackground = {
 export const SEOdata = {
   title: "Obstacle Fitness",
   description: "Obstacle fitness, där ditt hinder blir en framgång. Här får du all hjälp du behöver för att komma igång med din träning. Även om det gäller Styrketräning, löpning eller en avkopplande massage. Erbjuder online coaching eller personlig träning tillsammans med kund/företag",
-  customImageSrc: "./images/erik5.jpg",
+  customImageSrc: "./images/obstacle_fitness.jpg",
   ogType: "website",
   name: "PT"
 };
@@ -46,15 +46,15 @@ export const SEOdata = {
 //Social Media links
 export const SocialMedia = {
   instagram: {
-    url: "https://www.instagram.com/",
+    url: "https://www.instagram.com/erik.johansson.908/",
     title: "Instagram"
   },
   facebook: {
-    url: "https://www.facebook.com/",
+    url: "https://www.facebook.com/erik.johansson.908",
     title: "Facebook"
   },
   linkedin: {
-    url: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/in/erik-johansson-3b1bb7a5/",
     title: "LinkedIn"
   }
 };

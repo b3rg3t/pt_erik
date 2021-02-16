@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { GiEarthAfricaEurope } from "react-icons/gi";
 import { SEOdata, AMPurl, colors } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
 
@@ -10,7 +9,12 @@ const Logo = (): React.ReactElement => {
     <>
       <Link href={!isAmp ? `/` : `${AMPurl.url}`}>
         <a>
-          <GiEarthAfricaEurope color="white" size="3rem" />
+          <img
+            src="/images/obstacle_fitness-dumbell-transparent.png"
+            alt="Obstacle fitness logo"
+            width={"auto"}
+            height={40}
+          />
           {SEOdata.title.toUpperCase()}
         </a>
       </Link>
@@ -25,6 +29,9 @@ const Logo = (): React.ReactElement => {
         }
         a:hover {
           color: ${colors.secondary};
+        }
+        img {
+          margin-right: 8px;
         }
         @media only screen and (max-width: 600px) {
           a:hover {
