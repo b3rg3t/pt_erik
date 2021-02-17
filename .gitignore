@@ -20,6 +20,8 @@
 .DS_Store
 .env*
 
+/_static
+
 # debug
 npm-debug.log*
 yarn-debug.log*

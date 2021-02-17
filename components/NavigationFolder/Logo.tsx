@@ -7,11 +7,13 @@ const Logo = ({ logo }): React.ReactElement => {
   const isAmp = useAmp();
   return (
     <>
+      {isAmp ? (
+        <amp-img src={logo?.url} alt={logo?.alt} width={"auto"} height={40} />
+      ) : (
+        <img src={logo?.url} alt={logo?.alt} width={"auto"} height={40} />
+      )}
       <Link href={!isAmp ? `/` : `${AMPurl.url}`}>
-        <a>
-          <img src={logo?.url} alt={logo?.alt} width={"auto"} height={40} />
-          {SEOdata.title.toUpperCase()}
-        </a>
+        <a>{SEOdata.title.toUpperCase()}</a>
       </Link>
       <style jsx>{`
         a {
