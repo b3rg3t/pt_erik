@@ -2,18 +2,21 @@ import React from "react";
 import Link from "next/link";
 import { SEOdata, AMPurl, colors } from "../../helpers/helpdata";
 import { useAmp } from "next/amp";
+import Image from "../AMP/AmpImage";
 
 const Logo = ({ logo }): React.ReactElement => {
   const isAmp = useAmp();
   return (
     <>
-      {isAmp ? (
-        <amp-img src={logo?.url} alt={logo?.alt} width={"auto"} height={40} />
-      ) : (
-        <img src={logo?.url} alt={logo?.alt} width={"auto"} height={40} />
-      )}
+      <Image
+        src={logo?.url}
+        alt={logo?.alt}
+        width={40}
+        height={40}
+        layout="intrinsic"
+      />
       <Link href={!isAmp ? `/` : `${AMPurl.url}`}>
-        <a>{SEOdata.title.toUpperCase()}</a>
+        <a style={{ marginLeft: "8px" }}>{SEOdata.title.toUpperCase()}</a>
       </Link>
       <style jsx>{`
         a {
