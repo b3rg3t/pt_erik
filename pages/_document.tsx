@@ -18,7 +18,7 @@ class MyDocument extends Document {
           <SEOTags />
           <meta
             name="google-site-verification"
-            content="-NCuph836TtmYabNKEBeGQOuQjswVn7X--YKJrTkeiE"
+            content="7RhHz_cy9Sge7vc7WTI06p-s7fA8LUfvU_t-_ZlPZ_U"
           />
           <meta name="theme-color" content={colors.navbar} />
           <meta charSet="utf-8" />
