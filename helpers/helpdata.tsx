@@ -46,7 +46,7 @@ export const SEOdata = {
 //Social Media links
 export const SocialMedia = {
   instagram: {
-    url: "https://www.instagram.com/erik.johansson.908/",
+    url: "https://www.instagram.com/obstacle.fitness/",
     title: "Instagram"
   },
   facebook: {
