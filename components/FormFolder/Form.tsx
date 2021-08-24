@@ -30,7 +30,7 @@ const Form = (): React.ReactElement => {
     };
     let response;
     try {
-      const postBasin = await axios.post(`${heights.url}`, data, {
+      const postBasin = await axios.post("https://usebasin.com/f/580747f3a72c.json", data, {
         headers
       });
       response = await postBasin;
@@ -81,9 +81,9 @@ const Form = (): React.ReactElement => {
           <form
             className="contact__form"
             onSubmit={handleSubmit}
-            verify-xhr={isAmp ? `${process.env.USEBASIN_EMAIL}` : null}
+            verify-xhr={isAmp ? "https://usebasin.com/f/580747f3a72c.json" : null}
             method="post"
-            action-xhr={isAmp ? `${process.env.USEBASIN_EMAIL}` : null}
+            action-xhr={isAmp ? "https://usebasin.com/f/580747f3a72c.json" : null}
             target="_top"
           >
             <h3 className="contact__head">Kontakt</h3>
